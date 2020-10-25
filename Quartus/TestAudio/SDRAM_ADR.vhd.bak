@@ -1,0 +1,36 @@
+-- SDRAM_ADR.VHD (a peripheral module for SCOMP)
+-- 2020.10.25
+--
+-- This module controls the address selection of the SDRAM memory on the rising edge of CS.
+
+
+LIBRARY IEEE;
+LIBRARY LPM;
+
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE LPM.LPM_COMPONENTS.ALL;
+
+
+ENTITY SDRAM_ADR IS
+  PORT(
+    RESETN      : IN  STD_LOGIC;
+    CS          : IN  STD_LOGIC;
+    ADDRESS_OUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+    ADDRESS_IN  : IN  STD_LOGIC_VECTOR(15 DOWNTO 0)
+  );
+END DIG_OUT;
+
+
+ARCHITECTURE a OF SDRAM_ADR IS
+  BEGIN
+    PROCESS (RESETN, CS)
+      BEGIN
+        IF (RESETN = '0') THEN
+          DATA <= x"0000";
+        ELSIF (RISING_EDGE(CS)) THEN
+          DATA <= IO_DATA;
+        END IF;
+      END PROCESS;
+  END a;
