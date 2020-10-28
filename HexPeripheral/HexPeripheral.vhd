@@ -1,5 +1,5 @@
 -- HexPeripheral.vhd
--- 7-segment display segments are active low
+
 
 
 LIBRARY IEEE;
@@ -79,20 +79,20 @@ begin
 					latch_hex5 <= "1111111";
 					latch_player <= "1111111";
 				
-				when writeHex =>	-- turn on/off segments of 7-segment LED display
+				when writeHex =>	-- turn on/off segments of 7-segment LED display (0 = off for IO_DATA, 1 = on for IO_DATA)
 					case IO_DATA(11 downto 9) is	-- display to change is the decimal value of 9th to 11th bits of instruction
 						when "000" =>
-							latch_hex0 <= IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+							latch_hex0 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
 						when "001" =>
-							latch_hex1 <= IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+							latch_hex1 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
 						when "010" =>
-							latch_hex2 <= IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+							latch_hex2 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
 						when "011" =>
-							latch_hex3 <= IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+							latch_hex3 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
 						when "100" =>
-							latch_hex4 <= IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+							latch_hex4 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
 						when "101" =>
-							latch_hex5 <= IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+							latch_hex5 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
 						when others =>
 							latch_hex0 <= "1111111";
 					end case;

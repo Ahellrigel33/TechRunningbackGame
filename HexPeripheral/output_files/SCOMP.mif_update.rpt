@@ -1,5 +1,5 @@
 MIF/HEX Update report for SCOMP
-Wed Oct 28 04:03:44 2020
+Wed Oct 28 18:00:00 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; MIF/HEX Update Summary                                        ;
 +-----------------------+---------------------------------------+
-; MIF/HEX Update Status ; Successful - Wed Oct 28 04:03:44 2020 ;
+; MIF/HEX Update Status ; Successful - Wed Oct 28 18:00:00 2020 ;
 ; Revision Name         ; SCOMP                                 ;
 ; Top-level Entity Name ; SCOMP_System                          ;
 ; Family                ; MAX 10                                ;
@@ -59,9 +59,9 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime MIF/HEX Update
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Oct 28 04:03:44 2020
+    Info: Processing started: Wed Oct 28 18:00:00 2020
 Info: Command: quartus_cdb SCOMP -c SCOMP --update_mif
-Warning (113031): 409 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 409 warnings found, and 10 warnings are reported. File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif Line: 1
+Warning (113031): 351 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 351 warnings found, and 10 warnings are reported. File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif Line: 1
     Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 13
     Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 14
     Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 15
@@ -75,8 +75,8 @@ Warning (113031): 409 out of 2048 addresses are reinitialized. The latest initia
 Info (39024): Processed the following Memory Initialization File(s)
     Info (39025): Processed Memory Initialization File C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif Line: 0
 Info: Quartus Prime MIF/HEX Update was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4737 megabytes
-    Info: Processing ended: Wed Oct 28 04:03:44 2020
+    Info: Peak virtual memory: 4733 megabytes
+    Info: Processing ended: Wed Oct 28 18:00:00 2020
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
