@@ -4,6 +4,20 @@ Test:
     OUT    	HexPeriph
     LOADI	5
 	CALL	DelayAC
+	
+	LOAD	writePlayer
+	OR		rightSide
+	OUT		HexPeriph	
+	LOADI	5
+	CALL	DelayAC
+
+	LOAD	writePlayer
+	OR		midSide
+	OUT		HexPeriph	
+	LOADI	5
+	CALL	DelayAC
+
+	
 	LOAD	writeHex
 	OR		Hex5
 	OR		leftDef
@@ -12,18 +26,34 @@ Test:
 	CALL	DelayAC
 	
 	LOAD	writeHex
-	OR	Hex4
+	OR		Hex0
+	OR		rightDef
+	OUT		HexPeriph
+	LOADI	5
+	CALL	DelayAC
+	
+	
+	LOAD	writeHex
+	OR		Hex0
+	OR		leftDef
+	OUT		HexPeriph
+	LOADI	5
+	CALL	DelayAC
+	
+	LOAD	writeHex
+	OR		Hex4
 	OR		midDef
 	OUT		HexPeriph
 	LOADI	5
 	CALL	DelayAC
 	
 	LOAD	writeHex	
-	OR	Hex3
+	OR		Hex3
 	OR		midDef
 	OUT		HexPeriph
 	LOADI	5
 	CALL	DelayAC
+	
 	
 	LOAD	writeHex
 	OR		Hex1
@@ -31,26 +61,23 @@ Test:
 	OUT		HexPeriph
 	LOADI	5
 	CALL	DelayAC
-	
-	
-	LOAD	writePlayer
-	OR		leftSide	
-	OUT		HexPeriph
-	LOADI	5
-	CALL	DelayAC
-	
-	LOAD	writePlayer
-	OR		midSide	
-	OUT		HexPeriph	
-	LOADI	5
-	CALL	DelayAC
-	
-	LOAD	writePlayer
-	OR		rightSide
-	OUT		HexPeriph	
-	LOADI	5
-	CALL	DelayAC
 	JUMP   	Test
+	
+	
+;	LOAD	writePlayer
+;	OR		leftSide	
+;	OUT		HexPeriph
+;	LOADI	5
+;	CALL	DelayAC
+	
+;	LOAD	writePlayer
+;	OR		midSide	
+;	OUT		HexPeriph	
+;	LOADI	5
+;	CALL	DelayAC
+	
+	
+
 
 
 ; First load opcode, then OR the operand
@@ -67,9 +94,13 @@ Hex2:	DW &B0000010000000000
 Hex3:	DW &B0000011000000000
 Hex4:	DW &B0000100000000000
 Hex5:	DW &B0000101000000000
-leftDef:	DW &B1110111
-midDef:		DW &B0111111
-rightDef:	DW &B1111110
+leftDef:	DW &B0001000
+midDef:		DW &B1000000
+rightDef:	DW &B0000001
+
+;leftDef:	DW &B1110111
+;midDef:		DW &B0111111
+;rightDef:	DW &B1111110
 
 
 ; writePlayer operands
@@ -79,94 +110,6 @@ rightSide:		DW &B0000001000000000
 
 HexPeriph:  	EQU &H0E0
 
-; Subroutine to configure the I2C for reading accelerometer data.
-; Only needs to be done once after each reset.
-SetupI2C:
-	LOAD   AccCfg      ; load the number of commands
-	STORE  CmdCnt
-	LOADI  AccCfg      ; Load list address
-	ADDI   1           ; Increment to first command
-	STORE  CmdPtr
-I2CCmdLoop:
-	CALL   BlockI2C    ; wait for idle
-	LOAD   I2CWCmd     ; load write command
-	OUT    I2C_CMD     ; to I2C_CMD register
-	ILOAD  CmdPtr      ; load current command
-	OUT    I2C_DATA    ; to I2C_DATA register
-	OUT    I2C_RDY     ; start the communication
-	CALL   BlockI2C    ; wait for it to finish
-	LOAD   CmdPtr
-	ADDI   1           ; Increment to next command
-	STORE  CmdPtr
-	LOAD   CmdCnt
-	ADDI   -1          ; Check if finished
-	STORE  CmdCnt
-	JPOS   I2CCmdLoop
-	RETURN
-CmdPtr: DW 0
-CmdCnt: DW 0
-
-; Subroutine to read the X-direction acceleration.
-; Returns the value in AC.
-ReadX:
-	CALL   BlockI2C    ; ensure bus is idle
-	LOAD   I2CRCmd     ; load read command
-	OUT    I2C_CMD     ; send read command to I2C_CMD register
-	LOAD   AccXAddr    ; load ADXL345 register address for X acceleration 
-	OUT    I2C_DATA    ; send to I2C_DATA register
-	OUT    I2C_RDY     ; start the communication
-	CALL   BlockI2C    ; wait for it to finish
-	IN     I2C_data    ; put the data in AC
-	CALL   SwapBytes   ; bytes are returned in wrong order; swap them
-	RETURN
-		
-; Subroutine to read the Y-direction acceleration.
-; Returns the value in AC.
-ReadY:
-	CALL   BlockI2C    ; ensure bus is idle
-	LOAD   I2CRCmd     ; load read command
-	OUT    I2C_CMD     ; send read command to I2C_CMD register
-	LOAD   AccYAddr    ; load ADXL345 register address for X acceleration 
-	OUT    I2C_DATA    ; send to I2C_DATA register
-	OUT    I2C_RDY     ; start the communication
-	CALL   BlockI2C    ; wait for it to finish
-	IN     I2C_data    ; put the data in AC
-	CALL   SwapBytes   ; bytes are returned in wrong order; swap them
-	RETURN
-				
-
- 
-; This subroutine swaps the high and low bytes in AC
-SwapBytes:
-	STORE  SBT1
-	SHIFT  8
-	STORE  SBT2
-	LOAD   SBT1
-	SHIFT  -8
-	AND    LoByte
-	OR     SBT2
-	RETURN
-SBT1: DW 0
-SBT2: DW 0
-
-; Subroutine to block until I2C device is idle.
-; Enters error loop if no response for ~0.1 seconds.
-BlockI2C:
-	LOAD   Zero
-	STORE  Temp        ; Used to check for timeout
-BI2CL:
-	LOAD   Temp
-	ADDI   1           ; this will result in ~0.1s timeout
-	STORE  Temp
-	JZERO  I2CError    ; Timeout occurred; error
-	IN     I2C_RDY     ; Read busy signal
-	JPOS   BI2CL       ; If not 0, try again
-	RETURN             ; Else return
-I2CError:
-	LOAD   Zero
-	ADDI   &H12C       ; "I2C"
-	OUT    Hex0        ; display error message
-	JUMP   I2CError
 
 ;*******************************************************************************
 ; DelayAC: Pause for some multiple of 0.1 seconds.
