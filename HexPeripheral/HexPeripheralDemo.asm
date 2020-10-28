@@ -4,8 +4,16 @@ Test:
     OUT    	HexPeriph
     LOADI	5
 	CALL	DelayAC
+	
+	LOAD	writePlayer
+	OR		rightSide
+	OUT		HexPeriph	
+	LOADI	5
+	CALL	DelayAC
+
+	
 	LOAD	writeHex
-	OR		Hex5
+	OR		Hex0
 	OR		leftDef
 	OUT		HexPeriph
 	LOADI	5
@@ -31,26 +39,21 @@ Test:
 	OUT		HexPeriph
 	LOADI	5
 	CALL	DelayAC
-	
-	
-	LOAD	writePlayer
-	OR		leftSide	
-	OUT		HexPeriph
-	LOADI	5
-	CALL	DelayAC
-	
-	LOAD	writePlayer
-	OR		midSide	
-	OUT		HexPeriph	
-	LOADI	5
-	CALL	DelayAC
-	
-	LOAD	writePlayer
-	OR		rightSide
-	OUT		HexPeriph	
-	LOADI	5
-	CALL	DelayAC
 	JUMP   	Test
+	
+;	LOAD	writePlayer
+;	OR		leftSide	
+;	OUT		HexPeriph
+;	LOADI	5
+;	CALL	DelayAC
+	
+;	LOAD	writePlayer
+;	OR		midSide	
+;	OUT		HexPeriph	
+;	LOADI	5
+;	CALL	DelayAC
+	
+	
 
 
 ; First load opcode, then OR the operand
