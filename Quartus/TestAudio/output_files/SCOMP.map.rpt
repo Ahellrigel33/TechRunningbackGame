@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Sat Oct 31 14:47:54 2020
+Sat Oct 31 16:57:23 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -15,28 +15,27 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |SCOMP_System|MemPeripheral:inst14|state
- 11. State Machine - |SCOMP_System|SCOMP:inst|state
- 12. State Machine - |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|state
- 13. State Machine - |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|state
- 14. User-Specified and Inferred Latches
- 15. Registers Removed During Synthesis
- 16. General Register Statistics
- 17. Inverted Register Statistics
- 18. Multiplexer Restructuring Statistics (Restructuring Performed)
- 19. Source assignments for MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated
- 20. Parameter Settings for User Entity Instance: I2C_INTERFACE:inst13|i2c_master:inst
- 21. Parameter Settings for User Entity Instance: PLL_main:inst1|altpll:altpll_component
- 22. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter
- 23. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus
- 24. Parameter Settings for User Entity Instance: MemPeripheral:inst14|altsyncram:altsyncram_component
- 25. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
- 26. Parameter Settings for User Entity Instance: DIG_IN:inst7|LPM_BUSTRI:IO_BUS
- 27. altpll Parameter Settings by Entity Instance
- 28. altsyncram Parameter Settings by Entity Instance
- 29. Post-Synthesis Netlist Statistics for Top Partition
- 30. Elapsed Time Per Partition
- 31. Analysis & Synthesis Messages
+ 10. State Machine - |SCOMP_System|SCOMP:inst|state
+ 11. State Machine - |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|state
+ 12. State Machine - |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|state
+ 13. Registers Removed During Synthesis
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Inverted Register Statistics
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated
+ 19. Parameter Settings for User Entity Instance: I2C_INTERFACE:inst13|i2c_master:inst
+ 20. Parameter Settings for User Entity Instance: PLL_main:inst1|altpll:altpll_component
+ 21. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter
+ 22. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus
+ 23. Parameter Settings for User Entity Instance: MemPeripheral:inst14|altsyncram:altsyncram_component
+ 24. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
+ 25. Parameter Settings for User Entity Instance: DIG_IN:inst7|LPM_BUSTRI:IO_BUS
+ 26. altpll Parameter Settings by Entity Instance
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -63,15 +62,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Oct 31 14:47:54 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat Oct 31 16:57:23 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,204                                       ;
-;     Total combinational functions  ; 1,056                                       ;
-;     Dedicated logic registers      ; 492                                         ;
-; Total registers                    ; 492                                         ;
+; Total logic elements               ; 229                                         ;
+;     Total combinational functions  ; 225                                         ;
+;     Dedicated logic registers      ; 92                                          ;
+; Total registers                    ; 92                                          ;
 ; Total pins                         ; 75                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 1,048,576                                   ;
@@ -182,11 +181,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
+;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -242,20 +237,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                  ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,204                                                                                  ;
+; Estimated Total logic elements              ; 229                                                                                    ;
 ;                                             ;                                                                                        ;
-; Total combinational functions               ; 1056                                                                                   ;
+; Total combinational functions               ; 225                                                                                    ;
 ; Logic element usage by number of LUT inputs ;                                                                                        ;
-;     -- 4 input functions                    ; 587                                                                                    ;
-;     -- 3 input functions                    ; 319                                                                                    ;
-;     -- <=2 input functions                  ; 150                                                                                    ;
+;     -- 4 input functions                    ; 99                                                                                     ;
+;     -- 3 input functions                    ; 50                                                                                     ;
+;     -- <=2 input functions                  ; 76                                                                                     ;
 ;                                             ;                                                                                        ;
 ; Logic elements by mode                      ;                                                                                        ;
-;     -- normal mode                          ; 950                                                                                    ;
-;     -- arithmetic mode                      ; 106                                                                                    ;
+;     -- normal mode                          ; 154                                                                                    ;
+;     -- arithmetic mode                      ; 71                                                                                     ;
 ;                                             ;                                                                                        ;
-; Total registers                             ; 492                                                                                    ;
-;     -- Dedicated logic registers            ; 492                                                                                    ;
+; Total registers                             ; 92                                                                                     ;
+;     -- Dedicated logic registers            ; 92                                                                                     ;
 ;     -- I/O registers                        ; 0                                                                                      ;
 ;                                             ;                                                                                        ;
 ; I/O pins                                    ; 75                                                                                     ;
@@ -267,9 +262,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                      ;
 ;                                             ;                                                                                        ;
 ; Maximum fan-out node                        ; PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 255                                                                                    ;
-; Total fan-out                               ; 7282                                                                                   ;
-; Average fan-out                             ; 3.98                                                                                   ;
+; Maximum fan-out                             ; 210                                                                                    ;
+; Total fan-out                               ; 3152                                                                                   ;
+; Average fan-out                             ; 5.27                                                                                   ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 
 
@@ -278,39 +273,19 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                      ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |SCOMP_System                             ; 1056 (1)            ; 492 (0)                   ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 75   ; 0            ; 0          ; |SCOMP_System                                                                                                            ; SCOMP_System    ; work         ;
+; |SCOMP_System                             ; 225 (2)             ; 92 (0)                    ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 75   ; 0            ; 0          ; |SCOMP_System                                                                                                            ; SCOMP_System    ; work         ;
 ;    |AudioPeripheral:inst16|               ; 72 (72)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|AudioPeripheral:inst16                                                                                     ; AudioPeripheral ; work         ;
-;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                                                               ; DIG_IN          ; work         ;
-;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                                                              ; DIG_OUT         ; work         ;
-;    |DPs:inst10|                           ; 0 (0)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DPs:inst10                                                                                                 ; DPs             ; work         ;
-;    |HEX_DISP_6:inst9|                     ; 42 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9                                                                                           ; HEX_DISP_6      ; work         ;
-;       |HEX_DISP:inst1|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1                                                                            ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst2|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst2                                                                            ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst3|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst3                                                                            ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst4|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst4                                                                            ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst5|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5                                                                            ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst6|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6                                                                            ; HEX_DISP        ; work         ;
-;    |I2C_INTERFACE:inst13|                 ; 214 (56)            ; 125 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13                                                                                       ; I2C_INTERFACE   ; work         ;
-;       |i2c_ctrl:inst14|                   ; 58 (58)             ; 70 (70)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14                                                                       ; i2c_ctrl        ; work         ;
-;       |i2c_master:inst|                   ; 100 (100)           ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst                                                                       ; i2c_master      ; work         ;
-;    |IO_DECODER:inst3|                     ; 22 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|IO_DECODER:inst3                                                                                           ; IO_DECODER      ; work         ;
-;    |MemPeripheral:inst14|                 ; 138 (49)            ; 52 (49)                   ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14                                                                                       ; MemPeripheral   ; work         ;
-;       |altsyncram:altsyncram_component|   ; 89 (0)              ; 3 (0)                     ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
-;          |altsyncram_35r3:auto_generated| ; 89 (0)              ; 3 (3)                     ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated                        ; altsyncram_35r3 ; work         ;
-;             |decode_aj9:rden_decode|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|decode_aj9:rden_decode ; decode_aj9      ; work         ;
-;             |decode_h7a:decode3|          ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|decode_h7a:decode3     ; decode_h7a      ; work         ;
+;    |MemPeripheral:inst14|                 ; 108 (20)            ; 22 (19)                   ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14                                                                                       ; MemPeripheral   ; work         ;
+;       |altsyncram:altsyncram_component|   ; 88 (0)              ; 3 (0)                     ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;          |altsyncram_35r3:auto_generated| ; 88 (0)              ; 3 (3)                     ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated                        ; altsyncram_35r3 ; work         ;
+;             |decode_aj9:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|decode_aj9:rden_decode ; decode_aj9      ; work         ;
 ;             |mux_g3b:mux2|                ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|mux_g3b:mux2           ; mux_g3b         ; work         ;
-;    |PLL_main:inst1|                       ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1                                                                                             ; PLL_main        ; work         ;
-;       |altpll:altpll_component|           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component                                                                     ; altpll          ; work         ;
-;          |PLL_main_altpll:auto_generated| ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated                                      ; PLL_main_altpll ; work         ;
-;    |SCOMP:inst|                           ; 492 (404)           ; 178 (178)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                                                 ; SCOMP           ; work         ;
-;       |lpm_bustri:io_bus|                 ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_bustri:io_bus                                                                               ; lpm_bustri      ; work         ;
-;       |lpm_clshift:shifter|               ; 86 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                             ; lpm_clshift     ; work         ;
-;          |lpm_clshift_fuc:auto_generated| ; 86 (86)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                              ; lpm_clshift_fuc ; work         ;
-;    |SQ_GEN:inst11|                        ; 11 (11)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SQ_GEN:inst11                                                                                              ; SQ_GEN          ; work         ;
-;    |TIMER:inst4|                          ; 28 (18)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                                                                ; TIMER           ; work         ;
-;       |lpm_bustri:IO_BUS|                 ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4|lpm_bustri:IO_BUS                                                                              ; lpm_bustri      ; work         ;
-;    |clk_div:inst5|                        ; 36 (36)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                                                              ; clk_div         ; work         ;
+;    |PLL_main:inst1|                       ; 1 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1                                                                                             ; PLL_main        ; work         ;
+;       |altpll:altpll_component|           ; 1 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component                                                                     ; altpll          ; work         ;
+;          |PLL_main_altpll:auto_generated| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated                                      ; PLL_main_altpll ; work         ;
+;    |SCOMP:inst|                           ; 13 (13)             ; 14 (14)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                                                 ; SCOMP           ; work         ;
+;    |SQ_GEN:inst11|                        ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SQ_GEN:inst11                                                                                              ; SQ_GEN          ; work         ;
+;    |clk_div:inst5|                        ; 28 (28)             ; 21 (21)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                                                              ; clk_div         ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -331,18 +306,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+------------------------------+-----------------+
 ; Altera ; ALTPLL       ; 19.1    ; N/A          ; N/A          ; |SCOMP_System|PLL_main:inst1 ; PLL_main.vhd    ;
 +--------+--------------+---------+--------------+--------------+------------------------------+-----------------+
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------+
-; State Machine - |SCOMP_System|MemPeripheral:inst14|state ;
-+-------------+-------------+-------------+----------------+
-; Name        ; state.AUDIO ; state.LATCH ; state.SCOMP    ;
-+-------------+-------------+-------------+----------------+
-; state.SCOMP ; 0           ; 0           ; 0              ;
-; state.LATCH ; 0           ; 1           ; 1              ;
-; state.AUDIO ; 1           ; 0           ; 1              ;
-+-------------+-------------+-------------+----------------+
 
 
 Encoding Type:  One-Hot
@@ -417,32 +380,445 @@ Encoding Type:  One-Hot
 +----------------+------------+----------------+----------------+----------+----------+----------------+---------------+---------------+-------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; MemPeripheral:inst14|addr[13]                      ; VCC                 ; yes                    ;
-; MemPeripheral:inst14|addr[14]                      ; VCC                 ; yes                    ;
-; MemPeripheral:inst14|addr[15]                      ; VCC                 ; yes                    ;
-; MemPeripheral:inst14|addr[11]                      ; VCC                 ; yes                    ;
-; MemPeripheral:inst14|addr[12]                      ; VCC                 ; yes                    ;
-; Number of user-specified and inferred latches = 5  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++------------------------------------------------------+---------------------------------------------+
+; Register name                                        ; Reason for Removal                          ;
++------------------------------------------------------+---------------------------------------------+
+; DIG_IN:inst7|B_DI[10..15]                            ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk         ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|IR[0..10]                                 ; Stuck at GND due to stuck port data_in      ;
+; DIG_OUT:inst6|DATA[0..9]                             ; Stuck at GND due to stuck port clock        ;
+; HEX_DISP_6:inst9|HEX_DISP:inst3|latched_hex[0..3]    ; Stuck at GND due to stuck port clock        ;
+; HEX_DISP_6:inst9|HEX_DISP:inst6|latched_hex[0..3]    ; Stuck at GND due to stuck port clock        ;
+; HEX_DISP_6:inst9|HEX_DISP:inst5|latched_hex[0..3]    ; Stuck at GND due to stuck port clock        ;
+; HEX_DISP_6:inst9|HEX_DISP:inst4|latched_hex[0..3]    ; Stuck at GND due to stuck port clock        ;
+; HEX_DISP_6:inst9|HEX_DISP:inst2|latched_hex[0..3]    ; Stuck at GND due to stuck port clock        ;
+; HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[0..3]    ; Stuck at GND due to stuck port clock        ;
+; DPs:inst10|inst[0..4]                                ; Stuck at GND due to stuck port clock        ;
+; SQ_GEN:inst11|COMPARE[0..3]                          ; Stuck at GND due to stuck port clock        ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|cmd_in[0,1,4,5] ; Stuck at GND due to stuck port clock        ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|addr_in[1..7]   ; Stuck at GND due to stuck port clock        ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[0..15]  ; Stuck at GND due to stuck port clock        ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|go              ; Stuck at GND due to stuck port clock        ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|running         ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_addr[1..7]   ; Stuck at GND due to stuck port data_in      ;
+; SQ_GEN:inst11|COUNT[0..3]                            ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|IO_WRITE_int                              ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[0..7]   ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[1..7]   ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_tx[0..7]   ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|rnw             ; Stuck at VCC due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|count[2]        ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|PC_stack[9][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][0]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][1]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][2]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][3]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][4]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][5]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][6]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][7]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][8]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][9]                            ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[9][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[8][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[7][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[6][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[5][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[4][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[3][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[2][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[1][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|PC_stack[0][10]                           ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_nop                              ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_loadi                            ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_add                              ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_addi                             ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_sub                              ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_jump                             ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_jneg                             ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_jzero                            ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_jpos                             ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_call                             ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_return                           ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_and                              ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_or                               ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_xor                              ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_shift                            ; Lost fanout                                 ;
+; SCOMP:inst|state.ex_store                            ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|state.ex_iload                            ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|state.ex_istore                           ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|state.ex_in                               ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|state.ex_out                              ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.Tx1p      ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.Rx1p      ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|state.ex_load                             ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|state.ex_store2                           ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|state.ex_istore2                          ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|state.ex_in2                              ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|state.ex_out2                             ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[9..15] ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[9]                                 ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[8]     ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[8]                                 ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[7]     ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[7]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[7]      ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[7]                                 ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[6]     ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[6]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[6]      ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[6]                                 ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[5]     ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[5]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[5]      ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[5]                                 ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[4]     ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[4]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[4]      ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[4]                                 ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[3]     ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[3]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[3]      ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[3]                                 ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[2]     ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[2]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[2]      ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[2]                                 ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[1]     ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[1]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[1]      ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[1]                                 ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[0]     ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[0]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[0]      ; Lost fanout                                 ;
+; DIG_IN:inst7|B_DI[0]                                 ; Lost fanout                                 ;
+; TIMER:inst4|COUNT[0..15]                             ; Lost fanout                                 ;
+; SCOMP:inst|IO_CYCLE                                  ; Lost fanout                                 ;
+; SCOMP:inst|AC[1..15]                                 ; Merged with SCOMP:inst|AC[0]                ;
+; SCOMP:inst|MW                                        ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.Tx2       ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.Rx2       ; Stuck at GND due to stuck port data_in      ;
+; SCOMP:inst|AC[0]                                     ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.Tx1       ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.Rx1       ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.idle      ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|busy            ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|comm_en         ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.restart   ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.start     ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.command   ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.slv_ack1  ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.rd        ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.wr        ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.mstr_ack  ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.slv_ack2  ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0..2]   ; Stuck at VCC due to stuck port clock_enable ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.stop      ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|ack_error       ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.ready     ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|scl_req         ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|scl_ena         ; Stuck at GND due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[0]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|sda_int         ; Stuck at VCC due to stuck port data_in      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|data_clk        ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk~en      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|count[0,1]      ; Lost fanout                                 ;
+; I2C_INTERFACE:inst13|i2c_master:inst|stretch         ; Lost fanout                                 ;
+; clk_div:inst5|clock_100kHz                           ; Lost fanout                                 ;
+; clk_div:inst5|clock_100kHz_int                       ; Lost fanout                                 ;
+; clk_div:inst5|count_100kHz[0..5]                     ; Lost fanout                                 ;
+; Total Number of Removed Registers = 377              ;                                             ;
++------------------------------------------------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                     ;
-+-----------------------------------------------+----------------------------------------+
-; Register name                                 ; Reason for Removal                     ;
-+-----------------------------------------------+----------------------------------------+
-; DIG_IN:inst7|B_DI[10..15]                     ; Stuck at GND due to stuck port data_in ;
-; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk  ; Stuck at GND due to stuck port data_in ;
-; I2C_INTERFACE:inst13|i2c_master:inst|count[2] ; Stuck at GND due to stuck port data_in ;
-; SCOMP:inst|state.ex_nop                       ; Lost fanout                            ;
-; Total Number of Removed Registers = 9         ;                                        ;
-+-----------------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                               ;
++-----------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
+; Register name                                       ; Reason for Removal        ; Registers Removed due to This Register                                                  ;
++-----------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
+; SCOMP:inst|IR[10]                                   ; Stuck at GND              ; DIG_OUT:inst6|DATA[9], DIG_OUT:inst6|DATA[8], DIG_OUT:inst6|DATA[7],                    ;
+;                                                     ; due to stuck port data_in ; DIG_OUT:inst6|DATA[6], DIG_OUT:inst6|DATA[5], DIG_OUT:inst6|DATA[4],                    ;
+;                                                     ;                           ; DIG_OUT:inst6|DATA[3], DIG_OUT:inst6|DATA[2], DIG_OUT:inst6|DATA[1],                    ;
+;                                                     ;                           ; DIG_OUT:inst6|DATA[0], HEX_DISP_6:inst9|HEX_DISP:inst3|latched_hex[1],                  ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst3|latched_hex[0],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst6|latched_hex[3],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst6|latched_hex[2],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst6|latched_hex[1],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst6|latched_hex[0],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst5|latched_hex[3],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst5|latched_hex[2],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst5|latched_hex[1],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst5|latched_hex[0],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst2|latched_hex[3],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst2|latched_hex[2],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst2|latched_hex[1],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst2|latched_hex[0],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[3],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[2],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[1],                                         ;
+;                                                     ;                           ; HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[0], DPs:inst10|inst[4],                     ;
+;                                                     ;                           ; DPs:inst10|inst[3], DPs:inst10|inst[2], DPs:inst10|inst[1], DPs:inst10|inst[0],         ;
+;                                                     ;                           ; SQ_GEN:inst11|COMPARE[3], SQ_GEN:inst11|COMPARE[2], SQ_GEN:inst11|COMPARE[1],           ;
+;                                                     ;                           ; SQ_GEN:inst11|COMPARE[0], I2C_INTERFACE:inst13|i2c_ctrl:inst14|cmd_in[1],               ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|cmd_in[0],                                         ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|addr_in[7],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|addr_in[6],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|addr_in[5],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|addr_in[4],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|addr_in[3],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|addr_in[2],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|addr_in[1],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[9],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[8],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[7],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[6],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[5],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[4],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[3],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[2],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[1],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[0], SQ_GEN:inst11|COUNT[3],                ;
+;                                                     ;                           ; SQ_GEN:inst11|COUNT[2], SQ_GEN:inst11|COUNT[1], SQ_GEN:inst11|COUNT[0],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[9], DIG_IN:inst7|B_DI[9],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[8], DIG_IN:inst7|B_DI[8],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[7], DIG_IN:inst7|B_DI[7],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[6], DIG_IN:inst7|B_DI[6],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[5], DIG_IN:inst7|B_DI[5],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[4], DIG_IN:inst7|B_DI[4],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[3], DIG_IN:inst7|B_DI[3],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[2], DIG_IN:inst7|B_DI[2],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[1], DIG_IN:inst7|B_DI[1],                 ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[0], DIG_IN:inst7|B_DI[0],                 ;
+;                                                     ;                           ; TIMER:inst4|COUNT[0], TIMER:inst4|COUNT[1], TIMER:inst4|COUNT[2], TIMER:inst4|COUNT[3], ;
+;                                                     ;                           ; TIMER:inst4|COUNT[4], TIMER:inst4|COUNT[5], TIMER:inst4|COUNT[6], TIMER:inst4|COUNT[7], ;
+;                                                     ;                           ; TIMER:inst4|COUNT[8], TIMER:inst4|COUNT[9],                                             ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|busy                                               ;
+; DIG_IN:inst7|B_DI[13]                               ; Stuck at GND              ; HEX_DISP_6:inst9|HEX_DISP:inst4|latched_hex[1],                                         ;
+;                                                     ; due to stuck port data_in ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|cmd_in[5],                                         ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[13],                                       ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|running,                                           ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_addr[7],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_addr[6],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_addr[5],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_addr[4],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_addr[3],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_addr[2],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_addr[1],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[7],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[6],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[5],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[4],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[3],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[2],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[1],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[0],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[7],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[6],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[5],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[4],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[3],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[2],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[1],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_tx[7],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_tx[6],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_tx[5],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_tx[4],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_tx[3],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_tx[2],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_tx[1],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_tx[0],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|rnw,                                               ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[13], TIMER:inst4|COUNT[13],               ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|comm_en,                                           ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|state.start,                                       ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|ack_error,                                         ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|state.ready,                                       ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|scl_req,                                           ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|scl_ena,                                           ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[0],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|sda_int,                                           ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_clk,                                          ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|count[1]                                           ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|go             ; Stuck at GND              ; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[7],                                        ;
+;                                                     ; due to stuck port clock   ; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[7],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[6],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[6],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[5],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[5],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[4],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[4],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[3],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[3],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[2],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[2],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[1],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[1],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rd[0],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|data_rx[0], SCOMP:inst|AC[0]                       ;
+; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk        ; Stuck at GND              ; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk~en,                                        ;
+;                                                     ; due to stuck port data_in ; I2C_INTERFACE:inst13|i2c_master:inst|stretch, clk_div:inst5|clock_100kHz,               ;
+;                                                     ;                           ; clk_div:inst5|clock_100kHz_int, clk_div:inst5|count_100kHz[0],                          ;
+;                                                     ;                           ; clk_div:inst5|count_100kHz[1], clk_div:inst5|count_100kHz[2],                           ;
+;                                                     ;                           ; clk_div:inst5|count_100kHz[3], clk_div:inst5|count_100kHz[4],                           ;
+;                                                     ;                           ; clk_div:inst5|count_100kHz[5]                                                           ;
+; SCOMP:inst|PC_stack[9][8]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][8], SCOMP:inst|PC_stack[7][8], SCOMP:inst|PC_stack[6][8],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][8], SCOMP:inst|PC_stack[4][8], SCOMP:inst|PC_stack[3][8],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][8], SCOMP:inst|PC_stack[1][8], SCOMP:inst|PC_stack[0][8]         ;
+; SCOMP:inst|PC_stack[9][7]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][7], SCOMP:inst|PC_stack[7][7], SCOMP:inst|PC_stack[6][7],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][7], SCOMP:inst|PC_stack[4][7], SCOMP:inst|PC_stack[3][7],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][7], SCOMP:inst|PC_stack[1][7], SCOMP:inst|PC_stack[0][7]         ;
+; SCOMP:inst|PC_stack[9][6]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][6], SCOMP:inst|PC_stack[7][6], SCOMP:inst|PC_stack[6][6],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][6], SCOMP:inst|PC_stack[4][6], SCOMP:inst|PC_stack[3][6],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][6], SCOMP:inst|PC_stack[1][6], SCOMP:inst|PC_stack[0][6]         ;
+; SCOMP:inst|PC_stack[9][5]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][5], SCOMP:inst|PC_stack[7][5], SCOMP:inst|PC_stack[6][5],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][5], SCOMP:inst|PC_stack[4][5], SCOMP:inst|PC_stack[3][5],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][5], SCOMP:inst|PC_stack[1][5], SCOMP:inst|PC_stack[0][5]         ;
+; SCOMP:inst|PC_stack[9][4]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][4], SCOMP:inst|PC_stack[7][4], SCOMP:inst|PC_stack[6][4],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][4], SCOMP:inst|PC_stack[4][4], SCOMP:inst|PC_stack[3][4],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][4], SCOMP:inst|PC_stack[1][4], SCOMP:inst|PC_stack[0][4]         ;
+; SCOMP:inst|PC_stack[9][3]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][3], SCOMP:inst|PC_stack[7][3], SCOMP:inst|PC_stack[6][3],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][3], SCOMP:inst|PC_stack[4][3], SCOMP:inst|PC_stack[3][3],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][3], SCOMP:inst|PC_stack[1][3], SCOMP:inst|PC_stack[0][3]         ;
+; SCOMP:inst|PC_stack[9][2]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][2], SCOMP:inst|PC_stack[7][2], SCOMP:inst|PC_stack[6][2],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][2], SCOMP:inst|PC_stack[4][2], SCOMP:inst|PC_stack[3][2],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][2], SCOMP:inst|PC_stack[1][2], SCOMP:inst|PC_stack[0][2]         ;
+; SCOMP:inst|PC_stack[9][1]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][1], SCOMP:inst|PC_stack[7][1], SCOMP:inst|PC_stack[6][1],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][1], SCOMP:inst|PC_stack[4][1], SCOMP:inst|PC_stack[3][1],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][1], SCOMP:inst|PC_stack[1][1], SCOMP:inst|PC_stack[0][1]         ;
+; SCOMP:inst|PC_stack[9][0]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][0], SCOMP:inst|PC_stack[7][0], SCOMP:inst|PC_stack[6][0],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][0], SCOMP:inst|PC_stack[4][0], SCOMP:inst|PC_stack[3][0],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][0], SCOMP:inst|PC_stack[1][0], SCOMP:inst|PC_stack[0][0]         ;
+; SCOMP:inst|PC_stack[9][9]                           ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][9], SCOMP:inst|PC_stack[7][9], SCOMP:inst|PC_stack[6][9],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][9], SCOMP:inst|PC_stack[4][9], SCOMP:inst|PC_stack[3][9],        ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][9], SCOMP:inst|PC_stack[1][9], SCOMP:inst|PC_stack[0][9]         ;
+; SCOMP:inst|PC_stack[9][10]                          ; Lost Fanouts              ; SCOMP:inst|PC_stack[8][10], SCOMP:inst|PC_stack[7][10], SCOMP:inst|PC_stack[6][10],     ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[5][10], SCOMP:inst|PC_stack[4][10], SCOMP:inst|PC_stack[3][10],     ;
+;                                                     ;                           ; SCOMP:inst|PC_stack[2][10], SCOMP:inst|PC_stack[1][10], SCOMP:inst|PC_stack[0][10]      ;
+; DIG_IN:inst7|B_DI[12]                               ; Stuck at GND              ; HEX_DISP_6:inst9|HEX_DISP:inst4|latched_hex[0],                                         ;
+;                                                     ; due to stuck port data_in ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|cmd_in[4],                                         ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[12],                                       ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[12], TIMER:inst4|COUNT[12]                ;
+; DIG_IN:inst7|B_DI[10]                               ; Stuck at GND              ; HEX_DISP_6:inst9|HEX_DISP:inst3|latched_hex[2],                                         ;
+;                                                     ; due to stuck port data_in ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[10],                                       ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[10], TIMER:inst4|COUNT[10],               ;
+;                                                     ;                           ; SCOMP:inst|IO_CYCLE                                                                     ;
+; DIG_IN:inst7|B_DI[11]                               ; Stuck at GND              ; HEX_DISP_6:inst9|HEX_DISP:inst3|latched_hex[3],                                         ;
+;                                                     ; due to stuck port data_in ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[11],                                       ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[11], TIMER:inst4|COUNT[11]                ;
+; DIG_IN:inst7|B_DI[15]                               ; Stuck at GND              ; HEX_DISP_6:inst9|HEX_DISP:inst4|latched_hex[3],                                         ;
+;                                                     ; due to stuck port data_in ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[15],                                       ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[15], TIMER:inst4|COUNT[15]                ;
+; DIG_IN:inst7|B_DI[14]                               ; Stuck at GND              ; HEX_DISP_6:inst9|HEX_DISP:inst4|latched_hex[2],                                         ;
+;                                                     ; due to stuck port data_in ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[14],                                       ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[14], TIMER:inst4|COUNT[14]                ;
+; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.Tx1p     ; Stuck at GND              ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.Tx1,                                         ;
+;                                                     ; due to stuck port data_in ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.Rx1,                                         ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_ctrl:inst14|state.idle                                         ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.command  ; Stuck at GND              ; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[2],                                        ;
+;                                                     ; due to stuck port data_in ; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[1],                                        ;
+;                                                     ;                           ; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0]                                         ;
+; I2C_INTERFACE:inst13|i2c_master:inst|count[2]       ; Stuck at GND              ; I2C_INTERFACE:inst13|i2c_master:inst|count[0]                                           ;
+;                                                     ; due to stuck port data_in ;                                                                                         ;
+; SCOMP:inst|state.ex_store                           ; Stuck at GND              ; SCOMP:inst|MW                                                                           ;
+;                                                     ; due to stuck port data_in ;                                                                                         ;
+; SCOMP:inst|state.ex_iload                           ; Stuck at GND              ; SCOMP:inst|state.ex_load                                                                ;
+;                                                     ; due to stuck port data_in ;                                                                                         ;
+; SCOMP:inst|state.ex_in                              ; Stuck at GND              ; SCOMP:inst|state.ex_in2                                                                 ;
+;                                                     ; due to stuck port data_in ;                                                                                         ;
+; I2C_INTERFACE:inst13|i2c_master:inst|state.slv_ack1 ; Stuck at GND              ; I2C_INTERFACE:inst13|i2c_master:inst|state.stop                                         ;
+;                                                     ; due to stuck port data_in ;                                                                                         ;
++-----------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -450,29 +826,27 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 492   ;
-; Number of registers using Synchronous Clear  ; 40    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 169   ;
+; Total registers                              ; 92    ;
+; Number of registers using Synchronous Clear  ; 45    ;
+; Number of registers using Synchronous Load   ; 11    ;
+; Number of registers using Asynchronous Clear ; 23    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 293   ;
+; Number of registers using Clock Enable       ; 59    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------+
-; Inverted Register Statistics                              ;
-+-------------------------------------------------+---------+
-; Inverted Register                               ; Fan out ;
-+-------------------------------------------------+---------+
-; AudioPeripheral:inst16|addr_int[11]             ; 3       ;
-; I2C_INTERFACE:inst13|i2c_master:inst|sda_int    ; 2       ;
-; AudioPeripheral:inst16|zero_state               ; 20      ;
-; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[2] ; 16      ;
-; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[1] ; 30      ;
-; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0] ; 25      ;
-; Total number of inverted registers = 6          ;         ;
-+-------------------------------------------------+---------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; MemPeripheral:inst14|a_ready           ; 4       ;
+; MemPeripheral:inst14|a_read            ; 28      ;
+; AudioPeripheral:inst16|addr_int[11]    ; 3       ;
+; AudioPeripheral:inst16|zero_state      ; 20      ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -480,19 +854,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst16|addr_int[10]               ;
-; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[7][3]                         ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst16|counter[4]                 ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[1]   ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[7]   ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[1]                                  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0]   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[12] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[5]  ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[15]                                 ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|MemPeripheral:inst14|addr[5]                      ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst16|addr_int[2]                ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[3][0]                         ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst16|counter[1]                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[2]   ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[4]                                  ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[15] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[1]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[2]  ;
+; 11:1               ; 16 bits   ; 112 LEs       ; 96 LEs               ; 16 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[9]                                  ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|MemPeripheral:inst14|addr[10]                     ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|count        ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                                   ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|Selector21   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
@@ -556,7 +929,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_MULTIPLY_BY              ; 1                          ; Untyped                ;
 ; CLK4_MULTIPLY_BY              ; 1                          ; Untyped                ;
 ; CLK3_MULTIPLY_BY              ; 1                          ; Untyped                ;
-; CLK2_MULTIPLY_BY              ; 1                          ; Untyped                ;
+; CLK2_MULTIPLY_BY              ; 1                          ; Signed Integer         ;
 ; CLK1_MULTIPLY_BY              ; 441                        ; Signed Integer         ;
 ; CLK0_MULTIPLY_BY              ; 1                          ; Signed Integer         ;
 ; CLK9_DIVIDE_BY                ; 0                          ; Untyped                ;
@@ -566,7 +939,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_DIVIDE_BY                ; 1                          ; Untyped                ;
 ; CLK4_DIVIDE_BY                ; 1                          ; Untyped                ;
 ; CLK3_DIVIDE_BY                ; 1                          ; Untyped                ;
-; CLK2_DIVIDE_BY                ; 1                          ; Untyped                ;
+; CLK2_DIVIDE_BY                ; 25                         ; Signed Integer         ;
 ; CLK1_DIVIDE_BY                ; 500000                     ; Signed Integer         ;
 ; CLK0_DIVIDE_BY                ; 5                          ; Signed Integer         ;
 ; CLK9_PHASE_SHIFT              ; 0                          ; Untyped                ;
@@ -592,7 +965,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_DUTY_CYCLE               ; 50                         ; Untyped                ;
 ; CLK4_DUTY_CYCLE               ; 50                         ; Untyped                ;
 ; CLK3_DUTY_CYCLE               ; 50                         ; Untyped                ;
-; CLK2_DUTY_CYCLE               ; 50                         ; Untyped                ;
+; CLK2_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK1_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK0_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                ;
@@ -824,7 +1197,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; PORT_CLKBAD1                  ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK0                     ; PORT_USED                  ; Untyped                ;
 ; PORT_CLK1                     ; PORT_USED                  ; Untyped                ;
-; PORT_CLK2                     ; PORT_UNUSED                ; Untyped                ;
+; PORT_CLK2                     ; PORT_USED                  ; Untyped                ;
 ; PORT_CLK3                     ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK4                     ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK5                     ; PORT_UNUSED                ; Untyped                ;
@@ -1038,29 +1411,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 75                          ;
-; cycloneiii_ff         ; 492                         ;
-;     CLR               ; 142                         ;
-;     ENA               ; 251                         ;
-;     ENA CLR           ; 27                          ;
+; cycloneiii_ff         ; 92                          ;
+;     CLR               ; 8                           ;
+;     ENA               ; 18                          ;
+;     ENA CLR           ; 15                          ;
 ;     ENA SCLR          ; 15                          ;
-;     SCLR              ; 25                          ;
-;     plain             ; 32                          ;
+;     ENA SCLR SLD      ; 11                          ;
+;     SCLR              ; 19                          ;
+;     plain             ; 6                           ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 1068                        ;
-;     arith             ; 106                         ;
-;         2 data inputs ; 76                          ;
-;         3 data inputs ; 30                          ;
-;     normal            ; 962                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 22                          ;
-;         2 data inputs ; 63                          ;
-;         3 data inputs ; 289                         ;
-;         4 data inputs ; 587                         ;
+; cycloneiii_lcell_comb ; 226                         ;
+;     arith             ; 71                          ;
+;         2 data inputs ; 57                          ;
+;         3 data inputs ; 14                          ;
+;     normal            ; 155                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 36                          ;
+;         4 data inputs ; 99                          ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 128                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 4.49                        ;
+; Max LUT depth         ; 4.40                        ;
+; Average LUT depth     ; 2.61                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1069,7 +1443,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1079,7 +1453,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sat Oct 31 14:47:40 2020
+    Info: Processing started: Sat Oct 31 16:57:11 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file I2C_INTERFACE.bdf
@@ -1114,7 +1488,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file SCOMP.v
 Info (12021): Found 1 design units, including 1 entities, in source file SCOMP_System.bdf
     Info (12023): Found entity 1: SCOMP_System
 Info (12021): Found 2 design units, including 1 entities, in source file PLL_main.vhd
-    Info (12022): Found design unit 1: pll_main-SYN File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 55
+    Info (12022): Found design unit 1: pll_main-SYN File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 56
     Info (12023): Found entity 1: PLL_main File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file HEX_DISP_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
@@ -1132,9 +1506,9 @@ Info (12128): Elaborating entity "i2c_master" for hierarchy "I2C_INTERFACE:inst1
 Info (12128): Elaborating entity "i2c_ctrl" for hierarchy "I2C_INTERFACE:inst13|i2c_ctrl:inst14"
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 149
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 149
-Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 149
+Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 157
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 157
+Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 157
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1144,6 +1518,10 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component"
     Info (12134): Parameter "clk1_duty_cycle" = "50"
     Info (12134): Parameter "clk1_multiply_by" = "441"
     Info (12134): Parameter "clk1_phase_shift" = "0"
+    Info (12134): Parameter "clk2_divide_by" = "25"
+    Info (12134): Parameter "clk2_duty_cycle" = "50"
+    Info (12134): Parameter "clk2_multiply_by" = "1"
+    Info (12134): Parameter "clk2_phase_shift" = "0"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
@@ -1178,7 +1556,7 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component"
     Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk0" = "PORT_USED"
     Info (12134): Parameter "port_clk1" = "PORT_USED"
-    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_USED"
     Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
@@ -1216,42 +1594,10 @@ Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the 
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "MemPeripheral" for hierarchy "MemPeripheral:inst14"
-Info (10041): Inferred latch for "mw" at MemPeripheral.vhd(103) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 103
-Info (10041): Inferred latch for "ac[0]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[1]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[2]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[3]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[4]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[5]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[6]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[7]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[8]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[9]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[10]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[11]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[12]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[13]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[14]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "ac[15]" at MemPeripheral.vhd(101) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Info (10041): Inferred latch for "addr[0]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[1]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[2]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[3]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[4]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[5]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[6]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[7]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[8]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[9]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[10]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[11]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[12]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[13]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[14]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (10041): Inferred latch for "addr[15]" at MemPeripheral.vhd(98) File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Info (12128): Elaborating entity "altsyncram" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 39
-Info (12130): Elaborated megafunction instantiation "MemPeripheral:inst14|altsyncram:altsyncram_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 39
-Info (12133): Instantiated megafunction "MemPeripheral:inst14|altsyncram:altsyncram_component" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 39
+Warning (10541): VHDL Signal Declaration warning at MemPeripheral.vhd(15): used implicit default value for signal "s_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 15
+Info (12128): Elaborating entity "altsyncram" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 41
+Info (12130): Elaborated megafunction instantiation "MemPeripheral:inst14|altsyncram:altsyncram_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 41
+Info (12133): Instantiated megafunction "MemPeripheral:inst14|altsyncram:altsyncram_component" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 41
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1330,77 +1676,100 @@ Info (12128): Elaborating entity "DPs" for hierarchy "DPs:inst10"
 Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst9"
 Info (12128): Elaborating entity "HEX_DISP" for hierarchy "HEX_DISP_6:inst9|HEX_DISP:inst1"
 Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[6]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[5]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[4]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[3]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[2]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[1]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[0]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[10]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[11]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[12]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[13]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[14]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[15]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[0]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[1]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[2]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[3]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[4]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[5]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[6]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[7]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[8]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[9]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|addr[10]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 98
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[9]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[8]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|ac[7]" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 101
-Warning (14026): LATCH primitive "MemPeripheral:inst14|mw" is permanently enabled File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 33
-Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[4]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[4]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[3]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[3]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[2]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[2]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[1]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[1]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[0]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[0]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[5]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[5]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[6]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[6]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[7]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[7]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[8]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[8]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[9]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[9]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[10]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[10]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[11]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[11]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[12]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[12]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[13]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[13]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[14]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[14]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[15]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[15]" into an OR gate
-Info (13000): Registers with preset signals will power-up high File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/i2c_master.vhd Line: 57
+Info (13000): Registers with preset signals will power-up high File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 30
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GSENSOR_CS_n" is stuck at VCC
     Warning (13410): Pin "GSENSOR_SDO" is stuck at VCC
+    Warning (13410): Pin "DP[4]" is stuck at VCC
+    Warning (13410): Pin "DP[3]" is stuck at VCC
+    Warning (13410): Pin "DP[2]" is stuck at VCC
+    Warning (13410): Pin "DP[1]" is stuck at VCC
+    Warning (13410): Pin "DP[0]" is stuck at VCC
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC
+    Warning (13410): Pin "HEX0[5]" is stuck at GND
+    Warning (13410): Pin "HEX0[4]" is stuck at GND
+    Warning (13410): Pin "HEX0[3]" is stuck at GND
+    Warning (13410): Pin "HEX0[2]" is stuck at GND
+    Warning (13410): Pin "HEX0[1]" is stuck at GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC
+    Warning (13410): Pin "HEX1[5]" is stuck at GND
+    Warning (13410): Pin "HEX1[4]" is stuck at GND
+    Warning (13410): Pin "HEX1[3]" is stuck at GND
+    Warning (13410): Pin "HEX1[2]" is stuck at GND
+    Warning (13410): Pin "HEX1[1]" is stuck at GND
+    Warning (13410): Pin "HEX1[0]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC
+    Warning (13410): Pin "HEX2[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[4]" is stuck at GND
+    Warning (13410): Pin "HEX2[3]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC
+    Warning (13410): Pin "HEX3[5]" is stuck at GND
+    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[0]" is stuck at GND
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC
+    Warning (13410): Pin "HEX4[5]" is stuck at GND
+    Warning (13410): Pin "HEX4[4]" is stuck at GND
+    Warning (13410): Pin "HEX4[3]" is stuck at GND
+    Warning (13410): Pin "HEX4[2]" is stuck at GND
+    Warning (13410): Pin "HEX4[1]" is stuck at GND
+    Warning (13410): Pin "HEX4[0]" is stuck at GND
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC
+    Warning (13410): Pin "HEX5[5]" is stuck at GND
+    Warning (13410): Pin "HEX5[4]" is stuck at GND
+    Warning (13410): Pin "HEX5[3]" is stuck at GND
+    Warning (13410): Pin "HEX5[2]" is stuck at GND
+    Warning (13410): Pin "HEX5[1]" is stuck at GND
+    Warning (13410): Pin "HEX5[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
 Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
-Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info (286030): Timing-Driven Synthesis is running
 Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
-Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
-Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Info (17049): 199 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1449 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[0]"
+Info (21057): Implemented 435 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 61 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1245 logic cells
+    Info (21061): Implemented 231 logic cells
     Info (21064): Implemented 128 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 1060 megabytes
-    Info: Processing ended: Sat Oct 31 14:47:54 2020
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:30
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 83 warnings
+    Info: Peak virtual memory: 1044 megabytes
+    Info: Processing ended: Sat Oct 31 16:57:23 2020
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:28
 
 

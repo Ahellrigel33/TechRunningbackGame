@@ -1713,7 +1713,7 @@ https://fpgasoftware.intel.com/eula.
 (title_block
 	(rect 1240 1240 1608 1360)
 	(section (rect 0 24 368 48)(text "COMPANY" (rect 2 0 88 16)(font "Arial" ))(text "Georgia Tech DDL" (rect 56 2 293 30)(font "Arial" (font_size 12)))(border))
-	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 48 16)(font "Arial" ))(text "Sat Oct 31 14:08:25 2020" (rect 56 3 326 27)(font "Arial" (font_size 10)))(date)(border))
+	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 48 16)(font "Arial" ))(text "Sat Oct 31 16:58:36 2020" (rect 56 3 326 27)(font "Arial" (font_size 10)))(date)(border))
 	(section (rect 0 48 368 72)(text "DESIGNER" (rect 2 0 90 16)(font "Arial" ))(text "ECE 2031" (rect 56 2 185 30)(font "Arial" (font_size 12)))(border))
 	(section (rect 0 72 280 96)(text "NUMBER" (rect 2 0 75 16)(font "Arial" ))(text "1.00" (rect 56 1 103 25)(font "Arial" (font_size 10)))(border))
 	(section (rect 310 96 368 120)(text "OF" (rect 10 0 33 16)(font "Arial" ))(text "1" (rect 34 4 48 28)(font "Arial" (font_size 10))))

@@ -26,7 +26,9 @@ end MemPeripheral;
 architecture rtl of MemPeripheral is
 	type state_t is (SCOMP, LATCH, AUDIO);
 	signal state: state_t;
-	signal a_state: std_logic;
+	signal a_read: std_logic;
+	signal a_ready: std_logic;
+	signal s_en: std_logic;
 	signal addr: 	 std_logic_vector(15 downto 0);
 	signal data: 	 std_logic_vector(15 downto 0);
 	signal ac: 		 std_logic_vector(15 downto 0);
@@ -65,46 +67,31 @@ begin
 	process(resetn, clock)
 	begin
 		if(resetn = '0') then
-			state <= SCOMP;
-			a_state <= '0';
-		elsif(rising_edge(clock)) then
-			case state is
-			when SCOMP =>
-				if(a_rd_en = '1' and a_state = '0') then
-					a_state <= '1';
-					state <= LATCH;
-				elsif(a_rd_en = '0') then
-					a_state <= '0';
-				end if;
-			when LATCH =>
-				s_mw_latch   <= s_mw;
-				s_addr_latch <= s_addr;
-				s_ac_latch   <= s_ac;
-				state <= AUDIO;
-			when AUDIO =>
+			a_read <= '1';
+			a_ready <= '1';
+		elsif(falling_edge(clock)) then
+			if(a_rd_en = '1' and a_ready = '1') then
+				a_read <= '0';
+				a_ready <= '0';
+				s_en <= '0';
+			elsif(a_rd_en = '1' and a_read = '0') then
 				a_data_latch <= data;
-				state <= SCOMP;
-			end case;
-		end if;
-		if(falling_edge(clock)) then
-			if(state = SCOMP) then
-				scomp_en <= '1';
-			else
-				scomp_en <= '0';
+				a_read <= '1';
+			elsif(a_read = '1') then	
+				s_en <= '1';
+				if (a_rd_en = '0') then
+					a_ready <= '1';
+				end if;
 			end if;
 		end if;
 	end process;
 	
-	addr 	 <= (15 downto 11 => '0') & s_addr when state = SCOMP else 
-				 a_addr when state = LATCH else
-				 (15 downto 11 => '0') & s_addr_latch when state = AUDIO;
-	ac		 <= s_ac when (state = SCOMP or state = LATCH) else
-				 s_ac_latch when state = AUDIO;
-	mw     <= s_mw when state = SCOMP else
-				 '0' when state = LATCH else
-				 s_mw_latch when state = AUDIO;
-	s_data <= data;
-	
+	addr <= (15 downto 11 => '0') & s_addr when a_read = '1' else
+			  a_addr;
+	mw <= s_mw when a_read = '1' else
+			'0';
+	ac <= s_ac;
 	a_data <= a_data_latch;
-
+	scomp_en <= s_en;
+	
 end rtl;
