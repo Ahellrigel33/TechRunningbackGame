@@ -1,0 +1,30 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    000 : b82a; -- LOADI  &B101010
+    001 : 98e0; -- OUT    DPs
+    002 : b802; -- LOADI  2
+    003 : 8009; -- CALL   DelayAC
+    004 : b815; -- LOADI  &B010101
+    005 : 98e0; -- OUT    DPs
+    006 : b803; -- LOADI  3
+    007 : 8009; -- CALL   DelayAC
+    008 : 2800; -- JUMP   DPLoop
+    009 : 100f; -- STORE  DelayTime   ; Save the desired delay
+    00a : 9802; -- OUT    Timer       ; Reset the timer
+    00b : 9002; -- IN     Timer       ; Get the current timer value
+    00c : 200f; -- SUB    DelayTime
+    00d : 300b; -- JNEG   WaitingLoop ; Repeat until timer = delay value
+    00e : 8800; -- RETURN
+    00f : 0000; -- DelayTime: DW 0
+
+    [010..7ff] : 0000; -- Empty memory
+
+  END;

@@ -1,5 +1,5 @@
 Assembler report for SCOMP
-Wed Oct 07 14:07:52 2020
+Sat Oct 31 11:27:46 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/output_files/SCOMP.sof
+  5. Assembler Device Options: SCOMP.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Oct 07 14:07:52 2020 ;
+; Assembler Status      ; Successful - Sat Oct 31 11:27:46 2020 ;
 ; Revision Name         ; SCOMP                                 ;
 ; Top-level Entity Name ; SCOMP_System                          ;
 ; Family                ; MAX 10                                ;
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                                 ;
-+-----------------------------------------------------------------------------------------------------------+
-; File Name                                                                                                 ;
-+-----------------------------------------------------------------------------------------------------------+
-; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/output_files/SCOMP.sof ;
-+-----------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+; Assembler Generated Files                                                 ;
++---------------------------------------------------------------------------+
+; File Name                                                                 ;
++---------------------------------------------------------------------------+
+; /home/akash/College/ECE 2031/Project/SCOMP_Project/output_files/SCOMP.sof ;
++---------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/output_files/SCOMP.sof ;
-+----------------+--------------------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                                            ;
-+----------------+--------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x002E99ED                                                                                                         ;
-; Checksum       ; 0x002E99ED                                                                                                         ;
-+----------------+--------------------------------------------------------------------------------------------------------------------+
++-------------------------------------+
+; Assembler Device Options: SCOMP.sof ;
++----------------+--------------------+
+; Option         ; Setting            ;
++----------------+--------------------+
+; JTAG usercode  ; 0x005EEC96         ;
+; Checksum       ; 0x005EEC96         ;
++----------------+--------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Oct 07 14:07:45 2020
+    Info: Processing started: Sat Oct 31 11:27:43 2020
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SCOMP -c SCOMP
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4704 megabytes
-    Info: Processing ended: Wed Oct 07 14:07:53 2020
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 824 megabytes
+    Info: Processing ended: Sat Oct 31 11:27:46 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

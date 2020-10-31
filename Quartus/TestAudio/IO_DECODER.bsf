@@ -97,9 +97,16 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 240 160)
 		(output)
-		(text "SDRAM_EN" (rect 0 0 57 12)(font "Arial" ))
-		(text "SDRAM_EN" (rect 162 155 219 167)(font "Arial" ))
+		(text "DP_EN" (rect 0 0 33 12)(font "Arial" ))
+		(text "DP_EN" (rect 186 155 219 167)(font "Arial" ))
 		(line (pt 240 160)(pt 224 160)(line_width 1))
+	)
+	(port
+		(pt 240 176)
+		(output)
+		(text "SQ_EN" (rect 0 0 33 12)(font "Arial" ))
+		(text "SQ_EN" (rect 186 171 219 183)(font "Arial" ))
+		(line (pt 240 176)(pt 224 176)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 224 192)(line_width 1))

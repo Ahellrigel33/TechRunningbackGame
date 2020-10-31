@@ -26,7 +26,11 @@ entity SCOMP is
 		dbg_PC    : out   std_logic_vector(10 downto 0);
 		dbg_MA    : out   std_logic_vector(10 downto 0);
 		dbg_MD    : out   std_logic_vector(15 downto 0);
-		dbg_IR    : out   std_logic_vector(15 downto 0)
+		dbg_IR    : out   std_logic_vector(15 downto 0);
+		m_mw         : out    std_logic;
+		m_data		 : in	    std_logic_vector(15 downto 0);
+		m_addr	    : out    std_logic_vector(10 downto 0);
+		m_ac			 : out    std_logic_vector(15 downto 0)
 	);
 end SCOMP;
 
@@ -34,8 +38,8 @@ architecture a of SCOMP is
 	type state_type is (
 		init, fetch, decode, ex_nop,
 		ex_load, ex_store, ex_store2, ex_iload, ex_istore, ex_istore2, ex_loadi,
-		ex_add, ex_sub, ex_addi,
-		ex_jump, ex_jneg, ex_jpos, ex_jzero,
+		ex_add, ex_addi, ex_sub,
+		ex_jump, ex_jneg, ex_jzero, ex_jpos,
 		ex_call, ex_return,
 		ex_and, ex_or, ex_xor, ex_shift,
 		ex_in, ex_in2, ex_out, ex_out2
@@ -58,32 +62,11 @@ architecture a of SCOMP is
 
 begin
 	-- use altsyncram component for unified program and data memory
-	altsyncram_component : altsyncram
-	GENERIC MAP (
-		numwords_a => 2048,
-		widthad_a => 11,
-		width_a => 16,
-		init_file => "CatchGame.mif",
-		clock_enable_input_a => "BYPASS",
-		clock_enable_output_a => "BYPASS",
-		intended_device_family => "MAX 10",
-		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
-		lpm_type => "altsyncram",
-		operation_mode => "SINGLE_PORT",
-		outdata_aclr_a => "NONE",
-		outdata_reg_a => "UNREGISTERED",
-		power_up_uninitialized => "FALSE",
-		read_during_write_mode_port_a => "NEW_DATA_NO_NBE_READ",
-		width_byteena_a => 1
-	)
-	PORT MAP (
-		wren_a    => MW,
-		clock0    => clock,
-		address_a => next_mem_addr,
-		data_a    => AC,
-		q_a       => mem_data
-	);
-
+	m_mw <= MW;
+	mem_data <= m_data;
+	m_addr <= next_mem_addr;
+	m_ac <= AC;
+	
 	-- use lpm function to shift AC
 	shifter: lpm_clshift
 	generic map (
@@ -136,10 +119,12 @@ begin
 					PC        <= "00000000000"; -- reset PC to the beginning of memory, address 0x000
 					AC        <= x"0000";       -- clear AC register
 					IO_WRITE_int <= '0';        -- don't drive IO
+					IO_CYCLE  <= '0';           -- stop any active IO operations
 					state     <= fetch;         -- start fetch-decode-execute cycle
 
 				when fetch =>
 					IO_WRITE_int <= '0';   -- lower IO_WRITE after an out
+					IO_CYCLE  <= '0';      -- lower IO_CYCLE after an in
 					PC        <= PC + 1;   -- increment PC to next instruction address
 					state     <= decode;
 
@@ -158,10 +143,10 @@ begin
 							state <= ex_sub;
 						when "00101" =>       -- jump
 							state <= ex_jump;
-						when "00110" =>       -- jneg
-							state <= ex_jneg;
-						when "00111" =>       -- jpos
+						when "00111" =>       -- jneg
 							state <= ex_jpos;
+						when "00110" =>       -- jpos
+							state <= ex_jneg;
 						when "01000" =>       -- jzero
 							state <= ex_jzero;
 						when "01001" =>       -- and
@@ -183,7 +168,6 @@ begin
 						when "10001" =>       -- return
 							state <= ex_return;
 						when "10010" =>       -- in
-							IO_CYCLE <= '1';
 							state <= ex_in;
 						when "10011" =>       -- out
 							state <= ex_out;
@@ -212,23 +196,23 @@ begin
 				when ex_add =>
 					AC    <= AC + mem_data;   -- addition
 					state <= fetch;
-					
+
 				when ex_sub =>
-					AC		<= AC - mem_data;   -- subtraction
+					AC    <= AC - mem_data;   -- addition
 					state <= fetch;
 
 				when ex_jump =>
 					PC    <= operand; -- overwrite PC with new address
 					state <= fetch;
 
-				when ex_jneg =>
-					if (AC(15) = '1') then
+				when ex_jpos =>
+					if (AC(15) = '0') and (AC /= "0000000000000000") then
 						PC    <= operand;      -- Change the program counter to the operand
 					end if;
 					state <= fetch;
-					
-				when ex_jpos =>
-					if (AC(15) = '0' and AC /= x"0000") then
+
+				when ex_jneg =>
+					if (AC(15) = '1') then
 						PC    <= operand;      -- Change the program counter to the operand
 					end if;
 					state <= fetch;
@@ -289,11 +273,11 @@ begin
 					state       <= fetch;
 
 				when ex_in =>
-					AC <= IO_DATA;
+					IO_CYCLE <= '1';
 					state <= ex_in2;
 
 				when ex_in2 =>
-					IO_CYCLE <= '0';
+					AC <= IO_DATA;
 					state <= fetch;
 
 				when ex_out =>
