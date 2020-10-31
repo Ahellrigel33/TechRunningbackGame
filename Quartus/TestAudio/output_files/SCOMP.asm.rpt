@@ -1,5 +1,5 @@
 Assembler report for SCOMP
-Sat Oct 31 11:27:46 2020
+Sat Oct 31 14:48:38 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Oct 31 11:27:46 2020 ;
+; Assembler Status      ; Successful - Sat Oct 31 14:48:38 2020 ;
 ; Revision Name         ; SCOMP                                 ;
 ; Top-level Entity Name ; SCOMP_System                          ;
 ; Family                ; MAX 10                                ;
@@ -53,13 +53,13 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+---------------------------------------------------------------------------+
-; Assembler Generated Files                                                 ;
-+---------------------------------------------------------------------------+
-; File Name                                                                 ;
-+---------------------------------------------------------------------------+
-; /home/akash/College/ECE 2031/Project/SCOMP_Project/output_files/SCOMP.sof ;
-+---------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                 ;
++-------------------------------------------------------------------------------------------+
+; File Name                                                                                 ;
++-------------------------------------------------------------------------------------------+
+; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/SCOMP.sof ;
++-------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------+
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+--------------------+
 ; Option         ; Setting            ;
 +----------------+--------------------+
-; JTAG usercode  ; 0x005EEC96         ;
-; Checksum       ; 0x005EEC96         ;
+; JTAG usercode  ; 0x00603BD1         ;
+; Checksum       ; 0x00603BD1         ;
 +----------------+--------------------+
 
 
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sat Oct 31 11:27:43 2020
+    Info: Processing started: Sat Oct 31 14:48:34 2020
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SCOMP -c SCOMP
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 824 megabytes
-    Info: Processing ended: Sat Oct 31 11:27:46 2020
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 829 megabytes
+    Info: Processing ended: Sat Oct 31 14:48:38 2020
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

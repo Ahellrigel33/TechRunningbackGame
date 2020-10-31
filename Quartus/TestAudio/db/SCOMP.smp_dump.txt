@@ -1,4 +1,10 @@
 
+State Machine - |SCOMP_System|MemPeripheral:inst14|state
+Name state.AUDIO state.LATCH state.SCOMP 
+state.SCOMP 0 0 0 
+state.LATCH 0 1 1 
+state.AUDIO 1 0 1 
+
 State Machine - |SCOMP_System|SCOMP:inst|state
 Name state.ex_out2 state.ex_out state.ex_in2 state.ex_in state.ex_shift state.ex_xor state.ex_or state.ex_and state.ex_return state.ex_call state.ex_jpos state.ex_jzero state.ex_jneg state.ex_jump state.ex_sub state.ex_addi state.ex_add state.ex_loadi state.ex_istore2 state.ex_istore state.ex_iload state.ex_store2 state.ex_store state.ex_load state.ex_nop state.decode state.fetch state.init 
 state.init 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 

@@ -62,8 +62,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 184 32)
 		(output)
-		(text "addr[19..0]" (rect 0 0 41 12)(font "Arial" ))
-		(text "addr[19..0]" (rect 122 27 163 39)(font "Arial" ))
+		(text "addr[15..0]" (rect 0 0 41 12)(font "Arial" ))
+		(text "addr[15..0]" (rect 122 27 163 39)(font "Arial" ))
 		(line (pt 184 32)(pt 168 32)(line_width 3))
 	)
 	(port

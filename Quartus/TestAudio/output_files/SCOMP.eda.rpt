@@ -1,5 +1,5 @@
 EDA Netlist Writer report for SCOMP
-Sat Oct 31 11:27:52 2020
+Sat Oct 31 14:48:45 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Oct 31 11:27:52 2020 ;
+; EDA Netlist Writer Status ; Successful - Sat Oct 31 14:48:44 2020 ;
 ; Revision Name             ; SCOMP                                 ;
 ; Top-level Entity Name     ; SCOMP_System                          ;
 ; Family                    ; MAX 10                                ;
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Simulation Generated Files                                                      ;
-+---------------------------------------------------------------------------------+
-; Generated Files                                                                 ;
-+---------------------------------------------------------------------------------+
-; /home/akash/College/ECE 2031/Project/SCOMP_Project/simulation/modelsim/SCOMP.vo ;
-+---------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                      ;
++-------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                 ;
++-------------------------------------------------------------------------------------------------+
+; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/simulation/modelsim/SCOMP.vo ;
++-------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,12 +81,12 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sat Oct 31 11:27:51 2020
+    Info: Processing started: Sat Oct 31 14:48:44 2020
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off SCOMP -c SCOMP
-Info (204019): Generated file SCOMP.vo in folder "/home/akash/College/ECE 2031/Project/SCOMP_Project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file SCOMP.vo in folder "/home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 1080 megabytes
-    Info: Processing ended: Sat Oct 31 11:27:52 2020
+    Info: Peak virtual memory: 1086 megabytes
+    Info: Processing ended: Sat Oct 31 14:48:45 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

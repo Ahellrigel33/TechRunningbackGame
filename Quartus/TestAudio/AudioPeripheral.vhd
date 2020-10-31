@@ -27,6 +27,7 @@ architecture rtl of AudioPeripheral is
 	signal song: std_logic_vector(9 downto 0);
 	signal trigger_song_change: std_logic;
 	signal addr_int: std_logic_vector(15 downto 0);
+	signal zero_state: std_logic;
 begin
 	process(resetn, cs, clk, zero_data)
 	begin
@@ -49,16 +50,21 @@ begin
 --			end case;
 		if (resetn = '0') then
 			addr_int <= x"0800";
+			zero_state <= '1';
 		elsif (rising_edge(clk)) then
-			if (counter < counts) then
+			if (zero_data = '1' and zero_state = '0') then
+				addr_int <= x"0800";
+				rd_en <= '1';
+				zero_state <= '1';
+			elsif (zero_state = '1') then -- Load the new data
+				zero_state <= '0'; 
+				rd_en <= '0';
+				counter <= (14 downto 0 => '0');
+			elsif (counter < counts) then
 				rd_en <= '0';
 				counter <= counter + 1;
 			elsif (zero_data = '0') then
 				addr_int <= addr_int + 1;
-				rd_en <= '1';
-				counter <= (14 downto 0 => '0');
-			else 
-				addr_int <= x"0800";
 				rd_en <= '1';
 				counter <= (14 downto 0 => '0');
 			end if;
