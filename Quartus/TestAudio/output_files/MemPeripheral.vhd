@@ -86,12 +86,13 @@ begin
 		end if;
 	end process;
 	
-	addr <= (15 downto 11 => '0') & s_addr when a_read = '1' else
-			  a_addr;
-	mw <= s_mw when a_read = '1' else
-			'0';
+	addr <= (15 downto 11 => '0') & s_addr; --when a_read = '1' else
+--			  a_addr;
+	mw <= s_mw; --when a_read = '1' else
+--			'0';
 	ac <= s_ac;
 	a_data <= a_data_latch;
 	scomp_en <= s_en;
+	s_data <= data;
 	
 end rtl;
