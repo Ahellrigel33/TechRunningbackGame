@@ -84,7 +84,7 @@ begin
 	process 
 	begin
 		wait until rising_edge(CS);
-		IO_OUT(6 downto 0) <= playerSegs;
+		IO_OUT(6 downto 0) <= not(playerSegs);
 	end process;
 	
 	
@@ -123,10 +123,10 @@ begin
 --	
 	with currentPos select
 	playerSegs <= 
-		"0001000" when left,
-		"1000000" when middle,
-		"0000001" when right,
-		"0000000" when others;
+		"1110111" when left,
+		"0111111" when middle,
+		"1111110" when right,
+		"1111111" when others;
 
 	hexPlayer <= playerSegs;
 	
