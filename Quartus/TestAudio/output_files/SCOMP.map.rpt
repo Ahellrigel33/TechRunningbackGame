@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Wed Oct 07 14:07:09 2020
+Sat Oct 31 17:49:33 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -16,21 +16,25 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |SCOMP_System|SCOMP:inst|state
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ror3:auto_generated
- 15. Parameter Settings for User Entity Instance: SCOMP:inst|altsyncram:altsyncram_component
- 16. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter
- 17. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus
- 18. Parameter Settings for User Entity Instance: PLL_main:inst1|altpll:altpll_component
- 19. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
- 20. Parameter Settings for User Entity Instance: DIG_IN:inst7|LPM_BUSTRI:IO_BUS
- 21. altsyncram Parameter Settings by Entity Instance
- 22. altpll Parameter Settings by Entity Instance
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+ 11. State Machine - |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|state
+ 12. State Machine - |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|state
+ 13. Registers Removed During Synthesis
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated
+ 18. Parameter Settings for User Entity Instance: I2C_INTERFACE:inst13|i2c_master:inst
+ 19. Parameter Settings for User Entity Instance: PLL_main:inst1|altpll:altpll_component
+ 20. Parameter Settings for User Entity Instance: MemPeripheral:inst14|altsyncram:altsyncram_component
+ 21. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter
+ 22. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus
+ 23. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
+ 24. Parameter Settings for User Entity Instance: DIG_IN:inst7|LPM_BUSTRI:IO_BUS
+ 25. altpll Parameter Settings by Entity Instance
+ 26. altsyncram Parameter Settings by Entity Instance
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -57,16 +61,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 07 14:07:09 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat Oct 31 17:49:33 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 686                                         ;
-;     Total combinational functions  ; 628                                         ;
-;     Dedicated logic registers      ; 260                                         ;
-; Total registers                    ; 260                                         ;
-; Total pins                         ; 64                                          ;
+; Total logic elements               ; 1,004                                       ;
+;     Total combinational functions  ; 859                                         ;
+;     Dedicated logic registers      ; 443                                         ;
+; Total registers                    ; 443                                         ;
+; Total pins                         ; 75                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 32,768                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -168,132 +172,149 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                            ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                              ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
-; HEX_DISP.vhd                     ; yes             ; User VHDL File                         ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/HEX_DISP.vhd           ;         ;
-; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/DIG_OUT.vhd            ;         ;
-; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/DIG_IN.vhd             ;         ;
-; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/clk_div.vhd            ;         ;
-; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/TIMER.vhd              ;         ;
-; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/IO_DECODER.vhd         ;         ;
-; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd              ;         ;
-; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP_System.bdf       ;         ;
-; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/PLL_main.vhd           ;         ;
-; HEX_DISP_6.bdf                   ; yes             ; User Block Diagram/Schematic File      ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/HEX_DISP_6.bdf         ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                                     ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc                              ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                                        ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                                     ;         ;
-; aglobal191.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                                     ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                                      ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                                         ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                                         ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                                       ;         ;
-; db/altsyncram_ror3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/db/altsyncram_ror3.tdf ;         ;
-; CatchGame.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/CatchGame.mif          ;         ;
-; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                                    ;         ;
-; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/db/lpm_clshift_fuc.tdf ;         ;
-; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                                     ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                                         ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc                                    ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc                                  ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                  ;         ;
-; db/pll_main_altpll.v             ; yes             ; Auto-Generated Megafunction            ; C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/db/pll_main_altpll.v   ;         ;
-+----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                    ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                      ; Library ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+---------+
+; I2C_INTERFACE.bdf                ; yes             ; User Block Diagram/Schematic File      ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/I2C_INTERFACE.bdf              ;         ;
+; i2c_master.vhd                   ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/i2c_master.vhd                 ;         ;
+; i2c_ctrl.vhd                     ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/i2c_ctrl.vhd                   ;         ;
+; HEX_DISP.vhd                     ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/HEX_DISP.vhd                   ;         ;
+; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/DIG_OUT.vhd                    ;         ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/DIG_IN.vhd                     ;         ;
+; clk_div.vhd                      ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/clk_div.vhd                    ;         ;
+; TIMER.vhd                        ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/TIMER.vhd                      ;         ;
+; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/IO_DECODER.vhd                 ;         ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd                      ;         ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP_System.bdf               ;         ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd                   ;         ;
+; HEX_DISP_6.bdf                   ; yes             ; User Block Diagram/Schematic File      ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/HEX_DISP_6.bdf                 ;         ;
+; DPs.bdf                          ; yes             ; User Block Diagram/Schematic File      ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/DPs.bdf                        ;         ;
+; output_files/MemPeripheral.vhd   ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd ;         ;
+; AudioPeripheral.vhd              ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/AudioPeripheral.vhd            ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                        ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                    ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc                   ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc                 ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc                 ;         ;
+; db/PLL_main_altpll.v             ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/PLL_main_altpll.v           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                    ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc             ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                       ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                    ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                     ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altrom.inc                        ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altram.inc                        ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                      ;         ;
+; db/altsyncram_35r3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf         ;         ;
+; Up.mif                           ; yes             ; Auto-Found Memory Initialization File  ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/Up.mif                         ;         ;
+; db/decode_h7a.tdf                ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/decode_h7a.tdf              ;         ;
+; db/decode_aj9.tdf                ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/decode_aj9.tdf              ;         ;
+; db/mux_g3b.tdf                   ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/mux_g3b.tdf                 ;         ;
+; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                   ;         ;
+; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/lpm_clshift_fuc.tdf         ;         ;
+; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                    ;         ;
+; SQ_GEN.vhd                       ; yes             ; Auto-Found VHDL File                   ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SQ_GEN.vhd                     ;         ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                          ;
-+---------------------------------------------+----------------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                                  ;
-+---------------------------------------------+----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 686                                                                                    ;
-;                                             ;                                                                                        ;
-; Total combinational functions               ; 628                                                                                    ;
-; Logic element usage by number of LUT inputs ;                                                                                        ;
-;     -- 4 input functions                    ; 345                                                                                    ;
-;     -- 3 input functions                    ; 225                                                                                    ;
-;     -- <=2 input functions                  ; 58                                                                                     ;
-;                                             ;                                                                                        ;
-; Logic elements by mode                      ;                                                                                        ;
-;     -- normal mode                          ; 570                                                                                    ;
-;     -- arithmetic mode                      ; 58                                                                                     ;
-;                                             ;                                                                                        ;
-; Total registers                             ; 260                                                                                    ;
-;     -- Dedicated logic registers            ; 260                                                                                    ;
-;     -- I/O registers                        ; 0                                                                                      ;
-;                                             ;                                                                                        ;
-; I/O pins                                    ; 64                                                                                     ;
-; Total memory bits                           ; 32768                                                                                  ;
-;                                             ;                                                                                        ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                                      ;
-;                                             ;                                                                                        ;
-; Total PLLs                                  ; 1                                                                                      ;
-;     -- PLLs                                 ; 1                                                                                      ;
-;                                             ;                                                                                        ;
-; Maximum fan-out node                        ; PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 222                                                                                    ;
-; Total fan-out                               ; 3276                                                                                   ;
-; Average fan-out                             ; 3.17                                                                                   ;
-+---------------------------------------------+----------------------------------------------------------------------------------------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 1,004  ;
+;                                             ;        ;
+; Total combinational functions               ; 859    ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 470    ;
+;     -- 3 input functions                    ; 284    ;
+;     -- <=2 input functions                  ; 105    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 768    ;
+;     -- arithmetic mode                      ; 91     ;
+;                                             ;        ;
+; Total registers                             ; 443    ;
+;     -- Dedicated logic registers            ; 443    ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 75     ;
+; Total memory bits                           ; 32768  ;
+;                                             ;        ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+;                                             ;        ;
+; Total PLLs                                  ; 1      ;
+;     -- PLLs                                 ; 1      ;
+;                                             ;        ;
+; Maximum fan-out node                        ; inst15 ;
+; Maximum fan-out                             ; 178    ;
+; Total fan-out                               ; 4622   ;
+; Average fan-out                             ; 3.14   ;
++---------------------------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                       ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                     ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; |SCOMP_System                             ; 628 (0)             ; 260 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 64   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System    ; work         ;
-;    |DIG_IN:inst7|                         ; 14 (0)              ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN          ; work         ;
-;       |lpm_bustri:IO_BUS|                 ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7|lpm_bustri:IO_BUS                                            ; lpm_bustri      ; work         ;
-;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                             ; DIG_OUT         ; work         ;
-;    |HEX_DISP_6:inst9|                     ; 42 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9                                                          ; HEX_DISP_6      ; work         ;
-;       |HEX_DISP:inst1|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst2|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst2                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst3|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst3                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst4|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst4                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst5|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst6|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6                                           ; HEX_DISP        ; work         ;
-;    |IO_DECODER:inst3|                     ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|IO_DECODER:inst3                                                          ; IO_DECODER      ; work         ;
-;    |PLL_main:inst1|                       ; 1 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1                                                            ; PLL_main        ; work         ;
-;       |altpll:altpll_component|           ; 1 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component                                    ; altpll          ; work         ;
-;          |PLL_main_altpll:auto_generated| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated     ; PLL_main_altpll ; work         ;
-;    |SCOMP:inst|                           ; 516 (410)           ; 178 (178)                 ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP           ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;          |altsyncram_ror3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ror3:auto_generated ; altsyncram_ror3 ; work         ;
-;       |lpm_bustri:io_bus|                 ; 25 (25)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_bustri:io_bus                                              ; lpm_bustri      ; work         ;
-;       |lpm_clshift:shifter|               ; 81 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                            ; lpm_clshift     ; work         ;
-;          |lpm_clshift_fuc:auto_generated| ; 81 (81)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated             ; lpm_clshift_fuc ; work         ;
-;    |TIMER:inst4|                          ; 18 (18)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                               ; TIMER           ; work         ;
-;    |clk_div:inst5|                        ; 27 (27)             ; 21 (21)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                             ; clk_div         ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                 ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                               ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |SCOMP_System                             ; 859 (2)             ; 443 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 75   ; 0            ; 0          ; |SCOMP_System                                                                                     ; SCOMP_System    ; work         ;
+;    |AudioPeripheral:inst16|               ; 39 (39)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|AudioPeripheral:inst16                                                              ; AudioPeripheral ; work         ;
+;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                                        ; DIG_IN          ; work         ;
+;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                                       ; DIG_OUT         ; work         ;
+;    |DPs:inst10|                           ; 0 (0)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DPs:inst10                                                                          ; DPs             ; work         ;
+;    |HEX_DISP_6:inst9|                     ; 42 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9                                                                    ; HEX_DISP_6      ; work         ;
+;       |HEX_DISP:inst1|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1                                                     ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst2|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst2                                                     ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst3|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst3                                                     ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst4|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst4                                                     ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst5|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5                                                     ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst6|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6                                                     ; HEX_DISP        ; work         ;
+;    |I2C_INTERFACE:inst13|                 ; 209 (50)            ; 125 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13                                                                ; I2C_INTERFACE   ; work         ;
+;       |i2c_ctrl:inst14|                   ; 58 (58)             ; 70 (70)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14                                                ; i2c_ctrl        ; work         ;
+;       |i2c_master:inst|                   ; 101 (101)           ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst                                                ; i2c_master      ; work         ;
+;    |IO_DECODER:inst3|                     ; 24 (24)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|IO_DECODER:inst3                                                                    ; IO_DECODER      ; work         ;
+;    |MemPeripheral:inst14|                 ; 4 (4)               ; 19 (19)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14                                                                ; MemPeripheral   ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_35r3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated ; altsyncram_35r3 ; work         ;
+;    |PLL_main:inst1|                       ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1                                                                      ; PLL_main        ; work         ;
+;       |altpll:altpll_component|           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component                                              ; altpll          ; work         ;
+;          |PLL_main_altpll:auto_generated| ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated               ; PLL_main_altpll ; work         ;
+;    |SCOMP:inst|                           ; 472 (390)           ; 178 (178)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                          ; SCOMP           ; work         ;
+;       |lpm_clshift:shifter|               ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                      ; lpm_clshift     ; work         ;
+;          |lpm_clshift_fuc:auto_generated| ; 82 (82)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                       ; lpm_clshift_fuc ; work         ;
+;    |SQ_GEN:inst11|                        ; 13 (13)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SQ_GEN:inst11                                                                       ; SQ_GEN          ; work         ;
+;    |TIMER:inst4|                          ; 18 (18)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                                         ; TIMER           ; work         ;
+;    |clk_div:inst5|                        ; 36 (36)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                                       ; clk_div         ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                              ;
-+--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+---------------+
-; Name                                                                                 ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF           ;
-+--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+---------------+
-; SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ror3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 2048         ; 16           ; --           ; --           ; 32768 ; CatchGame.mif ;
-+--------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+---------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
++------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+--------+
+; Name                                                                                           ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF    ;
++------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+--------+
+; MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 65536        ; 16           ; --           ; --           ; 1048576 ; Up.mif ;
++------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+--------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -308,49 +329,87 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; State Machine - |SCOMP_System|SCOMP:inst|state                                                                                                                                                                                                                                                                                                                                                                                                                                ;
-+------------------+---------------+--------------+--------------+-------------+----------------+--------------+-------------+--------------+-----------------+---------------+----------------+---------------+---------------+---------------+---------------+--------------+--------------+----------------+------------------+-----------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
-; Name             ; state.ex_out2 ; state.ex_out ; state.ex_in2 ; state.ex_in ; state.ex_shift ; state.ex_xor ; state.ex_or ; state.ex_and ; state.ex_return ; state.ex_call ; state.ex_jzero ; state.ex_jpos ; state.ex_jneg ; state.ex_jump ; state.ex_addi ; state.ex_sub ; state.ex_add ; state.ex_loadi ; state.ex_istore2 ; state.ex_istore ; state.ex_iload ; state.ex_store2 ; state.ex_store ; state.ex_load ; state.ex_nop ; state.decode ; state.fetch ; state.init ;
-+------------------+---------------+--------------+--------------+-------------+----------------+--------------+-------------+--------------+-----------------+---------------+----------------+---------------+---------------+---------------+---------------+--------------+--------------+----------------+------------------+-----------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
-; state.init       ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 0          ;
-; state.fetch      ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 1           ; 1          ;
-; state.decode     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 1            ; 0           ; 1          ;
-; state.ex_nop     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 1            ; 0            ; 0           ; 1          ;
-; state.ex_load    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 1             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_store   ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 1              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_store2  ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 1               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_iload   ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 1              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_istore  ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 1               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_istore2 ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 1                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_loadi   ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 1              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_add     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 1            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_sub     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 1            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_addi    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 1             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_jump    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 1             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_jneg    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 1             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_jpos    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 1             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_jzero   ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 1              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_call    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 1             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_return  ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 1               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_and     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 1            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_or      ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 1           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_xor     ; 0             ; 0            ; 0            ; 0           ; 0              ; 1            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_shift   ; 0             ; 0            ; 0            ; 0           ; 1              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_in      ; 0             ; 0            ; 0            ; 1           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_in2     ; 0             ; 0            ; 1            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_out     ; 0             ; 1            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-; state.ex_out2    ; 1             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0              ; 0             ; 0             ; 0             ; 0             ; 0            ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
-+------------------+---------------+--------------+--------------+-------------+----------------+--------------+-------------+--------------+-----------------+---------------+----------------+---------------+---------------+---------------+---------------+--------------+--------------+----------------+------------------+-----------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
++------------------+---------------+--------------+--------------+-------------+----------------+--------------+-------------+--------------+-----------------+---------------+---------------+----------------+---------------+---------------+--------------+---------------+--------------+----------------+------------------+-----------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
+; Name             ; state.ex_out2 ; state.ex_out ; state.ex_in2 ; state.ex_in ; state.ex_shift ; state.ex_xor ; state.ex_or ; state.ex_and ; state.ex_return ; state.ex_call ; state.ex_jpos ; state.ex_jzero ; state.ex_jneg ; state.ex_jump ; state.ex_sub ; state.ex_addi ; state.ex_add ; state.ex_loadi ; state.ex_istore2 ; state.ex_istore ; state.ex_iload ; state.ex_store2 ; state.ex_store ; state.ex_load ; state.ex_nop ; state.decode ; state.fetch ; state.init ;
++------------------+---------------+--------------+--------------+-------------+----------------+--------------+-------------+--------------+-----------------+---------------+---------------+----------------+---------------+---------------+--------------+---------------+--------------+----------------+------------------+-----------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
+; state.init       ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 0          ;
+; state.fetch      ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 1           ; 1          ;
+; state.decode     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 1            ; 0           ; 1          ;
+; state.ex_nop     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 1            ; 0            ; 0           ; 1          ;
+; state.ex_load    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 1             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_store   ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 1              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_store2  ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 1               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_iload   ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 1              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_istore  ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 1               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_istore2 ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 1                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_loadi   ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 1              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_add     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 1            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_addi    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 1             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_sub     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 1            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jump    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 1             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jneg    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 1             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jzero   ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 1              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_jpos    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 1             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_call    ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 1             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_return  ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 1               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_and     ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 1            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_or      ; 0             ; 0            ; 0            ; 0           ; 0              ; 0            ; 1           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_xor     ; 0             ; 0            ; 0            ; 0           ; 0              ; 1            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_shift   ; 0             ; 0            ; 0            ; 0           ; 1              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_in      ; 0             ; 0            ; 0            ; 1           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_in2     ; 0             ; 0            ; 1            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_out     ; 0             ; 1            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
+; state.ex_out2    ; 1             ; 0            ; 0            ; 0           ; 0              ; 0            ; 0           ; 0            ; 0               ; 0             ; 0             ; 0              ; 0             ; 0             ; 0            ; 0             ; 0            ; 0              ; 0                ; 0               ; 0              ; 0               ; 0              ; 0             ; 0            ; 0            ; 0           ; 1          ;
++------------------+---------------+--------------+--------------+-------------+----------------+--------------+-------------+--------------+-----------------+---------------+---------------+----------------+---------------+---------------+--------------+---------------+--------------+----------------+------------------+-----------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; DIG_IN:inst7|B_DI[10..15]             ; Stuck at GND due to stuck port data_in ;
-; SCOMP:inst|state.ex_nop               ; Lost fanout                            ;
-; Total Number of Removed Registers = 7 ;                                        ;
-+---------------------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|state                          ;
++------------+-----------+------------+-----------+-----------+------------+-----------+------------+
+; Name       ; state.Rx1 ; state.Rx1p ; state.Rx2 ; state.Tx1 ; state.Tx1p ; state.Tx2 ; state.idle ;
++------------+-----------+------------+-----------+-----------+------------+-----------+------------+
+; state.idle ; 0         ; 0          ; 0         ; 0         ; 0          ; 0         ; 0          ;
+; state.Tx2  ; 0         ; 0          ; 0         ; 0         ; 0          ; 1         ; 1          ;
+; state.Tx1p ; 0         ; 0          ; 0         ; 0         ; 1          ; 0         ; 1          ;
+; state.Tx1  ; 0         ; 0          ; 0         ; 1         ; 0          ; 0         ; 1          ;
+; state.Rx2  ; 0         ; 0          ; 1         ; 0         ; 0          ; 0         ; 1          ;
+; state.Rx1p ; 0         ; 1          ; 0         ; 0         ; 0          ; 0         ; 1          ;
+; state.Rx1  ; 1         ; 0          ; 0         ; 0         ; 0          ; 0         ; 1          ;
++------------+-----------+------------+-----------+-----------+------------+-----------+------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|state                                                                                         ;
++----------------+------------+----------------+----------------+----------+----------+----------------+---------------+---------------+-------------+-------------+
+; Name           ; state.stop ; state.mstr_ack ; state.slv_ack2 ; state.rd ; state.wr ; state.slv_ack1 ; state.command ; state.restart ; state.start ; state.ready ;
++----------------+------------+----------------+----------------+----------+----------+----------------+---------------+---------------+-------------+-------------+
+; state.ready    ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0             ; 0           ; 0           ;
+; state.start    ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0             ; 1           ; 1           ;
+; state.restart  ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 1             ; 0           ; 1           ;
+; state.command  ; 0          ; 0              ; 0              ; 0        ; 0        ; 0              ; 1             ; 0             ; 0           ; 1           ;
+; state.slv_ack1 ; 0          ; 0              ; 0              ; 0        ; 0        ; 1              ; 0             ; 0             ; 0           ; 1           ;
+; state.wr       ; 0          ; 0              ; 0              ; 0        ; 1        ; 0              ; 0             ; 0             ; 0           ; 1           ;
+; state.rd       ; 0          ; 0              ; 0              ; 1        ; 0        ; 0              ; 0             ; 0             ; 0           ; 1           ;
+; state.slv_ack2 ; 0          ; 0              ; 1              ; 0        ; 0        ; 0              ; 0             ; 0             ; 0           ; 1           ;
+; state.mstr_ack ; 0          ; 1              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0             ; 0           ; 1           ;
+; state.stop     ; 1          ; 0              ; 0              ; 0        ; 0        ; 0              ; 0             ; 0             ; 0           ; 1           ;
++----------------+------------+----------------+----------------+----------+----------+----------------+---------------+---------------+-------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                               ;
++---------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                           ; Reason for Removal                     ;
++---------------------------------------------------------------------------------------------------------+----------------------------------------+
+; DIG_IN:inst7|B_DI[10..15]                                                                               ; Stuck at GND due to stuck port data_in ;
+; MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|address_reg_a[0..2] ; Stuck at GND due to stuck port data_in ;
+; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk                                                            ; Stuck at GND due to stuck port data_in ;
+; I2C_INTERFACE:inst13|i2c_master:inst|count[2]                                                           ; Stuck at GND due to stuck port data_in ;
+; SCOMP:inst|state.ex_nop                                                                                 ; Lost fanout                            ;
+; Total Number of Removed Registers = 12                                                                  ;                                        ;
++---------------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -358,119 +417,68 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 260   ;
-; Number of registers using Synchronous Clear  ; 19    ;
+; Total registers                              ; 443   ;
+; Number of registers using Synchronous Clear  ; 40    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 78    ;
+; Number of registers using Asynchronous Clear ; 151   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 151   ;
+; Number of registers using Clock Enable       ; 250   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[3][10] ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[2]           ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[1]           ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------+
++-----------------------------------------------------------+
+; Inverted Register Statistics                              ;
++-------------------------------------------------+---------+
+; Inverted Register                               ; Fan out ;
++-------------------------------------------------+---------+
+; MemPeripheral:inst14|a_ready                    ; 4       ;
+; MemPeripheral:inst14|a_read                     ; 4       ;
+; AudioPeripheral:inst16|zero_state               ; 4       ;
+; I2C_INTERFACE:inst13|i2c_master:inst|sda_int    ; 2       ;
+; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[2] ; 16      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[1] ; 30      ;
+; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0] ; 25      ;
+; Total number of inverted registers = 7          ;         ;
++-------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ror3:auto_generated ;
-+---------------------------------+--------------------+------+------------------------------------+
-; Assignment                      ; Value              ; From ; To                                 ;
-+---------------------------------+--------------------+------+------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                  ;
-+---------------------------------+--------------------+------+------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[0][2]                         ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst16|counter[5]                 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|data_tx[1]   ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[6]   ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[5]                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[15] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[1]  ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[5]                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|count        ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SCOMP:inst|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-----------------------------+
-; Parameter Name                     ; Value                ; Type                        ;
-+------------------------------------+----------------------+-----------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                     ;
-; WIDTH_A                            ; 16                   ; Signed Integer              ;
-; WIDTHAD_A                          ; 11                   ; Signed Integer              ;
-; NUMWORDS_A                         ; 2048                 ; Signed Integer              ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                     ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
-; WIDTH_B                            ; 1                    ; Signed Integer              ;
-; WIDTHAD_B                          ; 1                    ; Signed Integer              ;
-; NUMWORDS_B                         ; 0                    ; Signed Integer              ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                     ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                     ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer              ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer              ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
-; BYTE_SIZE                          ; 8                    ; Signed Integer              ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                     ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
-; INIT_FILE                          ; CatchGame.mif        ; Untyped                     ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
-; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer              ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                     ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                     ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer              ;
-; DEVICE_FAMILY                      ; MAX 10               ; Untyped                     ;
-; CBXI_PARAMETER                     ; altsyncram_ror3      ; Untyped                     ;
-+------------------------------------+----------------------+-----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++------------------------------------------------------------------------------------------------------------+
+; Source assignments for MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                           ;
++---------------------------------+--------------------+------+----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                            ;
++---------------------------------+--------------------+------+----------------------------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter ;
-+----------------+-----------------+------------------------------------------+
-; Parameter Name ; Value           ; Type                                     ;
-+----------------+-----------------+------------------------------------------+
-; LPM_PIPELINE   ; 0               ; Untyped                                  ;
-; LPM_SHIFTTYPE  ; arithmetic      ; Untyped                                  ;
-; LPM_WIDTH      ; 16              ; Signed Integer                           ;
-; LPM_WIDTHDIST  ; 4               ; Signed Integer                           ;
-; CBXI_PARAMETER ; lpm_clshift_fuc ; Untyped                                  ;
-+----------------+-----------------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; LPM_WIDTH      ; 16    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: I2C_INTERFACE:inst13|i2c_master:inst ;
++----------------+--------+---------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                    ;
++----------------+--------+---------------------------------------------------------+
+; input_clk      ; 100000 ; Signed Integer                                          ;
+; bus_clk        ; 25000  ; Signed Integer                                          ;
++----------------+--------+---------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -514,8 +522,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_MULTIPLY_BY              ; 1                          ; Untyped                ;
 ; CLK4_MULTIPLY_BY              ; 1                          ; Untyped                ;
 ; CLK3_MULTIPLY_BY              ; 1                          ; Untyped                ;
-; CLK2_MULTIPLY_BY              ; 1                          ; Untyped                ;
-; CLK1_MULTIPLY_BY              ; 1                          ; Untyped                ;
+; CLK2_MULTIPLY_BY              ; 1                          ; Signed Integer         ;
+; CLK1_MULTIPLY_BY              ; 441                        ; Signed Integer         ;
 ; CLK0_MULTIPLY_BY              ; 1                          ; Signed Integer         ;
 ; CLK9_DIVIDE_BY                ; 0                          ; Untyped                ;
 ; CLK8_DIVIDE_BY                ; 0                          ; Untyped                ;
@@ -524,8 +532,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_DIVIDE_BY                ; 1                          ; Untyped                ;
 ; CLK4_DIVIDE_BY                ; 1                          ; Untyped                ;
 ; CLK3_DIVIDE_BY                ; 1                          ; Untyped                ;
-; CLK2_DIVIDE_BY                ; 1                          ; Untyped                ;
-; CLK1_DIVIDE_BY                ; 1                          ; Untyped                ;
+; CLK2_DIVIDE_BY                ; 25                         ; Signed Integer         ;
+; CLK1_DIVIDE_BY                ; 500000                     ; Signed Integer         ;
 ; CLK0_DIVIDE_BY                ; 5                          ; Signed Integer         ;
 ; CLK9_PHASE_SHIFT              ; 0                          ; Untyped                ;
 ; CLK8_PHASE_SHIFT              ; 0                          ; Untyped                ;
@@ -550,8 +558,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; CLK5_DUTY_CYCLE               ; 50                         ; Untyped                ;
 ; CLK4_DUTY_CYCLE               ; 50                         ; Untyped                ;
 ; CLK3_DUTY_CYCLE               ; 50                         ; Untyped                ;
-; CLK2_DUTY_CYCLE               ; 50                         ; Untyped                ;
-; CLK1_DUTY_CYCLE               ; 50                         ; Untyped                ;
+; CLK2_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
+; CLK1_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK0_DUTY_CYCLE               ; 50                         ; Signed Integer         ;
 ; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                ;
 ; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                        ; Untyped                ;
@@ -781,8 +789,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; PORT_CLKBAD0                  ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLKBAD1                  ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK0                     ; PORT_USED                  ; Untyped                ;
-; PORT_CLK1                     ; PORT_UNUSED                ; Untyped                ;
-; PORT_CLK2                     ; PORT_UNUSED                ; Untyped                ;
+; PORT_CLK1                     ; PORT_USED                  ; Untyped                ;
+; PORT_CLK2                     ; PORT_USED                  ; Untyped                ;
 ; PORT_CLK3                     ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK4                     ; PORT_UNUSED                ; Untyped                ;
 ; PORT_CLK5                     ; PORT_UNUSED                ; Untyped                ;
@@ -848,6 +856,91 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MemPeripheral:inst14|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------------+
+; Parameter Name                     ; Value                ; Type                                  ;
++------------------------------------+----------------------+---------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                               ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                        ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                               ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                               ;
+; WIDTH_A                            ; 16                   ; Signed Integer                        ;
+; WIDTHAD_A                          ; 16                   ; Signed Integer                        ;
+; NUMWORDS_A                         ; 65536                ; Signed Integer                        ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                               ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                               ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                               ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                               ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                               ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                               ;
+; WIDTH_B                            ; 1                    ; Signed Integer                        ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer                        ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                               ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                               ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                               ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                               ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                               ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                               ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                               ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                               ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                               ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                               ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                               ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                               ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                        ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                               ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                               ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
+; INIT_FILE                          ; Up.mif               ; Untyped                               ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                               ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                        ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                               ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                               ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                               ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                               ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                               ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                               ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                               ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                               ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                        ;
+; DEVICE_FAMILY                      ; MAX 10               ; Untyped                               ;
+; CBXI_PARAMETER                     ; altsyncram_35r3      ; Untyped                               ;
++------------------------------------+----------------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter ;
++----------------+-----------------+------------------------------------------+
+; Parameter Name ; Value           ; Type                                     ;
++----------------+-----------------+------------------------------------------+
+; LPM_PIPELINE   ; 0               ; Untyped                                  ;
+; LPM_SHIFTTYPE  ; arithmetic      ; Untyped                                  ;
+; LPM_WIDTH      ; 16              ; Signed Integer                           ;
+; LPM_WIDTHDIST  ; 4               ; Signed Integer                           ;
+; CBXI_PARAMETER ; lpm_clshift_fuc ; Untyped                                  ;
++----------------+-----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; LPM_WIDTH      ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS ;
 +----------------+-------+---------------------------------------------------+
@@ -868,26 +961,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                       ;
-+-------------------------------------------+--------------------------------------------+
-; Name                                      ; Value                                      ;
-+-------------------------------------------+--------------------------------------------+
-; Number of entity instances                ; 1                                          ;
-; Entity Instance                           ; SCOMP:inst|altsyncram:altsyncram_component ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                ;
-;     -- WIDTH_A                            ; 16                                         ;
-;     -- NUMWORDS_A                         ; 2048                                       ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                               ;
-;     -- WIDTH_B                            ; 1                                          ;
-;     -- NUMWORDS_B                         ; 0                                          ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                     ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                               ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                       ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                  ;
-+-------------------------------------------+--------------------------------------------+
-
-
 +------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                           ;
 +-------------------------------+----------------------------------------+
@@ -905,31 +978,55 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+----------------------------------------+
 
 
++--------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                 ;
++-------------------------------------------+------------------------------------------------------+
+; Name                                      ; Value                                                ;
++-------------------------------------------+------------------------------------------------------+
+; Number of entity instances                ; 1                                                    ;
+; Entity Instance                           ; MemPeripheral:inst14|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                          ;
+;     -- WIDTH_A                            ; 16                                                   ;
+;     -- NUMWORDS_A                         ; 65536                                                ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                         ;
+;     -- WIDTH_B                            ; 1                                                    ;
+;     -- NUMWORDS_B                         ; 0                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                               ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                         ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                 ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                            ;
++-------------------------------------------+------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 64                          ;
-; cycloneiii_ff         ; 260                         ;
-;     CLR               ; 78                          ;
-;     ENA               ; 151                         ;
-;     SCLR              ; 19                          ;
-;     plain             ; 12                          ;
-; cycloneiii_lcell_comb ; 634                         ;
-;     arith             ; 58                          ;
-;         2 data inputs ; 42                          ;
-;         3 data inputs ; 16                          ;
-;     normal            ; 576                         ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 209                         ;
-;         4 data inputs ; 345                         ;
+; boundary_port         ; 75                          ;
+; cycloneiii_ff         ; 443                         ;
+;     CLR               ; 140                         ;
+;     ENA               ; 224                         ;
+;     ENA CLR           ; 11                          ;
+;     ENA SCLR          ; 15                          ;
+;     SCLR              ; 25                          ;
+;     plain             ; 28                          ;
+; cycloneiii_io_obuf    ; 2                           ;
+; cycloneiii_lcell_comb ; 871                         ;
+;     arith             ; 91                          ;
+;         2 data inputs ; 61                          ;
+;         3 data inputs ; 30                          ;
+;     normal            ; 780                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 20                          ;
+;         2 data inputs ; 35                          ;
+;         3 data inputs ; 254                         ;
+;         4 data inputs ; 470                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 3.92                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 3.74                        ;
 +-----------------------+-----------------------------+
 
 
@@ -938,7 +1035,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -948,135 +1045,75 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Oct 07 14:06:32 2020
+    Info: Processing started: Sat Oct 31 17:49:20 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file hex_disp.vhd
-    Info (12022): Found design unit 1: HEX_DISP-a File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/HEX_DISP.vhd Line: 17
-    Info (12023): Found entity 1: HEX_DISP File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/HEX_DISP.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/DIG_OUT.vhd Line: 16
-Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/DIG_IN.vhd Line: 18
-    Info (12023): Found entity 1: DIG_IN File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/DIG_IN.vhd Line: 10
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file I2C_INTERFACE.bdf
+    Info (12023): Found entity 1: I2C_INTERFACE
+Info (12021): Found 2 design units, including 1 entities, in source file i2c_master.vhd
+    Info (12022): Found design unit 1: i2c_master-logic File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/i2c_master.vhd Line: 49
+    Info (12023): Found entity 1: i2c_master File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/i2c_master.vhd Line: 31
+Info (12021): Found 2 design units, including 1 entities, in source file i2c_ctrl.vhd
+    Info (12022): Found design unit 1: i2c_ctrl-main File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/i2c_ctrl.vhd Line: 32
+    Info (12023): Found entity 1: i2c_ctrl File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/i2c_ctrl.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file HEX_DISP.vhd
+    Info (12022): Found design unit 1: HEX_DISP-a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/HEX_DISP.vhd Line: 17
+    Info (12023): Found entity 1: HEX_DISP File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/HEX_DISP.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file DIG_OUT.vhd
+    Info (12022): Found design unit 1: DIG_OUT-a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/DIG_OUT.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file DIG_IN.vhd
+    Info (12022): Found design unit 1: DIG_IN-a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/DIG_IN.vhd Line: 18
+    Info (12023): Found entity 1: DIG_IN File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/DIG_IN.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/clk_div.vhd Line: 21
-    Info (12023): Found entity 1: clk_div File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/clk_div.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/TIMER.vhd Line: 27
-    Info (12023): Found entity 1: TIMER File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/TIMER.vhd Line: 17
-Info (12021): Found 2 design units, including 1 entities, in source file io_decoder.vhd
-    Info (12022): Found design unit 1: IO_DECODER-a File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/IO_DECODER.vhd Line: 27
-    Info (12023): Found entity 1: IO_DECODER File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/IO_DECODER.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 33
-    Info (12023): Found entity 1: SCOMP File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
+    Info (12022): Found design unit 1: clk_div-a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/clk_div.vhd Line: 21
+    Info (12023): Found entity 1: clk_div File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/clk_div.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file TIMER.vhd
+    Info (12022): Found design unit 1: TIMER-a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/TIMER.vhd Line: 27
+    Info (12023): Found entity 1: TIMER File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/TIMER.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file IO_DECODER.vhd
+    Info (12022): Found design unit 1: IO_DECODER-a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/IO_DECODER.vhd Line: 29
+    Info (12023): Found entity 1: IO_DECODER File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/IO_DECODER.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file SCOMP.vhd
+    Info (12022): Found design unit 1: SCOMP-a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 37
+    Info (12023): Found entity 1: SCOMP File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file SCOMP_System.bdf
     Info (12023): Found entity 1: SCOMP_System
-Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: pll_main-SYN File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/PLL_main.vhd Line: 54
-    Info (12023): Found entity 1: PLL_main File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/PLL_main.vhd Line: 43
-Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
+Info (12021): Found 2 design units, including 1 entities, in source file PLL_main.vhd
+    Info (12022): Found design unit 1: pll_main-SYN File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 56
+    Info (12023): Found entity 1: PLL_main File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file HEX_DISP_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
+Info (12021): Found 1 design units, including 1 entities, in source file DPs.bdf
+    Info (12023): Found entity 1: DPs
+Info (12021): Found 2 design units, including 1 entities, in source file output_files/MemPeripheral.vhd
+    Info (12022): Found design unit 1: MemPeripheral-rtl File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 26
+    Info (12023): Found entity 1: MemPeripheral File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file AudioPeripheral.vhd
+    Info (12022): Found design unit 1: AudioPeripheral-rtl File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/AudioPeripheral.vhd Line: 20
+    Info (12023): Found entity 1: AudioPeripheral File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/AudioPeripheral.vhd Line: 7
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
-Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst9"
-Info (12128): Elaborating entity "HEX_DISP" for hierarchy "HEX_DISP_6:inst9|HEX_DISP:inst1"
-Info (12128): Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst3"
-Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 61
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 61
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 61
-    Info (12134): Parameter "address_aclr_a" = "UNUSED"
-    Info (12134): Parameter "address_aclr_b" = "NONE"
-    Info (12134): Parameter "address_reg_b" = "CLOCK1"
-    Info (12134): Parameter "byte_size" = "8"
-    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
-    Info (12134): Parameter "byteena_aclr_b" = "NONE"
-    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
-    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
-    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
-    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
-    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
-    Info (12134): Parameter "intended_device_family" = "MAX 10"
-    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
-    Info (12134): Parameter "enable_ecc" = "FALSE"
-    Info (12134): Parameter "implement_in_les" = "OFF"
-    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
-    Info (12134): Parameter "indata_aclr_b" = "NONE"
-    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "CatchGame.mif"
-    Info (12134): Parameter "init_file_layout" = "PORT_A"
-    Info (12134): Parameter "maximum_depth" = "0"
-    Info (12134): Parameter "numwords_a" = "2048"
-    Info (12134): Parameter "numwords_b" = "0"
-    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
-    Info (12134): Parameter "outdata_aclr_a" = "NONE"
-    Info (12134): Parameter "outdata_aclr_b" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
-    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
-    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
-    Info (12134): Parameter "ram_block_type" = "AUTO"
-    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
-    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
-    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
-    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
-    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
-    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
-    Info (12134): Parameter "width_a" = "16"
-    Info (12134): Parameter "width_b" = "1"
-    Info (12134): Parameter "width_byteena_a" = "1"
-    Info (12134): Parameter "width_byteena_b" = "1"
-    Info (12134): Parameter "width_eccstatus" = "3"
-    Info (12134): Parameter "widthad_a" = "11"
-    Info (12134): Parameter "widthad_b" = "1"
-    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
-    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
-    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
-    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
-    Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ror3.tdf
-    Info (12023): Found entity 1: altsyncram_ror3 File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/db/altsyncram_ror3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_ror3" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_ror3:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113031): 45 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 45 warnings found, and 10 warnings are reported. File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/CatchGame.mif Line: 1
-    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 13
-    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 14
-    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 15
-    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 16
-    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 17
-    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 18
-    Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 19
-    Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 20
-    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 21
-    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/ Line: 22
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 88
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 88
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 88
-    Info (12134): Parameter "LPM_WIDTH" = "16"
-    Info (12134): Parameter "LPM_WIDTHDIST" = "4"
-    Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
-    Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
-    Info (12134): Parameter "LPM_HINT" = "UNUSED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_clshift_fuc.tdf
-    Info (12023): Found entity 1: lpm_clshift_fuc File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/db/lpm_clshift_fuc.tdf Line: 23
-Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 115
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 115
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP.vhd Line: 115
-    Info (12134): Parameter "LPM_WIDTH" = "16"
-    Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
-    Info (12134): Parameter "LPM_HINT" = "UNUSED"
+Info (12128): Elaborating entity "I2C_INTERFACE" for hierarchy "I2C_INTERFACE:inst13"
+Info (12128): Elaborating entity "i2c_master" for hierarchy "I2C_INTERFACE:inst13|i2c_master:inst"
+Info (12128): Elaborating entity "i2c_ctrl" for hierarchy "I2C_INTERFACE:inst13|i2c_ctrl:inst14"
+Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/PLL_main.vhd Line: 141
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/PLL_main.vhd Line: 141
-Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/PLL_main.vhd Line: 141
+Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 157
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 157
+Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/PLL_main.vhd Line: 157
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
     Info (12134): Parameter "clk0_multiply_by" = "1"
     Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "clk1_divide_by" = "500000"
+    Info (12134): Parameter "clk1_duty_cycle" = "50"
+    Info (12134): Parameter "clk1_multiply_by" = "441"
+    Info (12134): Parameter "clk1_phase_shift" = "0"
+    Info (12134): Parameter "clk2_divide_by" = "25"
+    Info (12134): Parameter "clk2_duty_cycle" = "50"
+    Info (12134): Parameter "clk2_multiply_by" = "1"
+    Info (12134): Parameter "clk2_phase_shift" = "0"
     Info (12134): Parameter "compensate_clock" = "CLK0"
     Info (12134): Parameter "inclk0_input_frequency" = "20000"
     Info (12134): Parameter "intended_device_family" = "MAX 10"
@@ -1110,8 +1147,8 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component"
     Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
     Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk0" = "PORT_USED"
-    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
-    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk1" = "PORT_USED"
+    Info (12134): Parameter "port_clk2" = "PORT_USED"
     Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
     Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
@@ -1127,45 +1164,265 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/pll_main_altpll.v
-    Info (12023): Found entity 1: PLL_main_altpll File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/db/pll_main_altpll.v Line: 31
-Info (12128): Elaborating entity "PLL_main_altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12021): Found 1 design units, including 1 entities, in source file db/PLL_main_altpll.v
+    Info (12023): Found entity 1: PLL_main_altpll File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/PLL_main_altpll.v Line: 31
+Info (12128): Elaborating entity "PLL_main_altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated" File: /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "MemPeripheral" for hierarchy "MemPeripheral:inst14"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 41
+Info (12130): Elaborated megafunction instantiation "MemPeripheral:inst14|altsyncram:altsyncram_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 41
+Info (12133): Instantiated megafunction "MemPeripheral:inst14|altsyncram:altsyncram_component" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 41
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "MAX 10"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "Up.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "65536"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "16"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_35r3.tdf
+    Info (12023): Found entity 1: altsyncram_35r3 File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 34
+Info (12128): Elaborating entity "altsyncram_35r3" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated" File: /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_h7a.tdf
+    Info (12023): Found entity 1: decode_h7a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/decode_h7a.tdf Line: 23
+Info (12128): Elaborating entity "decode_h7a" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|decode_h7a:decode3" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_aj9.tdf
+    Info (12023): Found entity 1: decode_aj9 File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/decode_aj9.tdf Line: 23
+Info (12128): Elaborating entity "decode_aj9" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|decode_aj9:rden_decode" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_g3b.tdf
+    Info (12023): Found entity 1: mux_g3b File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/mux_g3b.tdf Line: 23
+Info (12128): Elaborating entity "mux_g3b" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|mux_g3b:mux2" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 46
+Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 71
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 71
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 71
+    Info (12134): Parameter "LPM_WIDTH" = "16"
+    Info (12134): Parameter "LPM_WIDTHDIST" = "4"
+    Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
+    Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
+    Info (12134): Parameter "LPM_HINT" = "UNUSED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_clshift_fuc.tdf
+    Info (12023): Found entity 1: lpm_clshift_fuc File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/lpm_clshift_fuc.tdf Line: 23
+Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 98
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 98
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 98
+    Info (12134): Parameter "LPM_WIDTH" = "16"
+    Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
+    Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TIMER" for hierarchy "TIMER:inst4"
-Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/TIMER.vhd Line: 59
-Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
+Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/TIMER.vhd Line: 59
+Info (12128): Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst3"
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
+Info (12128): Elaborating entity "AudioPeripheral" for hierarchy "AudioPeripheral:inst16"
+Warning (10541): VHDL Signal Declaration warning at AudioPeripheral.vhd(21): used implicit default value for signal "latched_input" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/AudioPeripheral.vhd Line: 21
+Warning (10036): Verilog HDL or VHDL warning at AudioPeripheral.vhd(27): object "song" assigned a value but never read File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/AudioPeripheral.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at AudioPeripheral.vhd(28): object "trigger_song_change" assigned a value but never read File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/AudioPeripheral.vhd Line: 28
+Warning (12125): Using design file SQ_GEN.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: SQ_GEN-a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SQ_GEN.vhd Line: 26
+    Info (12023): Found entity 1: SQ_GEN File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SQ_GEN.vhd Line: 16
+Info (12128): Elaborating entity "SQ_GEN" for hierarchy "SQ_GEN:inst11"
+Info (12128): Elaborating entity "DPs" for hierarchy "DPs:inst10"
+Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst9"
+Info (12128): Elaborating entity "HEX_DISP" for hierarchy "HEX_DISP_6:inst9|HEX_DISP:inst1"
 Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a16" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 431
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a17" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 455
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a18" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 479
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a19" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 503
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a20" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 527
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a21" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 551
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a22" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 575
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a23" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 599
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a24" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 623
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a25" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 647
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a26" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 671
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a27" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 695
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a28" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 719
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a29" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 743
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a30" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 767
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a31" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 791
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a32" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 815
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a33" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 839
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a34" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 863
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a35" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 887
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a36" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 911
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a37" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 935
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a38" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 959
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a39" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 983
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a40" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1007
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a41" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1031
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a42" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1055
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a43" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1079
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a44" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1103
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a45" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1127
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a46" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1151
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a47" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1175
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a48" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1199
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a49" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1223
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a50" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1247
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a51" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1271
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a52" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1295
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a53" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1319
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a54" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1343
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a55" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1367
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a56" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1391
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a57" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1415
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a58" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1439
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a59" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1463
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a60" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1487
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a61" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1511
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a62" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1535
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a63" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1559
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a64" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1583
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a65" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1607
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a66" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1631
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a67" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1655
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a68" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1679
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a69" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1703
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a70" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1727
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a71" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1751
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a72" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1775
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a73" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1799
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a74" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1823
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a75" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1847
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a76" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1871
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a77" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1895
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a78" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1919
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a79" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1943
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a80" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1967
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a81" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1991
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a82" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2015
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a83" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2039
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a84" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2063
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a85" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2087
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a86" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2111
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a87" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2135
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a88" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2159
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a89" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2183
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a90" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2207
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a91" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2231
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a92" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2255
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a93" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2279
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a94" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2303
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a95" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2327
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a96" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2351
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a97" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2375
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a98" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2399
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a99" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2423
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a100" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2447
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a101" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2471
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a102" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2495
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a103" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2519
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a104" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2543
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a105" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2567
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a106" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2591
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a107" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2615
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a108" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2639
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a109" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2663
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a110" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2687
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a111" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2711
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a112" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2735
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a113" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2759
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a114" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2783
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a115" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2807
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a116" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2831
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a117" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2855
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a118" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2879
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a119" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2903
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a120" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2927
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a121" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2951
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a122" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2975
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a123" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2999
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a124" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 3023
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a125" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 3047
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a126" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 3071
+        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a127" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 3095
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[0]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[0]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[1]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[1]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[2]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[2]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[3]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst1|latched_hex[3]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[4]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst2|latched_hex[0]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[5]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst2|latched_hex[1]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[6]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst2|latched_hex[2]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[7]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst2|latched_hex[3]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[8]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst3|latched_hex[0]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "SCOMP:inst|lpm_bustri:io_bus|dout[9]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst3|latched_hex[1]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "DIG_IN:inst7|lpm_bustri:IO_BUS|dout[10]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst3|latched_hex[2]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "DIG_IN:inst7|lpm_bustri:IO_BUS|dout[11]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst3|latched_hex[3]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "DIG_IN:inst7|lpm_bustri:IO_BUS|dout[12]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst4|latched_hex[0]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "DIG_IN:inst7|lpm_bustri:IO_BUS|dout[13]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst4|latched_hex[1]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "DIG_IN:inst7|lpm_bustri:IO_BUS|dout[14]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst4|latched_hex[2]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
-    Warning (13047): Converted the fan-out from the tri-state buffer "DIG_IN:inst7|lpm_bustri:IO_BUS|dout[15]" to the node "HEX_DISP_6:inst9|HEX_DISP:inst4|latched_hex[3]" into an OR gate File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf Line: 44
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[4]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[4]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[3]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[3]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[2]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[2]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[1]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[1]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[0]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[0]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[5]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[5]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[6]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[6]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[7]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[7]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[8]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[8]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[9]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[9]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[10]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[10]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[11]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[11]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[12]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[12]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[13]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[13]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[14]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[14]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[15]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[15]" into an OR gate
+Info (13000): Registers with preset signals will power-up high File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/output_files/MemPeripheral.vhd Line: 30
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "GSENSOR_CS_n" is stuck at VCC
+    Warning (13410): Pin "GSENSOR_SDO" is stuck at VCC
+Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info (286030): Timing-Driven Synthesis is running
+Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ALTSYNCRAM" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 407
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 780 device resources after synthesis - the final resource count might be different
+Warning (15899): PLL "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|pll1" has parameters clk2_multiply_by and clk2_divide_by specified but port CLK[2] is not connected File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/PLL_main_altpll.v Line: 51
+Info (21057): Implemented 1116 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 699 logic cells
+    Info (21059): Implemented 61 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 1024 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4837 megabytes
-    Info: Processing ended: Wed Oct 07 14:07:09 2020
-    Info: Elapsed time: 00:00:37
-    Info: Total CPU time (on all processors): 00:00:55
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 143 warnings
+    Info: Peak virtual memory: 1056 megabytes
+    Info: Processing ended: Sat Oct 31 17:49:33 2020
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:32
 
 

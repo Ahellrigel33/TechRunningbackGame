@@ -8,43 +8,43 @@ DATA_RADIX = HEX;
 
 CONTENT
   BEGIN
-    [000..7FF] : 0000;  -- Default to NOP
+    000 : 9000; -- IN     Switches
+    001 : 9801; -- OUT    LEDs
+    002 : 1021; -- STORE  Pattern
+    003 : 2807; -- JUMP   Left
+    004 : 0821; -- LOAD   Pattern
+    005 : 5822; -- XOR    Bit0
+    006 : 1021; -- STORE  Pattern
+    007 : 801c; -- CALL   Delay
+    008 : 0821; -- LOAD   Pattern
+    009 : 4823; -- AND    Bit9         ; bit mask
+    00a : 3810; -- JPOS   RMleft        ; bit9 is 1; go right
+    00b : 0821; -- LOAD   Pattern
+    00c : 6001; -- SHIFT  1
+    00d : 1021; -- STORE  Pattern
+    00e : 9801; -- OUT    LEDs
+    00f : 2807; -- JUMP   Left
+    010 : 0821; -- LOAD   Pattern
+    011 : 5823; -- XOR    Bit9
+    012 : 1021; -- STORE  Pattern
+    013 : 801c; -- CALL   Delay
+    014 : 0821; -- LOAD   Pattern
+    015 : 4822; -- AND    Bit0         ; bit mask
+    016 : 3804; -- JPOS   RMright      ; bit0 is 1; go left
+    017 : 0821; -- LOAD   Pattern
+    018 : 6011; -- SHIFT  -1
+    019 : 1021; -- STORE  Pattern
+    01a : 9801; -- OUT    LEDs
+    01b : 2813; -- JUMP   Right
+    01c : 9802; -- OUT    Timer
+    01d : 9002; -- IN     Timer
+    01e : 6ffe; -- ADDI   -2
+    01f : 301d; -- JNEG   WaitingLoop
+    020 : 8800; -- RETURN
+    021 : 0000; -- Pattern:   DW 0
+    022 : 0001; -- Bit0:      DW &B0000000001
+    023 : 0200; -- Bit9:      DW &B1000000000
 
-           000 : 9000;  -- 	IN     Switches
-           001 : 9801;  -- 	OUT    LEDs
-           002 : 1020;  -- 	STORE  Pattern
-           003 : 0820;  -- 	LOAD   Pattern
-           004 : 4823;  -- 	AND    LeftMask
-           005 : 1020;  -- 	STORE  Pattern
-           006 : 801B;  -- 	CALL   Delay
-           007 : 0820;  -- 	LOAD   Pattern
-           008 : 4822;  -- 	AND    Bit9         ; bit mask
-           009 : 380F;  -- 	JPOS   Right        ; bit9 is 1; go right
-           00A : 0820;  -- 	LOAD   Pattern
-           00B : 6001;  -- 	SHIFT  1
-           00C : 1020;  -- 	STORE  Pattern
-           00D : 9801;  -- 	OUT    LEDs
-           00E : 2803;  -- 	JUMP   Left
-           00F : 0820;  -- 	LOAD   Pattern
-           010 : 4824;  -- 	AND    RightMask
-           011 : 1020;  -- 	STORE  Pattern
-           012 : 801B;  -- 	CALL   Delay
-           013 : 0820;  -- 	LOAD   Pattern
-           014 : 4821;  -- 	AND    Bit0         ; bit mask
-           015 : 3803;  -- 	JPOS   Left         ; bit0 is 1; go left
-           016 : 0820;  -- 	LOAD   Pattern
-           017 : 6011;  -- 	SHIFT  -1
-           018 : 1020;  -- 	STORE  Pattern
-           019 : 9801;  -- 	OUT    LEDs
-           01A : 280F;  -- 	JUMP   Right
-           01B : 9802;  -- 	OUT    Timer
-           01C : 9002;  -- 	IN     Timer
-           01D : 6FFE;  -- 	ADDI   -2
-           01E : 301C;  -- 	JNEG   WaitingLoop
-           01F : 8800;  -- 	RETURN
-           020 : 0000;  -- Pattern:   DW 0
-           021 : 0001;  -- Bit0:      DW &B0000000001
-           022 : 0200;  -- Bit9:      DW &B1000000000
-           023 : 03FE;  -- LeftMask:  DW &B1111111110
-           024 : 01FF;  -- RightMask: DW &B0111111111
+    [024..7ff] : 0000; -- Empty memory
+
   END;

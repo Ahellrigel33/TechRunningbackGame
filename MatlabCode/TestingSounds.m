@@ -1,46 +1,83 @@
 %% Load file
-ramblinWreck = audioread("ramblinWreck.mp3");
+ramblinWreck = audioread("SoundFiles\ramblinWreck.mp3");
 fs = 44100;
-RWsec = ramblinWreck(round(44100*11.2):44100*24.4,2);
-tt = 1/fs*[0:length(RWsec)-1];
+audio = ramblinWreck(round(44100*11.2):44100*24.4,2);
+tt = 1/fs*[0:length(audio)-1];
 
-maskTop = RWsec > 0;
-maskBot = RWsec < 0;
+maskTop = audio >= 0;
+maskBot = audio < 0;
 
-sqRWsec = ones(length(RWsec), 1)/2;
-for i = 1:length(sqRWsec)
+sqAudio = ones(length(audio), 1)/2;
+for i = 1:length(sqAudio)
     if maskTop(i)
-        sqRWsec(i) = 1;
+        sqAudio(i) = 1;
     end
     if maskBot(i)
-        sqRWsec(i) = 0;
+        sqAudio(i) = 0;
     end
 end
 
 %% Hear sound as normal
-sound(RWsec, fs);
+sound(audio, fs);
 
 
 %% Hear sound as square wave
-sound(sqRWsec, fs);
+sound(sqAudio, fs);
 
 %% Plot
 figure;
 hold on
-area(tt(1:10000), sqRWsec(1:10000));
+area(tt(1:10000), sqAudio(1:10000));
 
 
 %% Output files
-audiowrite("RamblinWreckNormal.wav",RWsec, fs);
-audiowrite("RamblinWreckSquare.wav",sqRWsec, fs);
+audiowrite("RamblinWreckNormal.wav",audio, fs);
+audiowrite("RamblinWreckSquare.wav",sqAudio, fs);
 
 %% Fix volume
-volume = abs(RWsec);
+volume = abs(audio);
 plot(tt, volume);
 
 volume = round(volume*256);
 
 
-%% Output BIN Files
+%% Create pulse-length vector
+
+pulses = [];
+k = 0;
+currVal = sqAudio(1);
+for i = 1:length(sqAudio)
+    if sqAudio(i) == currVal
+        k = k + 1;
+    else
+        if currVal == 0
+            k = k + 32768
+        end
+        pulses = [pulses k];
+        if currVal == 0
+            currVal = 1;
+        else
+            currVal = 0;
+        end
+        k = 1;
+    end
+end
+pulses = [pulses 0];
+
+%% Generate MIF File
+writematrix(pulses, "MemoryFiles\SongVector.txt");
+
+    
+
+
+
+
+
+
+
+
+
+
+
 
 

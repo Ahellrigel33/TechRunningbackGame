@@ -20,7 +20,8 @@ ENTITY IO_DECODER IS
     I2C_CMD_EN    : OUT STD_LOGIC;
     I2C_DATA_EN   : OUT STD_LOGIC;
     I2C_RDY_EN    : OUT STD_LOGIC;
-	 SDRAM_EN      : OUT STD_LOGIC
+    DP_EN         : OUT STD_LOGIC;
+	 SQ_EN 			: OUT STD_LOGIC
   );
 
 END ENTITY;
@@ -38,10 +39,10 @@ begin
   TIMER_EN     <= '1' WHEN (ADDR_INT = 16#002#) and (IO_CYCLE = '1') ELSE '0';
   HEX0_EN      <= '1' WHEN (ADDR_INT = 16#004#) and (IO_CYCLE = '1') ELSE '0';
   HEX1_EN      <= '1' WHEN (ADDR_INT = 16#005#) and (IO_CYCLE = '1') ELSE '0';
-  SDRAM_EN     <= '1' WHEN (ADDR_INT = 16#006#) and (IO_CYCLE = '1') ELSE '0';
   I2C_CMD_EN   <= '1' WHEN (ADDR_INT = 16#090#) and (IO_CYCLE = '1') ELSE '0';
   I2C_DATA_EN  <= '1' WHEN (ADDR_INT = 16#091#) and (IO_CYCLE = '1') ELSE '0';
   I2C_RDY_EN   <= '1' WHEN (ADDR_INT = 16#092#) and (IO_CYCLE = '1') ELSE '0';
-  
+  DP_EN        <= '1' WHEN (ADDR_INT = 16#0E0#) and (IO_CYCLE = '1') ELSE '0';
+  SQ_EN        <= '1' WHEN (ADDR_INT = 16#0F0#) and (IO_CYCLE = '1') ELSE '0';
       
 END a;

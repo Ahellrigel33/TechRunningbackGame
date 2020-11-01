@@ -4,6 +4,34 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "Arduino_IO[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DP[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DP[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DP[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DP[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DP[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DP[0]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX0[6]",
 					"strict" : false
 				},
@@ -212,7 +240,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "GSENSOR_SDI",
+					"strict" : false
+				},
+				{
+					"name" : "GSENSOR_SCLK",
 					"strict" : false
 				},
 				{
@@ -220,11 +252,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[2]",
+					"name" : "SW[4]",
 					"strict" : false
 				},
 				{
@@ -232,7 +260,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[4]",
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{

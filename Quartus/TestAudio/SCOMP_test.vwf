@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP_bare -c SCOMP_bare --vector_source="C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP_test.vwf" --testbench_file="C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/simulation/qsim/SCOMP_test.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP_bare -c SCOMP_bare --vector_source="C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/SCOMP_test.vwf" --testbench_file="C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/simulation/qsim/SCOMP_test.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/simulation/qsim/" SCOMP_bare -c SCOMP_bare</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/ahell/OneDrive - Georgia Institute of Technology/ECE 2031/Labs/Lab7/SCOMP/simulation/qsim/" SCOMP_bare -c SCOMP_bare</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP_bare -c SCOMP_bare --vector_source="E:/Temp/SCOMP/SCOMP_test.vwf" --testbench_file="E:/Temp/SCOMP/simulation/qsim/SCOMP_test.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP_bare -c SCOMP_bare --vector_source="E:/Temp/SCOMP/SCOMP_test.vwf" --testbench_file="E:/Temp/SCOMP/simulation/qsim/SCOMP_test.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="E:/Temp/SCOMP/simulation/qsim/" SCOMP_bare -c SCOMP_bare</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="E:/Temp/SCOMP/simulation/qsim/" SCOMP_bare -c SCOMP_bare</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work SCOMP_bare.vho
@@ -871,8 +871,7 @@ TRANSITION_LIST("dbg_AC[15]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -881,8 +880,7 @@ TRANSITION_LIST("dbg_AC[14]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -891,8 +889,7 @@ TRANSITION_LIST("dbg_AC[13]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -901,8 +898,7 @@ TRANSITION_LIST("dbg_AC[12]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -911,8 +907,7 @@ TRANSITION_LIST("dbg_AC[11]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -921,8 +916,7 @@ TRANSITION_LIST("dbg_AC[10]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -931,8 +925,7 @@ TRANSITION_LIST("dbg_AC[9]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -941,8 +934,7 @@ TRANSITION_LIST("dbg_AC[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -951,8 +943,7 @@ TRANSITION_LIST("dbg_AC[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -961,8 +952,7 @@ TRANSITION_LIST("dbg_AC[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -971,8 +961,7 @@ TRANSITION_LIST("dbg_AC[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -981,8 +970,7 @@ TRANSITION_LIST("dbg_AC[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -991,8 +979,7 @@ TRANSITION_LIST("dbg_AC[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1001,8 +988,7 @@ TRANSITION_LIST("dbg_AC[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1011,8 +997,7 @@ TRANSITION_LIST("dbg_AC[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1021,8 +1006,7 @@ TRANSITION_LIST("dbg_AC[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1031,8 +1015,7 @@ TRANSITION_LIST("dbg_MA[10]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1041,8 +1024,7 @@ TRANSITION_LIST("dbg_MA[9]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1051,8 +1033,7 @@ TRANSITION_LIST("dbg_MA[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1061,8 +1042,7 @@ TRANSITION_LIST("dbg_MA[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1071,8 +1051,7 @@ TRANSITION_LIST("dbg_MA[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1081,8 +1060,7 @@ TRANSITION_LIST("dbg_MA[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1091,8 +1069,7 @@ TRANSITION_LIST("dbg_MA[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1101,8 +1078,7 @@ TRANSITION_LIST("dbg_MA[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1111,8 +1087,7 @@ TRANSITION_LIST("dbg_MA[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1121,8 +1096,7 @@ TRANSITION_LIST("dbg_MA[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1131,8 +1105,7 @@ TRANSITION_LIST("dbg_MA[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1141,8 +1114,7 @@ TRANSITION_LIST("dbg_PC[10]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1151,8 +1123,7 @@ TRANSITION_LIST("dbg_PC[9]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1161,8 +1132,7 @@ TRANSITION_LIST("dbg_PC[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1171,8 +1141,7 @@ TRANSITION_LIST("dbg_PC[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1181,8 +1150,7 @@ TRANSITION_LIST("dbg_PC[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1191,8 +1159,7 @@ TRANSITION_LIST("dbg_PC[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1201,8 +1168,7 @@ TRANSITION_LIST("dbg_PC[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1211,8 +1177,7 @@ TRANSITION_LIST("dbg_PC[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1221,8 +1186,7 @@ TRANSITION_LIST("dbg_PC[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1231,8 +1195,7 @@ TRANSITION_LIST("dbg_PC[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1241,8 +1204,7 @@ TRANSITION_LIST("dbg_PC[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1395,8 +1357,7 @@ TRANSITION_LIST("dbg_MD[15]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1405,8 +1366,7 @@ TRANSITION_LIST("dbg_MD[14]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1415,8 +1375,7 @@ TRANSITION_LIST("dbg_MD[13]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1425,8 +1384,7 @@ TRANSITION_LIST("dbg_MD[12]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1435,8 +1393,7 @@ TRANSITION_LIST("dbg_MD[11]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1445,8 +1402,7 @@ TRANSITION_LIST("dbg_MD[10]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1455,8 +1411,7 @@ TRANSITION_LIST("dbg_MD[9]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1465,8 +1420,7 @@ TRANSITION_LIST("dbg_MD[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1475,8 +1429,7 @@ TRANSITION_LIST("dbg_MD[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1485,8 +1438,7 @@ TRANSITION_LIST("dbg_MD[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1495,8 +1447,7 @@ TRANSITION_LIST("dbg_MD[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1505,8 +1456,7 @@ TRANSITION_LIST("dbg_MD[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1515,8 +1465,7 @@ TRANSITION_LIST("dbg_MD[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1525,8 +1474,7 @@ TRANSITION_LIST("dbg_MD[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1535,8 +1483,7 @@ TRANSITION_LIST("dbg_MD[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1545,8 +1492,7 @@ TRANSITION_LIST("dbg_MD[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1555,14 +1501,14 @@ TRANSITION_LIST("clock")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 50.0;
+		LEVEL 1 FOR 40.0;
 		NODE
 		{
-			REPEAT = 99;
-			LEVEL 0 FOR 50.0;
-			LEVEL 1 FOR 50.0;
+			REPEAT = 124;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
 		}
-		LEVEL 0 FOR 50.0;
+		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -1581,8 +1527,7 @@ TRANSITION_LIST("dbg_FETCH")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL X FOR 10000.0;
 	}
 }
 
@@ -1591,8 +1536,7 @@ TRANSITION_LIST("MW")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL U FOR 9999.0;
-		LEVEL 0 FOR 1.0;
+		LEVEL U FOR 10000.0;
 	}
 }
 
