@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Wed Oct 28 17:54:27 2020
+Sun Nov 01 20:11:48 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -62,7 +62,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 28 17:54:27 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sun Nov 01 20:11:48 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
@@ -174,57 +174,55 @@ https://fpgasoftware.intel.com/eula.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; I2C_INTERFACE.bdf                ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/I2C_INTERFACE.bdf      ;         ;
-; i2c_master.vhd                   ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd         ;         ;
-; i2c_ctrl.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd           ;         ;
-; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd            ;         ;
-; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_IN.vhd             ;         ;
-; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/clk_div.vhd            ;         ;
-; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd              ;         ;
-; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd         ;         ;
-; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd              ;         ;
-; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP_System.bdf       ;         ;
-; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd           ;         ;
-; HexPeripheral.vhd                ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd      ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                ;         ;
-; aglobal191.inc                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc            ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc           ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc         ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc         ;         ;
-; db/pll_main_altpll.v             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/pll_main_altpll.v   ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf            ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc     ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc               ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc            ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc             ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc              ;         ;
-; db/altsyncram_kks3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf ;         ;
-; HexPeripheralDemo.mif            ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif  ;         ;
-; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf           ;         ;
-; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf ;         ;
-; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf            ;         ;
-; sq_gen.vhd                       ; yes             ; Auto-Found VHDL File                   ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd             ;         ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------+---------+
+; I2C_INTERFACE.bdf                ; yes             ; User Block Diagram/Schematic File      ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/I2C_INTERFACE.bdf      ;         ;
+; i2c_master.vhd                   ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/i2c_master.vhd         ;         ;
+; i2c_ctrl.vhd                     ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd           ;         ;
+; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd            ;         ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/DIG_IN.vhd             ;         ;
+; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/clk_div.vhd            ;         ;
+; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/TIMER.vhd              ;         ;
+; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd         ;         ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd              ;         ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP_System.bdf       ;         ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/PLL_main.vhd           ;         ;
+; HexPeripheral.vhd                ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd      ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                        ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                    ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc                   ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc                 ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc                 ;         ;
+; db/pll_main_altpll.v             ; yes             ; Auto-Generated Megafunction            ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/db/pll_main_altpll.v   ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                    ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc             ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                       ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                    ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                     ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                        ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                        ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                      ;         ;
+; db/altsyncram_kks3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf ;         ;
+; HexPeripheralDemo.mif            ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif  ;         ;
+; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                   ;         ;
+; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf ;         ;
+; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                    ;         ;
+; sq_gen.vhd                       ; yes             ; Auto-Found VHDL File                   ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/sq_gen.vhd             ;         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -1042,60 +1040,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Oct 28 17:54:13 2020
+    Info: Processing started: Sun Nov 01 20:11:28 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_interface.bdf
     Info (12023): Found entity 1: I2C_INTERFACE
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_master.vhd
-    Info (12022): Found design unit 1: i2c_master-logic File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 49
-    Info (12023): Found entity 1: i2c_master File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 31
+    Info (12022): Found design unit 1: i2c_master-logic File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 49
+    Info (12023): Found entity 1: i2c_master File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 31
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_ctrl.vhd
-    Info (12022): Found design unit 1: i2c_ctrl-main File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd Line: 32
-    Info (12023): Found entity 1: i2c_ctrl File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd Line: 11
+    Info (12022): Found design unit 1: i2c_ctrl-main File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd Line: 32
+    Info (12023): Found entity 1: i2c_ctrl File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file hex_disp.vhd
-    Info (12022): Found design unit 1: HEX_DISP-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HEX_DISP.vhd Line: 17
-    Info (12023): Found entity 1: HEX_DISP File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HEX_DISP.vhd Line: 9
+    Info (12022): Found design unit 1: HEX_DISP-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/HEX_DISP.vhd Line: 17
+    Info (12023): Found entity 1: HEX_DISP File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/HEX_DISP.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd Line: 16
+    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_IN.vhd Line: 18
-    Info (12023): Found entity 1: DIG_IN File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_IN.vhd Line: 10
+    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/DIG_IN.vhd Line: 18
+    Info (12023): Found entity 1: DIG_IN File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/DIG_IN.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/clk_div.vhd Line: 21
-    Info (12023): Found entity 1: clk_div File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/clk_div.vhd Line: 6
+    Info (12022): Found design unit 1: clk_div-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/clk_div.vhd Line: 21
+    Info (12023): Found entity 1: clk_div File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/clk_div.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 27
-    Info (12023): Found entity 1: TIMER File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 17
+    Info (12022): Found design unit 1: TIMER-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 27
+    Info (12023): Found entity 1: TIMER File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file io_decoder.vhd
-    Info (12022): Found design unit 1: IO_DECODER-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 30
-    Info (12023): Found entity 1: IO_DECODER File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 9
+    Info (12022): Found design unit 1: IO_DECODER-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 30
+    Info (12023): Found entity 1: IO_DECODER File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 33
-    Info (12023): Found entity 1: SCOMP File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 16
+    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 33
+    Info (12023): Found entity 1: SCOMP File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
     Info (12023): Found entity 1: SCOMP_System
 Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: pll_main-SYN File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 54
-    Info (12023): Found entity 1: PLL_main File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 43
+    Info (12022): Found design unit 1: pll_main-SYN File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 54
+    Info (12023): Found entity 1: PLL_main File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
 Warning (12019): Can't analyze file -- file output_files/DPs.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file dps.bdf
     Info (12023): Found entity 1: DPs
 Info (12021): Found 2 design units, including 1 entities, in source file hexperipheral.vhd
-    Info (12022): Found design unit 1: HexPeripheral-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 37
-    Info (12023): Found entity 1: HexPeripheral File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 14
+    Info (12022): Found design unit 1: HexPeripheral-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 37
+    Info (12023): Found entity 1: HexPeripheral File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 14
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
 Info (12128): Elaborating entity "I2C_INTERFACE" for hierarchy "I2C_INTERFACE:inst13"
 Info (12128): Elaborating entity "i2c_master" for hierarchy "I2C_INTERFACE:inst13|i2c_master:inst"
 Info (12128): Elaborating entity "i2c_ctrl" for hierarchy "I2C_INTERFACE:inst13|i2c_ctrl:inst14"
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
-Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
+Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
+Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1152,12 +1150,12 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component"
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_main_altpll.v
-    Info (12023): Found entity 1: PLL_main_altpll File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/pll_main_altpll.v Line: 31
-Info (12128): Elaborating entity "PLL_main_altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated" File: d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
+    Info (12023): Found entity 1: PLL_main_altpll File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/db/pll_main_altpll.v Line: 31
+Info (12128): Elaborating entity "PLL_main_altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
+Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
+Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1209,46 +1207,46 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kks3.tdf
-    Info (12023): Found entity 1: altsyncram_kks3 File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_kks3" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_kks3:auto_generated" File: d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113031): 345 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 345 warnings found, and 10 warnings are reported. File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif Line: 1
-    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 13
-    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 14
-    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 15
-    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 16
-    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 17
-    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 18
-    Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 19
-    Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 20
-    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 21
-    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 22
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
+    Info (12023): Found entity 1: altsyncram_kks3 File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_kks3" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_kks3:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113031): 351 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 351 warnings found, and 10 warnings are reported. File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 13
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 14
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 15
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 16
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 17
+    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 18
+    Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 19
+    Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 20
+    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 21
+    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/ Line: 22
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_WIDTHDIST" = "4"
     Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
     Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_clshift_fuc.tdf
-    Info (12023): Found entity 1: lpm_clshift_fuc File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf Line: 23
-Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
+    Info (12023): Found entity 1: lpm_clshift_fuc File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf Line: 23
+Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TIMER" for hierarchy "TIMER:inst4"
-Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 59
+Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 59
 Info (12128): Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst3"
-Warning (10541): VHDL Signal Declaration warning at IO_DECODER.vhd(23): used implicit default value for signal "DP_EN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 23
+Warning (10541): VHDL Signal Declaration warning at IO_DECODER.vhd(23): used implicit default value for signal "DP_EN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 23
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
 Info (12128): Elaborating entity "HexPeripheral" for hierarchy "HexPeripheral:inst10"
 Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
 Warning (12125): Using design file sq_gen.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: SQ_GEN-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd Line: 25
-    Info (12023): Found entity 1: SQ_GEN File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd Line: 15
+    Info (12022): Found design unit 1: SQ_GEN-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/sq_gen.vhd Line: 25
+    Info (12023): Found entity 1: SQ_GEN File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/sq_gen.vhd Line: 15
 Info (12128): Elaborating entity "SQ_GEN" for hierarchy "SQ_GEN:inst16"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[6]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[6]" into an OR gate
@@ -1267,7 +1265,7 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[0]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[0]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[8]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[8]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[7]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[7]" into an OR gate
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 57
+Info (13000): Registers with preset signals will power-up high File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 57
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GSENSOR_CS_n" is stuck at VCC
@@ -1284,9 +1282,9 @@ Info (21057): Implemented 1052 device resources after synthesis - the final reso
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 4817 megabytes
-    Info: Processing ended: Wed Oct 28 17:54:27 2020
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Sun Nov 01 20:11:48 2020
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:34
 
 

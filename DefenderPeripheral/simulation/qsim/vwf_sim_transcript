@@ -1,0 +1,318 @@
+Determining the location of the ModelSim executable...
+
+Using: d:/intelfpga_lite/19.1/modelsim_ase/win32aloem/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-Altera will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP -c SCOMP --vector_source="C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/SCOMP_test.vwf" --testbench_file="C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/simulation/qsim/SCOMP_test.vwf.vht"
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Copyright (C) 2019  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Tue Oct 13 01:54:56 2020
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP -c SCOMP --vector_source="C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/SCOMP_test.vwf" --testbench_file="C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/simulation/qsim/SCOMP_test.vwf.vht"
+
+ in design
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/simulation/qsim/" SCOMP -c SCOMP
+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+    Info: Copyright (C) 2019  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Tue Oct 13 01:54:57 2020
+Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/simulation/qsim/" SCOMP -c SCOMP
+Info (204019): Generated file SCOMP.vho in folder "C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/simulation/qsim//" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4668 megabytes
+    Info: Processing ended: Tue Oct 13 01:54:57 2020
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/simulation/qsim/SCOMP.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+d:/intelfpga_lite/19.1/modelsim_ase/win32aloem//vsim -c -do SCOMP.do
+
+Reading D:/intelFPGA_lite/19.1/modelsim_ase/tcl/vsim/pref.tcl
+
+# 10.5b
+
+
+# do SCOMP.do
+
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:55:01 on Oct 13,2020
+# vcom -work work SCOMP.vho 
+
+# -- Loading package STANDARD
+
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+
+# -- Loading package fiftyfivenm_atom_pack
+# -- Loading package fiftyfivenm_components
+# -- Compiling entity SCOMP_System
+# -- Compiling architecture structure of SCOMP_System
+
+# End time: 01:55:02 on Oct 13,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 01:55:02 on Oct 13,2020
+# vcom -work work SCOMP_test.vwf.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity SCOMP_System_vhd_vec_tst
+# -- Compiling architecture SCOMP_System_arch of SCOMP_System_vhd_vec_tst
+# End time: 01:55:02 on Oct 13,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+# vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.SCOMP_System_vhd_vec_tst 
+# Start time: 01:55:03 on Oct 13,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.scomp_system_vhd_vec_tst(scomp_system_arch)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading altera.dffeas_pack
+# Loading altera.altera_primitives_components
+# Loading fiftyfivenm.fiftyfivenm_atom_pack(body)
+# Loading fiftyfivenm.fiftyfivenm_components
+# Loading work.scomp_system(structure)
+# Loading fiftyfivenm.fiftyfivenm_lcell_comb(vital_lcell_comb)
+# Loading fiftyfivenm.fiftyfivenm_io_obuf(behavior)
+# Loading fiftyfivenm.fiftyfivenm_io_ibuf(behavior)
+# Loading fiftyfivenm.fiftyfivenm_pllpack(body)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading fiftyfivenm.fiftyfivenm_pll(vital_pll)
+# Loading fiftyfivenm.fiftyfivenm_mn_cntr(behave)
+# Loading fiftyfivenm.fiftyfivenm_scale_cntr(behave)
+# Loading fiftyfivenm.fiftyfivenm_clkctrl(vital_clkctrl)
+# Loading fiftyfivenm.fiftyfivenm_ena_reg(behave)
+# Loading altera.dffeas(vital_dffeas)
+# Loading fiftyfivenm.fiftyfivenm_ram_block(block_arch)
+# Loading fiftyfivenm.fiftyfivenm_ram_register(reg_arch)
+# Loading fiftyfivenm.fiftyfivenm_ram_pulse_generator(pgen_arch)
+# Loading fiftyfivenm.fiftyfivenm_unvm(behavior)
+# Loading fiftyfivenm.fiftyfivenm_adcblock(behavior)
+# ** Warning: Design size of 168533 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+# after#31
+
+# End time: 01:55:04 on Oct 13,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/SCOMP_test.vwf...
+
+Reading C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/simulation/qsim/SCOMP.msim.vcd...
+
+Processing channel transitions... 
+
+Warning: dbg_AC[15] - signal not found in VCD.
+
+Warning: dbg_AC[14] - signal not found in VCD.
+
+Warning: dbg_AC[13] - signal not found in VCD.
+
+Warning: dbg_AC[12] - signal not found in VCD.
+
+Warning: dbg_AC[11] - signal not found in VCD.
+
+Warning: dbg_AC[10] - signal not found in VCD.
+
+Warning: dbg_AC[9] - signal not found in VCD.
+
+Warning: dbg_AC[8] - signal not found in VCD.
+
+Warning: dbg_AC[7] - signal not found in VCD.
+
+Warning: dbg_AC[6] - signal not found in VCD.
+
+Warning: dbg_AC[5] - signal not found in VCD.
+
+Warning: dbg_AC[4] - signal not found in VCD.
+
+Warning: dbg_AC[3] - signal not found in VCD.
+
+Warning: dbg_AC[2] - signal not found in VCD.
+
+Warning: dbg_AC[1] - signal not found in VCD.
+
+Warning: dbg_AC[0] - signal not found in VCD.
+
+Warning: dbg_MA[10] - signal not found in VCD.
+
+Warning: dbg_MA[9] - signal not found in VCD.
+
+Warning: dbg_MA[8] - signal not found in VCD.
+
+Warning: dbg_MA[7] - signal not found in VCD.
+
+Warning: dbg_MA[6] - signal not found in VCD.
+
+Warning: dbg_MA[5] - signal not found in VCD.
+
+Warning: dbg_MA[4] - signal not found in VCD.
+
+Warning: dbg_MA[3] - signal not found in VCD.
+
+Warning: dbg_MA[2] - signal not found in VCD.
+
+Warning: dbg_MA[1] - signal not found in VCD.
+
+Warning: dbg_MA[0] - signal not found in VCD.
+
+Warning: dbg_PC[10] - signal not found in VCD.
+
+Warning: dbg_PC[9] - signal not found in VCD.
+
+Warning: dbg_PC[8] - signal not found in VCD.
+
+Warning: dbg_PC[7] - signal not found in VCD.
+
+Warning: dbg_PC[6] - signal not found in VCD.
+
+Warning: dbg_PC[5] - signal not found in VCD.
+
+Warning: dbg_PC[4] - signal not found in VCD.
+
+Warning: dbg_PC[3] - signal not found in VCD.
+
+Warning: dbg_PC[2] - signal not found in VCD.
+
+Warning: dbg_PC[1] - signal not found in VCD.
+
+Warning: dbg_PC[0] - signal not found in VCD.
+
+Warning: dbg_IR[15] - signal not found in VCD.
+
+Warning: dbg_IR[14] - signal not found in VCD.
+
+Warning: dbg_IR[13] - signal not found in VCD.
+
+Warning: dbg_IR[12] - signal not found in VCD.
+
+Warning: dbg_IR[11] - signal not found in VCD.
+
+Warning: dbg_IR[10] - signal not found in VCD.
+
+Warning: dbg_IR[9] - signal not found in VCD.
+
+Warning: dbg_IR[8] - signal not found in VCD.
+
+Warning: dbg_IR[7] - signal not found in VCD.
+
+Warning: dbg_IR[6] - signal not found in VCD.
+
+Warning: dbg_IR[5] - signal not found in VCD.
+
+Warning: dbg_IR[4] - signal not found in VCD.
+
+Warning: dbg_IR[3] - signal not found in VCD.
+
+Warning: dbg_IR[2] - signal not found in VCD.
+
+Warning: dbg_IR[1] - signal not found in VCD.
+
+Warning: dbg_IR[0] - signal not found in VCD.
+
+Warning: dbg_MD[15] - signal not found in VCD.
+
+Warning: dbg_MD[14] - signal not found in VCD.
+
+Warning: dbg_MD[13] - signal not found in VCD.
+
+Warning: dbg_MD[12] - signal not found in VCD.
+
+Warning: dbg_MD[11] - signal not found in VCD.
+
+Warning: dbg_MD[10] - signal not found in VCD.
+
+Warning: dbg_MD[9] - signal not found in VCD.
+
+Warning: dbg_MD[8] - signal not found in VCD.
+
+Warning: dbg_MD[7] - signal not found in VCD.
+
+Warning: dbg_MD[6] - signal not found in VCD.
+
+Warning: dbg_MD[5] - signal not found in VCD.
+
+Warning: dbg_MD[4] - signal not found in VCD.
+
+Warning: dbg_MD[3] - signal not found in VCD.
+
+Warning: dbg_MD[2] - signal not found in VCD.
+
+Warning: dbg_MD[1] - signal not found in VCD.
+
+Warning: dbg_MD[0] - signal not found in VCD.
+
+Warning: clock - signal not found in VCD.
+
+Warning: resetn - signal not found in VCD.
+
+Warning: dbg_FETCH - signal not found in VCD.
+
+Warning: MW - signal not found in VCD.
+
+Writing the resulting VWF to C:/Users/Ryan/Documents/Schoolwork/ECE 2031/Lab8/simulation/qsim/SCOMP_20201013015504.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.
