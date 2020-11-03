@@ -71,8 +71,8 @@ Test:
 	OUT		HexPeriph	
 	LOADI	2
 	CALL	DelayAC
-
-	JUMP   	Test
+	
+	JUMP   	TEST
 ;	LOAD	writePlayer
 ;	OR		leftSide	
 ;	OUT		HexPeriph

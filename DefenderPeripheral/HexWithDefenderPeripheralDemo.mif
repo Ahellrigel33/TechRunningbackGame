@@ -72,7 +72,7 @@ CONTENT
            03B : 98E0;  -- 	OUT		HexPeriph	
            03C : B802;  -- 	LOADI	2
            03D : 8053;  -- 	CALL	DelayAC
-           03E : 2800;  -- 	JUMP   	Test
+           03E : 2800;  -- 	JUMP   	TEST
            03F : 0000;  -- clear:			DW &H0000
            040 : 1000;  -- writeHex:		DW &H1000
            041 : 2000;  -- writePlayer:	DW &H2000

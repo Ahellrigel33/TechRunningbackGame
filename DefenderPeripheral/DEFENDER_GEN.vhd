@@ -5,6 +5,7 @@
 library ieee;
 LIBRARY LPM;
 use ieee.std_logic_1164.all;
+USE IEEE.STD_LOGIC_ARITH.ALL;
 use ieee.std_logic_unsigned.all;
 USE LPM.LPM_COMPONENTS.ALL;
 
@@ -26,8 +27,8 @@ architecture Internals of defense is   -- Define the internal architecture of th
 	signal init_lfsr1: std_logic_vector(14 downto 0);  -- other random numer seed
 	signal random 	  : std_logic_vector(14 downto 0);  -- overall random output
 	
-	-- States for No defender, Right, Middle, Right Two, Left, Sides, Left Two
-	type state_type is (N, R, M, R2, L, S, L2, row);
+	-- States for Default, RightTwo, LeftTwo, and Sides
+	type state_type is (D, R2, L2, S);
 	signal state 	  : state_type;
 	signal defenders : std_logic_vector (6 downto 0);
 	
@@ -37,7 +38,7 @@ architecture Internals of defense is   -- Define the internal architecture of th
 	rand0 : process(cs, resetn) -- linear feedback shift register
 		begin
 		if resetn = '0' then
-			init_lfsr0 <= "000001111100110"; -- seed
+			init_lfsr0 <= "011011001100010"; -- seed
 		elsif rising_edge(cs) then
 			lfsr0 <= lfsr0(13 downto 0) & not(lfsr0(14) xor lfsr0(13)); -- randomizer
 			init_lfsr0 <= init_lfsr0 + 1; -- change random seed
@@ -47,7 +48,7 @@ architecture Internals of defense is   -- Define the internal architecture of th
 	rand1 : process(cs, resetn) -- linear feedback shift register opposite direction
 	begin
 		if resetn = '0' then
-			init_lfsr1 <= "000011001111000"; -- different seed
+			init_lfsr1 <= "011100111101100"; -- different seed
 		elsif rising_edge(cs) then
 			lfsr1 <= not(lfsr1(0) xor lfsr1(1)) & (lfsr1(14 downto 1)); -- randomizer
 			init_lfsr1 <= init_lfsr1 + 1; -- change random seed
@@ -62,168 +63,48 @@ architecture Internals of defense is   -- Define the internal architecture of th
 	StateMachine : process(cs, resetn) -- 
 	begin
 		if resetn = '0' then
-			state <= N;
+			state <= D;
 		elsif (rising_edge(cs)) then
 			case state is
-				when N =>
-					defenders <= "0000000";
-					case random (2 downto 0) is
-						when "001" =>
-						state <= R;
-						when "010" =>
-						state <= M;
-						when "011" =>
+				when D =>
+					if 31744 < random(14 downto 0) AND random(14 downto 0) < 32767 then
+						defenders <= "0000000";
+					end if;
+					if 24576 < random(14 downto 0) AND random(14 downto 0) < 30720 then
+						defenders <= "0000001";
+					end if;
+					if 20480 < random(14 downto 0) AND random(14 downto 0) < 24576 then
+						defenders <= "1000000";
+					end if;
+					if 16384 < random(14 downto 0) AND random(14 downto 0) < 20480 then
 						state <= R2;
-						when "100" =>
-						state <= L;
-						when "101" =>
-						state <= S;
-						when "110" =>
+						defenders <= "1000001";
+					end if;
+					if 12288 < random(14 downto 0) AND random(14 downto 0) < 16384 then
 						state <= L2;
-						--when "111" =>
-						--state <= row;
-						when others =>
-						state <= N;
-					end case;
-				when R =>
-					defenders <= "0000001";
-					case random (2 downto 0) is
-						when "001" =>
-						state <= R;
-						when "010" =>
-						state <= M;
-						when "011" =>
-						state <= R2;
-						when "100" =>
-						state <= L;
-						when "101" =>
+						defenders <= "1001000";
+					end if;
+					if 8192 < random(14 downto 0) AND random(14 downto 0) < 12288 then
+						defenders <= "0001001";
 						state <= S;
-						when "110" =>
-						state <= L2;
-						when others =>
-						state <= N;
-					end case;
-				when M =>
-					defenders <= "1000000";
-					case random (2 downto 0) is
-						when "001" =>
-						state <= R;
-						when "010" =>
-						state <= M;
-						when "011" =>
-						state <= R2;
-						when "100" =>
-						state <= L;
-						when "101" =>
-						state <= S;
-						when "110" =>
-						state <= L2;
-						--when "111" =>
-						--state <= row;
-						when others =>
-						state <= N;
-					end case;
-				when R2 =>
-					defenders <= "1000001";
-					case random (2 downto 0) is
-						when "001" =>
-						state <= R;
-						when "010" =>
-						state <= M;
-						when "011" =>
-						state <= R2;
-						when "100" =>
-						state <= L;
-						when "101" =>
-						state <= S;
-						when "110" =>
-						state <= L2;
-						--when "111" =>
-						--state <= row;
-						when others =>
-						state <= N;
-					end case;
-				when L =>
-					defenders <= "0001000";
-					case random (2 downto 0) is
-						when "001" =>
-						state <= R;
-						when "010" =>
-						state <= M;
-						when "011" =>
-						state <= R2;
-						when "100" =>
-						state <= L;
-						when "101" =>
-						state <= S;
-						when "110" =>
-						state <= L2;
-						--when "111" =>
-						--state <= row;
-						when others =>
-						state <= N;
-					end case;
-				when S =>
-					defenders <= "0001001";
-					case random (2 downto 0) is
-						when "001" =>
-						state <= R;
-						when "010" =>
-						state <= M;
-						when "011" =>
-						state <= R2;
-						when "100" =>
-						state <= L;
-						when "101" =>
-						state <= S;
-						when "110" =>
-						state <= L2;
-						--when "111" =>
-						--state <= row;
-						when others =>
-						state <= N;
-					end case;
+					end if;
+					if 1024 < random(14 downto 0) AND random(14 downto 0) < 8192 then
+						defenders <= "0001000";
+					end if;
+					if 0 < random(14 downto 0) AND random(14 downto 0) < 2048 then
+						defenders <= "0000000";
+					end if;
 				when L2 =>
-					defenders <= "1001000";
-					case random (2 downto 0) is
-						when "001" =>
-						state <= R;
-						when "010" =>
-						state <= M;
-						when "011" =>
-						state <= R2;
-						when "100" =>
-						state <= L;
-						when "101" =>
-						state <= S;
-						when "110" =>
-						state <= L2;
-						--when "111" =>
-						--state <= row;
-						when others =>
-						state <= N;
-					end case;
-				when row =>
-					defenders <= "1001001";
-					case random (2 downto 0) is
-						when "001" =>
-						state <= R;
-						when "010" =>
-						state <= M;
-						when "011" =>
-						state <= R2;
-						when "100" =>
-						state <= L;
-						when "101" =>
-						state <= S;
-						when "110" =>
-						state <= L2;
-						--when "111" =>
-						--state <= row;
-						when others =>
-						state <= N;
-					end case;
-					
+					defenders <= "0000000";
+					state <= D;
+				when R2 =>
+					defenders <= "0000000";
+					state <= D;
+				when S =>
+					defenders <= "0000000";
+					state <= D;
+				when others =>
+						defenders <= "0000000";
 			end case;
 		end if;
 	end process;
