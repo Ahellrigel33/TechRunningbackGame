@@ -26,12 +26,15 @@ architecture Internals of defense is   -- Define the internal architecture of th
 	signal lfsr1     : std_logic_vector(14 downto 0);  -- another random number generator
 	signal init_lfsr1: std_logic_vector(14 downto 0);  -- other random numer seed
 	signal random 	  : std_logic_vector(14 downto 0);  -- overall random output
+	signal A 		  : std_logic_vector(0  downto 0); -- used for difficulty encoding LSB
+	signal B 		  : std_logic_vector(0  downto 0);
 	
 	-- States for Default, RightTwo, LeftTwo, and Sides
 	type state_type is (D, R2, L2, S);
 	signal state 	  : state_type;
 	signal defenders : std_logic_vector (6 downto 0);
-	
+	type difficulty_type is ( easy, medium, hard, worst );
+	signal difficulty: difficulty_type;
 	signal IO_OUT    : std_logic;
 	begin
 	
@@ -66,33 +69,48 @@ architecture Internals of defense is   -- Define the internal architecture of th
 			state <= D;
 		elsif (rising_edge(cs)) then
 			case state is
+				
 				when D =>
-					if 31744 < random(14 downto 0) AND random(14 downto 0) < 32767 then
+					--L
+					if 32600< random(14 downto 0) AND random(14 downto 0) < 32767 then
+						defenders <= (A and B) & "001000";
+						if ((A > 0) and (B > 0)) then
+							state <= L2;
+						end if;
+					end if;
+					--N
+					if 24576 < random(14 downto 0) AND random(14 downto 0) < 32600 then
 						defenders <= "0000000";
 					end if;
-					if 24576 < random(14 downto 0) AND random(14 downto 0) < 30720 then
-						defenders <= "0000001";
-					end if;
+					--S
 					if 20480 < random(14 downto 0) AND random(14 downto 0) < 24576 then
-						defenders <= "1000000";
-					end if;
-					if 16384 < random(14 downto 0) AND random(14 downto 0) < 20480 then
-						state <= R2;
-						defenders <= "1000001";
-					end if;
-					if 12288 < random(14 downto 0) AND random(14 downto 0) < 16384 then
-						state <= L2;
-						defenders <= "1001000";
-					end if;
-					if 8192 < random(14 downto 0) AND random(14 downto 0) < 12288 then
-						defenders <= "0001001";
+						defenders <= ((not B) and A) & "00" & B & "00" & B;
 						state <= S;
 					end if;
-					if 1024 < random(14 downto 0) AND random(14 downto 0) < 8192 then
-						defenders <= "0001000";
+					--R2
+					if 16384 < random(14 downto 0) AND random(14 downto 0) < 20480 then
+						state <= R2;
+						defenders <= B & "00000" & (A or B);
 					end if;
-					if 0 < random(14 downto 0) AND random(14 downto 0) < 2048 then
+					--L2
+					if 12288 < random(14 downto 0) AND random(14 downto 0) < 16384 then
+						state <= L2;
+						defenders <= B & "00" & (A or B) & "000";
+					end if;
+					--M
+					if 8192 < random(14 downto 0) AND random(14 downto 0) < 12288 then
+						defenders <= (not(A and B)) & "00" & (A and B) & "00" & (A and B);
+					end if;
+					--N
+					if 500 < random(14 downto 0) AND random(14 downto 0) < 8192 then
 						defenders <= "0000000";
+					end if;
+					--R
+					if 0 < random(14 downto 0) AND random(14 downto 0) < 500 then
+						defenders <= (A and B) & "000001";
+						if ((A > 0) and (B > 0)) then
+							state <= R2;
+						end if;
 					end if;
 				when L2 =>
 					defenders <= "0000000";
@@ -104,11 +122,21 @@ architecture Internals of defense is   -- Define the internal architecture of th
 					defenders <= "0000000";
 					state <= D;
 				when others =>
-						defenders <= "0000000";
+					defenders <= "0000000";
 			end case;
 		end if;
 	end process;
-		
+	
+	DifficultyLatch : process (cs, resetn, IO_DATA)
+	begin 
+		if resetn = '0' then
+			B <= "0";
+			A <= "0";
+		elsif (rising_edge (cs) and (IO_WRITE = '1')) then
+			B <= IO_DATA (1 downto 1);
+			A <= IO_DATA (0 downto 0);
+		end if;
+	end process;
 		
 	IO_BUS: lpm_bustri  -- tri state drivers for IO bus
 	generic map(
@@ -116,6 +144,7 @@ architecture Internals of defense is   -- Define the internal architecture of th
 	)
 	port map( 			  -- connecting up signals for drivers
 		data     => "000000000" & defenders,
+	--	data     => "00000000000000" & B & A,
 		enabledt => IO_OUT,
 		tridata  => IO_DATA
 	);

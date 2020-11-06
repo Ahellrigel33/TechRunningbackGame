@@ -1985,6 +1985,8 @@ result[15] <= result[15].DB_MAX_OUTPUT_PORT_TYPE
 
 |SCOMP_System|defense:inst9
 cs => IO_OUT.IN0
+cs => A[0].CLK
+cs => B[0].CLK
 cs => defenders[0].CLK
 cs => defenders[1].CLK
 cs => defenders[2].CLK
@@ -2023,6 +2025,8 @@ cs => lfsr0[12].CLK
 cs => lfsr0[13].CLK
 cs => lfsr0[14].CLK
 cs => state~5.DATAIN
+resetn => A[0].ACLR
+resetn => B[0].ACLR
 resetn => state~7.DATAIN
 resetn => lfsr0[14].ENA
 resetn => lfsr0[13].ENA
@@ -2053,7 +2057,6 @@ resetn => lfsr1[4].ENA
 resetn => lfsr1[3].ENA
 resetn => lfsr1[2].ENA
 resetn => lfsr1[1].ENA
-resetn => defenders[0].ENA
 resetn => lfsr1[0].ENA
 resetn => defenders[6].ENA
 resetn => defenders[5].ENA
@@ -2061,7 +2064,10 @@ resetn => defenders[4].ENA
 resetn => defenders[3].ENA
 resetn => defenders[2].ENA
 resetn => defenders[1].ENA
+resetn => defenders[0].ENA
 IO_WRITE => IO_OUT.IN1
+IO_WRITE => B[0].ENA
+IO_WRITE => A[0].ENA
 IO_DATA[0] <> LPM_BUSTRI:IO_BUS.TRIDATA[0]
 IO_DATA[1] <> LPM_BUSTRI:IO_BUS.TRIDATA[1]
 IO_DATA[2] <> LPM_BUSTRI:IO_BUS.TRIDATA[2]

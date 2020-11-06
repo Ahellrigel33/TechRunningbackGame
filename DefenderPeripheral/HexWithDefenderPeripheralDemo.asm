@@ -1,5 +1,11 @@
 ORG 0
+
+	LOADI 	2
+	OUT 	defGen
+
 Test:
+
+
 	LOADI	clear
     OUT    	HexPeriph
     LOADI	2
