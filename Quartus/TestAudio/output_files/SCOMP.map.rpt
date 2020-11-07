@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Sat Oct 31 17:49:33 2020
+Mon Nov  2 15:09:52 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -22,7 +22,7 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  14. General Register Statistics
  15. Inverted Register Statistics
  16. Multiplexer Restructuring Statistics (Restructuring Performed)
- 17. Source assignments for MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated
+ 17. Source assignments for MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated
  18. Parameter Settings for User Entity Instance: I2C_INTERFACE:inst13|i2c_master:inst
  19. Parameter Settings for User Entity Instance: PLL_main:inst1|altpll:altpll_component
  20. Parameter Settings for User Entity Instance: MemPeripheral:inst14|altsyncram:altsyncram_component
@@ -61,18 +61,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Oct 31 17:49:33 2020       ;
+; Analysis & Synthesis Status        ; Successful - Mon Nov  2 15:09:52 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,004                                       ;
-;     Total combinational functions  ; 859                                         ;
-;     Dedicated logic registers      ; 443                                         ;
-; Total registers                    ; 443                                         ;
+; Total logic elements               ; 1,142                                       ;
+;     Total combinational functions  ; 1,013                                       ;
+;     Dedicated logic registers      ; 462                                         ;
+; Total registers                    ; 462                                         ;
 ; Total pins                         ; 75                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 32,768                                      ;
+; Total memory bits                  ; 1,048,576                                   ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 1                                           ;
 ; UFM blocks                         ; 0                                           ;
@@ -181,10 +181,10 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -223,8 +223,8 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                       ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altrom.inc                        ;         ;
 ; altram.inc                       ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altram.inc                        ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                      ;         ;
-; db/altsyncram_35r3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf         ;         ;
-; Up.mif                           ; yes             ; Auto-Found Memory Initialization File  ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/Up.mif                         ;         ;
+; db/altsyncram_4pr3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_4pr3.tdf         ;         ;
+; TestDone.mif                     ; yes             ; Auto-Found Memory Initialization File  ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/TestDone.mif                   ;         ;
 ; db/decode_h7a.tdf                ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/decode_h7a.tdf              ;         ;
 ; db/decode_aj9.tdf                ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/decode_aj9.tdf              ;         ;
 ; db/mux_g3b.tdf                   ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/mux_g3b.tdf                 ;         ;
@@ -235,86 +235,91 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimated Total logic elements              ; 1,004  ;
-;                                             ;        ;
-; Total combinational functions               ; 859    ;
-; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 470    ;
-;     -- 3 input functions                    ; 284    ;
-;     -- <=2 input functions                  ; 105    ;
-;                                             ;        ;
-; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 768    ;
-;     -- arithmetic mode                      ; 91     ;
-;                                             ;        ;
-; Total registers                             ; 443    ;
-;     -- Dedicated logic registers            ; 443    ;
-;     -- I/O registers                        ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 75     ;
-; Total memory bits                           ; 32768  ;
-;                                             ;        ;
-; Embedded Multiplier 9-bit elements          ; 0      ;
-;                                             ;        ;
-; Total PLLs                                  ; 1      ;
-;     -- PLLs                                 ; 1      ;
-;                                             ;        ;
-; Maximum fan-out node                        ; inst15 ;
-; Maximum fan-out                             ; 178    ;
-; Total fan-out                               ; 4622   ;
-; Average fan-out                             ; 3.14   ;
-+---------------------------------------------+--------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                          ;
++---------------------------------------------+----------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                  ;
++---------------------------------------------+----------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 1,142                                                                                  ;
+;                                             ;                                                                                        ;
+; Total combinational functions               ; 1013                                                                                   ;
+; Logic element usage by number of LUT inputs ;                                                                                        ;
+;     -- 4 input functions                    ; 582                                                                                    ;
+;     -- 3 input functions                    ; 279                                                                                    ;
+;     -- <=2 input functions                  ; 152                                                                                    ;
+;                                             ;                                                                                        ;
+; Logic elements by mode                      ;                                                                                        ;
+;     -- normal mode                          ; 907                                                                                    ;
+;     -- arithmetic mode                      ; 106                                                                                    ;
+;                                             ;                                                                                        ;
+; Total registers                             ; 462                                                                                    ;
+;     -- Dedicated logic registers            ; 462                                                                                    ;
+;     -- I/O registers                        ; 0                                                                                      ;
+;                                             ;                                                                                        ;
+; I/O pins                                    ; 75                                                                                     ;
+; Total memory bits                           ; 1048576                                                                                ;
+;                                             ;                                                                                        ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                      ;
+;                                             ;                                                                                        ;
+; Total PLLs                                  ; 1                                                                                      ;
+;     -- PLLs                                 ; 1                                                                                      ;
+;                                             ;                                                                                        ;
+; Maximum fan-out node                        ; PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 197                                                                                    ;
+; Total fan-out                               ; 7057                                                                                   ;
+; Average fan-out                             ; 4.02                                                                                   ;
++---------------------------------------------+----------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                 ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                               ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |SCOMP_System                             ; 859 (2)             ; 443 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 75   ; 0            ; 0          ; |SCOMP_System                                                                                     ; SCOMP_System    ; work         ;
-;    |AudioPeripheral:inst16|               ; 39 (39)             ; 17 (17)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|AudioPeripheral:inst16                                                              ; AudioPeripheral ; work         ;
-;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                                        ; DIG_IN          ; work         ;
-;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                                       ; DIG_OUT         ; work         ;
-;    |DPs:inst10|                           ; 0 (0)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DPs:inst10                                                                          ; DPs             ; work         ;
-;    |HEX_DISP_6:inst9|                     ; 42 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9                                                                    ; HEX_DISP_6      ; work         ;
-;       |HEX_DISP:inst1|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1                                                     ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst2|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst2                                                     ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst3|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst3                                                     ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst4|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst4                                                     ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst5|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5                                                     ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst6|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6                                                     ; HEX_DISP        ; work         ;
-;    |I2C_INTERFACE:inst13|                 ; 209 (50)            ; 125 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13                                                                ; I2C_INTERFACE   ; work         ;
-;       |i2c_ctrl:inst14|                   ; 58 (58)             ; 70 (70)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14                                                ; i2c_ctrl        ; work         ;
-;       |i2c_master:inst|                   ; 101 (101)           ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst                                                ; i2c_master      ; work         ;
-;    |IO_DECODER:inst3|                     ; 24 (24)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|IO_DECODER:inst3                                                                    ; IO_DECODER      ; work         ;
-;    |MemPeripheral:inst14|                 ; 4 (4)               ; 19 (19)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14                                                                ; MemPeripheral   ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;          |altsyncram_35r3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated ; altsyncram_35r3 ; work         ;
-;    |PLL_main:inst1|                       ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1                                                                      ; PLL_main        ; work         ;
-;       |altpll:altpll_component|           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component                                              ; altpll          ; work         ;
-;          |PLL_main_altpll:auto_generated| ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated               ; PLL_main_altpll ; work         ;
-;    |SCOMP:inst|                           ; 472 (390)           ; 178 (178)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                          ; SCOMP           ; work         ;
-;       |lpm_clshift:shifter|               ; 82 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                      ; lpm_clshift     ; work         ;
-;          |lpm_clshift_fuc:auto_generated| ; 82 (82)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                       ; lpm_clshift_fuc ; work         ;
-;    |SQ_GEN:inst11|                        ; 13 (13)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SQ_GEN:inst11                                                                       ; SQ_GEN          ; work         ;
-;    |TIMER:inst4|                          ; 18 (18)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                                         ; TIMER           ; work         ;
-;    |clk_div:inst5|                        ; 36 (36)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                                       ; clk_div         ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------+-----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                        ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                      ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |SCOMP_System                             ; 1013 (2)            ; 462 (0)                   ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 75   ; 0            ; 0          ; |SCOMP_System                                                                                                            ; SCOMP_System    ; work         ;
+;    |AudioPeripheral:inst16|               ; 72 (72)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|AudioPeripheral:inst16                                                                                     ; AudioPeripheral ; work         ;
+;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                                                               ; DIG_IN          ; work         ;
+;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                                                              ; DIG_OUT         ; work         ;
+;    |DPs:inst10|                           ; 0 (0)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DPs:inst10                                                                                                 ; DPs             ; work         ;
+;    |HEX_DISP_6:inst9|                     ; 42 (0)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9                                                                                           ; HEX_DISP_6      ; work         ;
+;       |HEX_DISP:inst1|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1                                                                            ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst2|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst2                                                                            ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst3|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst3                                                                            ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst4|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst4                                                                            ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst5|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5                                                                            ; HEX_DISP        ; work         ;
+;       |HEX_DISP:inst6|                    ; 7 (7)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6                                                                            ; HEX_DISP        ; work         ;
+;    |I2C_INTERFACE:inst13|                 ; 215 (56)            ; 125 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13                                                                                       ; I2C_INTERFACE   ; work         ;
+;       |i2c_ctrl:inst14|                   ; 59 (59)             ; 70 (70)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14                                                                       ; i2c_ctrl        ; work         ;
+;       |i2c_master:inst|                   ; 100 (100)           ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst                                                                       ; i2c_master      ; work         ;
+;    |IO_DECODER:inst3|                     ; 20 (20)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|IO_DECODER:inst3                                                                                           ; IO_DECODER      ; work         ;
+;    |MemPeripheral:inst14|                 ; 131 (42)            ; 22 (19)                   ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14                                                                                       ; MemPeripheral   ; work         ;
+;       |altsyncram:altsyncram_component|   ; 89 (0)              ; 3 (0)                     ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component                                                       ; altsyncram      ; work         ;
+;          |altsyncram_4pr3:auto_generated| ; 89 (0)              ; 3 (3)                     ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated                        ; altsyncram_4pr3 ; work         ;
+;             |decode_aj9:rden_decode|      ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated|decode_aj9:rden_decode ; decode_aj9      ; work         ;
+;             |decode_h7a:decode3|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated|decode_h7a:decode3     ; decode_h7a      ; work         ;
+;             |mux_g3b:mux2|                ; 80 (80)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated|mux_g3b:mux2           ; mux_g3b         ; work         ;
+;    |PLL_main:inst1|                       ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1                                                                                             ; PLL_main        ; work         ;
+;       |altpll:altpll_component|           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component                                                                     ; altpll          ; work         ;
+;          |PLL_main_altpll:auto_generated| ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated                                      ; PLL_main_altpll ; work         ;
+;    |SCOMP:inst|                           ; 457 (369)           ; 178 (178)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                                                 ; SCOMP           ; work         ;
+;       |lpm_bustri:io_bus|                 ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_bustri:io_bus                                                                               ; lpm_bustri      ; work         ;
+;       |lpm_clshift:shifter|               ; 86 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                             ; lpm_clshift     ; work         ;
+;          |lpm_clshift_fuc:auto_generated| ; 86 (86)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                              ; lpm_clshift_fuc ; work         ;
+;    |SQ_GEN:inst11|                        ; 10 (10)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SQ_GEN:inst11                                                                                              ; SQ_GEN          ; work         ;
+;    |TIMER:inst4|                          ; 28 (18)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                                                                ; TIMER           ; work         ;
+;       |lpm_bustri:IO_BUS|                 ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4|lpm_bustri:IO_BUS                                                                              ; lpm_bustri      ; work         ;
+;    |clk_div:inst5|                        ; 36 (36)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                                                              ; clk_div         ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
-+------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+--------+
-; Name                                                                                           ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF    ;
-+------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+--------+
-; MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 65536        ; 16           ; --           ; --           ; 1048576 ; Up.mif ;
-+------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+--------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                         ;
++------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+--------------+
+; Name                                                                                           ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF          ;
++------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+--------------+
+; MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 65536        ; 16           ; --           ; --           ; 1048576 ; TestDone.mif ;
++------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+---------+--------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -398,18 +403,17 @@ Encoding Type:  One-Hot
 +----------------+------------+----------------+----------------+----------+----------+----------------+---------------+---------------+-------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                               ;
-+---------------------------------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                                           ; Reason for Removal                     ;
-+---------------------------------------------------------------------------------------------------------+----------------------------------------+
-; DIG_IN:inst7|B_DI[10..15]                                                                               ; Stuck at GND due to stuck port data_in ;
-; MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|address_reg_a[0..2] ; Stuck at GND due to stuck port data_in ;
-; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk                                                            ; Stuck at GND due to stuck port data_in ;
-; I2C_INTERFACE:inst13|i2c_master:inst|count[2]                                                           ; Stuck at GND due to stuck port data_in ;
-; SCOMP:inst|state.ex_nop                                                                                 ; Lost fanout                            ;
-; Total Number of Removed Registers = 12                                                                  ;                                        ;
-+---------------------------------------------------------------------------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++-----------------------------------------------+----------------------------------------+
+; Register name                                 ; Reason for Removal                     ;
++-----------------------------------------------+----------------------------------------+
+; DIG_IN:inst7|B_DI[10..15]                     ; Stuck at GND due to stuck port data_in ;
+; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk  ; Stuck at GND due to stuck port data_in ;
+; I2C_INTERFACE:inst13|i2c_master:inst|count[2] ; Stuck at GND due to stuck port data_in ;
+; SCOMP:inst|state.ex_nop                       ; Lost fanout                            ;
+; Total Number of Removed Registers = 9         ;                                        ;
++-----------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -417,12 +421,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 443   ;
+; Total registers                              ; 462   ;
 ; Number of registers using Synchronous Clear  ; 40    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 151   ;
+; Number of registers using Asynchronous Clear ; 167   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 250   ;
+; Number of registers using Clock Enable       ; 265   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -433,13 +437,14 @@ Encoding Type:  One-Hot
 ; Inverted Register                               ; Fan out ;
 +-------------------------------------------------+---------+
 ; MemPeripheral:inst14|a_ready                    ; 4       ;
-; MemPeripheral:inst14|a_read                     ; 4       ;
-; AudioPeripheral:inst16|zero_state               ; 4       ;
+; MemPeripheral:inst14|a_read                     ; 29      ;
+; AudioPeripheral:inst16|addr_int[11]             ; 3       ;
+; AudioPeripheral:inst16|zero_state               ; 20      ;
 ; I2C_INTERFACE:inst13|i2c_master:inst|sda_int    ; 2       ;
 ; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[2] ; 16      ;
 ; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[1] ; 30      ;
 ; I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0] ; 25      ;
-; Total number of inverted registers = 7          ;         ;
+; Total number of inverted registers = 8          ;         ;
 +-------------------------------------------------+---------+
 
 
@@ -448,22 +453,24 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[0][2]                         ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst16|counter[5]                 ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|data_tx[1]   ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[6]   ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[5]                                  ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst16|addr_int[9]                ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[2][8]                         ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst16|counter[6]                 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|data_tx[0]   ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[5]   ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[0]                                  ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0]   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[15] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[1]  ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[5]                                  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[12] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[0]  ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[7]                                  ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|MemPeripheral:inst14|addr[0]                      ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|count        ;
 ; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
-; Source assignments for MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated ;
+; Source assignments for MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                           ;
 +---------------------------------+--------------------+------+----------------------------------------------+
@@ -899,7 +906,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                               ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                               ;
-; INIT_FILE                          ; Up.mif               ; Untyped                               ;
+; INIT_FILE                          ; TestDone.mif         ; Untyped                               ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                               ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                        ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                               ;
@@ -912,7 +919,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                               ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                        ;
 ; DEVICE_FAMILY                      ; MAX 10               ; Untyped                               ;
-; CBXI_PARAMETER                     ; altsyncram_35r3      ; Untyped                               ;
+; CBXI_PARAMETER                     ; altsyncram_4pr3      ; Untyped                               ;
 +------------------------------------+----------------------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1004,29 +1011,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 75                          ;
-; cycloneiii_ff         ; 443                         ;
-;     CLR               ; 140                         ;
+; cycloneiii_ff         ; 462                         ;
+;     CLR               ; 141                         ;
 ;     ENA               ; 224                         ;
-;     ENA CLR           ; 11                          ;
+;     ENA CLR           ; 26                          ;
 ;     ENA SCLR          ; 15                          ;
 ;     SCLR              ; 25                          ;
-;     plain             ; 28                          ;
+;     plain             ; 31                          ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 871                         ;
-;     arith             ; 91                          ;
-;         2 data inputs ; 61                          ;
+; cycloneiii_lcell_comb ; 1025                        ;
+;     arith             ; 106                         ;
+;         2 data inputs ; 76                          ;
 ;         3 data inputs ; 30                          ;
-;     normal            ; 780                         ;
+;     normal            ; 919                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 20                          ;
-;         2 data inputs ; 35                          ;
-;         3 data inputs ; 254                         ;
-;         4 data inputs ; 470                         ;
+;         1 data inputs ; 21                          ;
+;         2 data inputs ; 66                          ;
+;         3 data inputs ; 249                         ;
+;         4 data inputs ; 582                         ;
 ; cycloneiii_pll        ; 1                           ;
-; cycloneiii_ram_block  ; 16                          ;
+; cycloneiii_ram_block  ; 128                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 3.74                        ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 4.75                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1035,7 +1042,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -1045,7 +1052,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sat Oct 31 17:49:20 2020
+    Info: Processing started: Mon Nov  2 15:09:30 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file I2C_INTERFACE.bdf
@@ -1191,7 +1198,7 @@ Info (12133): Instantiated megafunction "MemPeripheral:inst14|altsyncram:altsync
     Info (12134): Parameter "indata_aclr_a" = "UNUSED"
     Info (12134): Parameter "indata_aclr_b" = "NONE"
     Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "Up.mif"
+    Info (12134): Parameter "init_file" = "TestDone.mif"
     Info (12134): Parameter "init_file_layout" = "PORT_A"
     Info (12134): Parameter "maximum_depth" = "0"
     Info (12134): Parameter "numwords_a" = "65536"
@@ -1221,18 +1228,18 @@ Info (12133): Instantiated megafunction "MemPeripheral:inst14|altsyncram:altsync
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_35r3.tdf
-    Info (12023): Found entity 1: altsyncram_35r3 File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 34
-Info (12128): Elaborating entity "altsyncram_35r3" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated" File: /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4pr3.tdf
+    Info (12023): Found entity 1: altsyncram_4pr3 File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_4pr3.tdf Line: 34
+Info (12128): Elaborating entity "altsyncram_4pr3" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated" File: /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_h7a.tdf
     Info (12023): Found entity 1: decode_h7a File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/decode_h7a.tdf Line: 23
-Info (12128): Elaborating entity "decode_h7a" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|decode_h7a:decode3" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 44
+Info (12128): Elaborating entity "decode_h7a" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated|decode_h7a:decode3" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_4pr3.tdf Line: 44
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_aj9.tdf
     Info (12023): Found entity 1: decode_aj9 File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/decode_aj9.tdf Line: 23
-Info (12128): Elaborating entity "decode_aj9" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|decode_aj9:rden_decode" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 45
+Info (12128): Elaborating entity "decode_aj9" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated|decode_aj9:rden_decode" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_4pr3.tdf Line: 45
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_g3b.tdf
     Info (12023): Found entity 1: mux_g3b File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/mux_g3b.tdf Line: 23
-Info (12128): Elaborating entity "mux_g3b" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|mux_g3b:mux2" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 46
+Info (12128): Elaborating entity "mux_g3b" for hierarchy "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_4pr3:auto_generated|mux_g3b:mux2" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_4pr3.tdf Line: 46
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
 Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 71
 Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/SCOMP.vhd Line: 71
@@ -1267,120 +1274,6 @@ Info (12128): Elaborating entity "DPs" for hierarchy "DPs:inst10"
 Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst9"
 Info (12128): Elaborating entity "HEX_DISP" for hierarchy "HEX_DISP_6:inst9|HEX_DISP:inst1"
 Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a16" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 431
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a17" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 455
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a18" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 479
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a19" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 503
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a20" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 527
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a21" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 551
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a22" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 575
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a23" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 599
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a24" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 623
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a25" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 647
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a26" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 671
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a27" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 695
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a28" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 719
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a29" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 743
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a30" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 767
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a31" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 791
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a32" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 815
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a33" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 839
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a34" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 863
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a35" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 887
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a36" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 911
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a37" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 935
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a38" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 959
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a39" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 983
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a40" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1007
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a41" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1031
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a42" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1055
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a43" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1079
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a44" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1103
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a45" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1127
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a46" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1151
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a47" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1175
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a48" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1199
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a49" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1223
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a50" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1247
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a51" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1271
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a52" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1295
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a53" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1319
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a54" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1343
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a55" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1367
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a56" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1391
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a57" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1415
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a58" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1439
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a59" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1463
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a60" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1487
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a61" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1511
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a62" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1535
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a63" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1559
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a64" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1583
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a65" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1607
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a66" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1631
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a67" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1655
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a68" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1679
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a69" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1703
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a70" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1727
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a71" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1751
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a72" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1775
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a73" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1799
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a74" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1823
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a75" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1847
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a76" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1871
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a77" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1895
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a78" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1919
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a79" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1943
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a80" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1967
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a81" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 1991
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a82" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2015
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a83" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2039
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a84" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2063
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a85" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2087
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a86" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2111
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a87" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2135
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a88" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2159
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a89" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2183
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a90" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2207
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a91" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2231
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a92" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2255
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a93" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2279
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a94" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2303
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a95" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2327
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a96" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2351
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a97" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2375
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a98" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2399
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a99" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2423
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a100" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2447
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a101" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2471
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a102" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2495
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a103" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2519
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a104" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2543
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a105" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2567
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a106" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2591
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a107" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2615
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a108" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2639
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a109" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2663
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a110" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2687
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a111" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2711
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a112" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2735
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a113" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2759
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a114" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2783
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a115" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2807
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a116" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2831
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a117" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2855
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a118" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2879
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a119" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2903
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a120" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2927
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a121" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2951
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a122" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2975
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a123" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 2999
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a124" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 3023
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a125" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 3047
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a126" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 3071
-        Warning (14320): Synthesized away node "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ram_block1a127" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 3095
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[4]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[4]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[3]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[3]" into an OR gate
@@ -1404,25 +1297,27 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GSENSOR_CS_n" is stuck at VCC
     Warning (13410): Pin "GSENSOR_SDO" is stuck at VCC
 Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info (286030): Timing-Driven Synthesis is running
 Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
+Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
-Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "MemPeripheral:inst14|altsyncram:altsyncram_component|altsyncram_35r3:auto_generated|ALTSYNCRAM" File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/altsyncram_35r3.tdf Line: 407
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (15899): PLL "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|pll1" has parameters clk2_multiply_by and clk2_divide_by specified but port CLK[2] is not connected File: /home/akash/College/ECE 2031/TechRunningbackGame/Quartus/TestAudio/db/PLL_main_altpll.v Line: 51
-Info (21057): Implemented 1116 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1384 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 61 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1024 logic cells
-    Info (21064): Implemented 16 RAM segments
+    Info (21061): Implemented 1180 logic cells
+    Info (21064): Implemented 128 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 143 warnings
-    Info: Peak virtual memory: 1056 megabytes
-    Info: Processing ended: Sat Oct 31 17:49:33 2020
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:32
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 1058 megabytes
+    Info: Processing ended: Mon Nov  2 15:09:52 2020
+    Info: Elapsed time: 00:00:22
+    Info: Total CPU time (on all processors): 00:00:51
 
 

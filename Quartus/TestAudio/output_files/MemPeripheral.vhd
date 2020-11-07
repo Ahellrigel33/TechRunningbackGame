@@ -43,7 +43,7 @@ begin
 		numwords_a => 65536,
 		widthad_a => 16,
 		width_a => 16,
-	init_file => "Up.mif",
+	init_file => "TestDone.mif",
 		clock_enable_input_a => "BYPASS",
 		clock_enable_output_a => "BYPASS",
 		intended_device_family => "MAX 10",
@@ -86,10 +86,10 @@ begin
 		end if;
 	end process;
 	
-	addr <= (15 downto 11 => '0') & s_addr; --when a_read = '1' else
---			  a_addr;
-	mw <= s_mw; --when a_read = '1' else
---			'0';
+	addr <= (15 downto 11 => '0') & s_addr when a_read = '1' else
+			  a_addr;
+	mw <= s_mw when a_read = '1' else
+			'0';
 	ac <= s_ac;
 	a_data <= a_data_latch;
 	scomp_en <= s_en;
