@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Wed Oct 28 04:06:45 2020
+Wed Oct 28 17:54:27 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -30,11 +30,12 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
  22. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus
  23. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
  24. Parameter Settings for User Entity Instance: DIG_IN:inst7|LPM_BUSTRI:IO_BUS
- 25. altpll Parameter Settings by Entity Instance
- 26. altsyncram Parameter Settings by Entity Instance
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 25. Parameter Settings for User Entity Instance: HexPeripheral:inst10
+ 26. altpll Parameter Settings by Entity Instance
+ 27. altsyncram Parameter Settings by Entity Instance
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -61,15 +62,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 28 04:06:45 2020       ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 28 17:54:27 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 930                                         ;
-;     Total combinational functions  ; 806                                         ;
-;     Dedicated logic registers      ; 414                                         ;
-; Total registers                    ; 414                                         ;
+; Total logic elements               ; 940                                         ;
+;     Total combinational functions  ; 816                                         ;
+;     Dedicated logic registers      ; 419                                         ;
+; Total registers                    ; 419                                         ;
 ; Total pins                         ; 68                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 32,768                                      ;
@@ -181,51 +182,49 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                               ;
-+--------------------------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                             ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                     ; Library ;
-+--------------------------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; I2C_INTERFACE.bdf                                            ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/I2C_INTERFACE.bdf      ;         ;
-; i2c_master.vhd                                               ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd         ;         ;
-; i2c_ctrl.vhd                                                 ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd           ;         ;
-; HEX_DISP.vhd                                                 ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HEX_DISP.vhd           ;         ;
-; DIG_OUT.vhd                                                  ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd            ;         ;
-; DIG_IN.vhd                                                   ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_IN.vhd             ;         ;
-; clk_div.vhd                                                  ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/clk_div.vhd            ;         ;
-; TIMER.vhd                                                    ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd              ;         ;
-; IO_DECODER.vhd                                               ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd         ;         ;
-; SCOMP.vhd                                                    ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd              ;         ;
-; SCOMP_System.bdf                                             ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP_System.bdf       ;         ;
-; PLL_main.vhd                                                 ; yes             ; User Wizard-Generated File             ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd           ;         ;
-; HEX_DISP_6.bdf                                               ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HEX_DISP_6.bdf         ;         ;
-; ../../../TechRunningbackGame/HexPeripheral/HexPeripheral.vhd ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd      ;         ;
-; altpll.tdf                                                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                ;         ;
-; aglobal191.inc                                               ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc            ;         ;
-; stratix_pll.inc                                              ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc           ;         ;
-; stratixii_pll.inc                                            ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc         ;         ;
-; cycloneii_pll.inc                                            ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc         ;         ;
-; db/pll_main_altpll.v                                         ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/pll_main_altpll.v   ;         ;
-; altsyncram.tdf                                               ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf            ;         ;
-; stratix_ram_block.inc                                        ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc     ;         ;
-; lpm_mux.inc                                                  ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc               ;         ;
-; lpm_decode.inc                                               ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc            ;         ;
-; a_rdenreg.inc                                                ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc             ;         ;
-; altrom.inc                                                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                ;         ;
-; altram.inc                                                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                ;         ;
-; altdpram.inc                                                 ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc              ;         ;
-; db/altsyncram_kks3.tdf                                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf ;         ;
-; hexperipheraldemo.mif                                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/hexperipheraldemo.mif  ;         ;
-; lpm_clshift.tdf                                              ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf           ;         ;
-; db/lpm_clshift_fuc.tdf                                       ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf ;         ;
-; lpm_bustri.tdf                                               ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf            ;         ;
-; sq_gen.vhd                                                   ; yes             ; Auto-Found VHDL File                   ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd             ;         ;
-+--------------------------------------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
+; I2C_INTERFACE.bdf                ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/I2C_INTERFACE.bdf      ;         ;
+; i2c_master.vhd                   ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd         ;         ;
+; i2c_ctrl.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd           ;         ;
+; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd            ;         ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_IN.vhd             ;         ;
+; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/clk_div.vhd            ;         ;
+; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd              ;         ;
+; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd         ;         ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd              ;         ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP_System.bdf       ;         ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd           ;         ;
+; HexPeripheral.vhd                ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd      ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc            ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc           ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc         ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc         ;         ;
+; db/pll_main_altpll.v             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/pll_main_altpll.v   ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf            ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc               ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc            ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc             ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc              ;         ;
+; db/altsyncram_kks3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf ;         ;
+; HexPeripheralDemo.mif            ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif  ;         ;
+; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf           ;         ;
+; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf ;         ;
+; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf            ;         ;
+; sq_gen.vhd                       ; yes             ; Auto-Found VHDL File                   ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd             ;         ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -233,20 +232,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                  ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 930                                                                                    ;
+; Estimated Total logic elements              ; 940                                                                                    ;
 ;                                             ;                                                                                        ;
-; Total combinational functions               ; 806                                                                                    ;
+; Total combinational functions               ; 816                                                                                    ;
 ; Logic element usage by number of LUT inputs ;                                                                                        ;
-;     -- 4 input functions                    ; 427                                                                                    ;
-;     -- 3 input functions                    ; 279                                                                                    ;
-;     -- <=2 input functions                  ; 100                                                                                    ;
+;     -- 4 input functions                    ; 432                                                                                    ;
+;     -- 3 input functions                    ; 282                                                                                    ;
+;     -- <=2 input functions                  ; 102                                                                                    ;
 ;                                             ;                                                                                        ;
 ; Logic elements by mode                      ;                                                                                        ;
-;     -- normal mode                          ; 743                                                                                    ;
-;     -- arithmetic mode                      ; 63                                                                                     ;
+;     -- normal mode                          ; 749                                                                                    ;
+;     -- arithmetic mode                      ; 67                                                                                     ;
 ;                                             ;                                                                                        ;
-; Total registers                             ; 414                                                                                    ;
-;     -- Dedicated logic registers            ; 414                                                                                    ;
+; Total registers                             ; 419                                                                                    ;
+;     -- Dedicated logic registers            ; 419                                                                                    ;
 ;     -- I/O registers                        ; 0                                                                                      ;
 ;                                             ;                                                                                        ;
 ; I/O pins                                    ; 68                                                                                     ;
@@ -258,8 +257,8 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                      ;
 ;                                             ;                                                                                        ;
 ; Maximum fan-out node                        ; PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 235                                                                                    ;
-; Total fan-out                               ; 4315                                                                                   ;
+; Maximum fan-out                             ; 240                                                                                    ;
+; Total fan-out                               ; 4362                                                                                   ;
 ; Average fan-out                             ; 3.14                                                                                   ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 
@@ -269,18 +268,18 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                     ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; |SCOMP_System                             ; 806 (0)             ; 414 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System    ; work         ;
+; |SCOMP_System                             ; 816 (0)             ; 419 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System    ; work         ;
 ;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN          ; work         ;
 ;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                             ; DIG_OUT         ; work         ;
-;    |HexPeripheral:inst10|                 ; 36 (36)             ; 45 (45)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HexPeripheral:inst10                                                      ; HexPeripheral   ; work         ;
-;    |I2C_INTERFACE:inst13|                 ; 217 (57)            ; 125 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13                                                      ; I2C_INTERFACE   ; work         ;
+;    |HexPeripheral:inst10|                 ; 42 (42)             ; 50 (50)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HexPeripheral:inst10                                                      ; HexPeripheral   ; work         ;
+;    |I2C_INTERFACE:inst13|                 ; 216 (57)            ; 125 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13                                                      ; I2C_INTERFACE   ; work         ;
 ;       |i2c_ctrl:inst14|                   ; 58 (58)             ; 70 (70)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14                                      ; i2c_ctrl        ; work         ;
-;       |i2c_master:inst|                   ; 102 (102)           ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst                                      ; i2c_master      ; work         ;
+;       |i2c_master:inst|                   ; 101 (101)           ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst                                      ; i2c_master      ; work         ;
 ;    |IO_DECODER:inst3|                     ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|IO_DECODER:inst3                                                          ; IO_DECODER      ; work         ;
 ;    |PLL_main:inst1|                       ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1                                                            ; PLL_main        ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component                                    ; altpll          ; work         ;
 ;          |PLL_main_altpll:auto_generated| ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated     ; PLL_main_altpll ; work         ;
-;    |SCOMP:inst|                           ; 481 (402)           ; 178 (178)                 ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP           ; work         ;
+;    |SCOMP:inst|                           ; 486 (407)           ; 178 (178)                 ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP           ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
 ;          |altsyncram_kks3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_kks3:auto_generated ; altsyncram_kks3 ; work         ;
 ;       |lpm_clshift:shifter|               ; 79 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                            ; lpm_clshift     ; work         ;
@@ -392,7 +391,8 @@ Encoding Type:  One-Hot
 ; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk  ; Stuck at GND due to stuck port data_in ;
 ; I2C_INTERFACE:inst13|i2c_master:inst|count[2] ; Stuck at GND due to stuck port data_in ;
 ; SCOMP:inst|state.ex_nop                       ; Lost fanout                            ;
-; Total Number of Removed Registers = 13        ;                                        ;
+; HexPeripheral:inst10|cnt[5..7]                ; Lost fanout                            ;
+; Total Number of Removed Registers = 16        ;                                        ;
 +-----------------------------------------------+----------------------------------------+
 
 
@@ -401,8 +401,8 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 414   ;
-; Number of registers using Synchronous Clear  ; 25    ;
+; Total registers                              ; 419   ;
+; Number of registers using Synchronous Clear  ; 30    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 115   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -431,19 +431,19 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[4][4]                         ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_player[6]              ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex2[4]                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex4[2]                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex1[0]                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex3[5]                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex5[0]                ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|data_tx[1]   ;
-; 10:1               ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex0[2]                ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[7]   ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[8]                                  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0]   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[12] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[0]  ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[0]                                  ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex2[3]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex4[6]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex1[6]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex3[6]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex5[1]                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[0]   ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex0[5]                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[5]   ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[10]                                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[1]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[11] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[2]  ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[9]                                  ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|count        ;
 ; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
@@ -948,6 +948,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HexPeripheral:inst10 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; min_count      ; 0     ; Signed Integer                           ;
+; max_count      ; 255   ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                           ;
 +-------------------------------+----------------------------------------+
@@ -991,28 +1002,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 68                          ;
-; cycloneiii_ff         ; 414                         ;
+; cycloneiii_ff         ; 419                         ;
 ;     CLR               ; 104                         ;
 ;     ENA               ; 251                         ;
 ;     ENA CLR           ; 11                          ;
-;     SCLR              ; 25                          ;
+;     SCLR              ; 30                          ;
 ;     plain             ; 23                          ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 807                         ;
-;     arith             ; 63                          ;
-;         2 data inputs ; 47                          ;
+; cycloneiii_lcell_comb ; 817                         ;
+;     arith             ; 67                          ;
+;         2 data inputs ; 51                          ;
 ;         3 data inputs ; 16                          ;
-;     normal            ; 744                         ;
+;     normal            ; 750                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 45                          ;
-;         3 data inputs ; 263                         ;
-;         4 data inputs ; 427                         ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 42                          ;
+;         3 data inputs ; 266                         ;
+;         4 data inputs ; 432                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 3.98                        ;
+; Average LUT depth     ; 3.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1021,7 +1032,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -1031,7 +1042,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Oct 28 04:06:34 2020
+    Info: Processing started: Wed Oct 28 17:54:13 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_interface.bdf
@@ -1074,8 +1085,8 @@ Warning (12019): Can't analyze file -- file output_files/DPs.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file dps.bdf
     Info (12023): Found entity 1: DPs
 Info (12021): Found 2 design units, including 1 entities, in source file hexperipheral.vhd
-    Info (12022): Found design unit 1: HexPeripheral-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 28
-    Info (12023): Found entity 1: HexPeripheral File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 12
+    Info (12022): Found design unit 1: HexPeripheral-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 37
+    Info (12023): Found entity 1: HexPeripheral File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 14
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
 Info (12128): Elaborating entity "I2C_INTERFACE" for hierarchy "I2C_INTERFACE:inst13"
 Info (12128): Elaborating entity "i2c_master" for hierarchy "I2C_INTERFACE:inst13|i2c_master:inst"
@@ -1200,6 +1211,17 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kks3.tdf
     Info (12023): Found entity 1: altsyncram_kks3 File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_kks3" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_kks3:auto_generated" File: d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Warning (113031): 345 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 345 warnings found, and 10 warnings are reported. File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif Line: 1
+    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 13
+    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 14
+    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 15
+    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 16
+    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 17
+    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 18
+    Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 19
+    Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 20
+    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 21
+    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 22
 Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
 Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
 Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
@@ -1228,17 +1250,15 @@ Warning (12125): Using design file sq_gen.vhd, which is not specified as a desig
     Info (12022): Found design unit 1: SQ_GEN-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd Line: 25
     Info (12023): Found entity 1: SQ_GEN File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd Line: 15
 Info (12128): Elaborating entity "SQ_GEN" for hierarchy "SQ_GEN:inst16"
-Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst9"
-Info (12128): Elaborating entity "HEX_DISP" for hierarchy "HEX_DISP_6:inst9|HEX_DISP:inst1"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[6]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[6]" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[11]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[11]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[15]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[15]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[14]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[14]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[13]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[13]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[12]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[12]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[11]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[11]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[10]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[10]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[9]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[9]" into an OR gate
-    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[6]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[6]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[5]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[5]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[4]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[4]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[3]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[3]" into an OR gate
@@ -1253,20 +1273,20 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GSENSOR_CS_n" is stuck at VCC
     Warning (13410): Pin "GSENSOR_SDO" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1042 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1052 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 54 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 957 logic cells
+    Info (21061): Implemented 967 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
     Info: Peak virtual memory: 4817 megabytes
-    Info: Processing ended: Wed Oct 28 04:06:45 2020
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Processing ended: Wed Oct 28 17:54:27 2020
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:23
 
 

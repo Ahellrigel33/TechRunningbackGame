@@ -39,6 +39,20 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
+		(pt 0 64)
+		(input)
+		(text "CLK" (rect 0 0 20 12)(font "Arial" ))
+		(text "CLK" (rect 21 59 41 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "resetn" (rect 0 0 24 12)(font "Arial" ))
+		(text "resetn" (rect 21 75 45 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
 		(pt 208 32)
 		(output)
 		(text "hex0[6..0]" (rect 0 0 38 12)(font "Arial" ))
@@ -80,7 +94,18 @@ https://fpgasoftware.intel.com/eula.
 		(text "hex5[6..0]" (rect 149 107 187 119)(font "Arial" ))
 		(line (pt 208 112)(pt 192 112)(line_width 3))
 	)
+	(parameter
+		"MIN_COUNT"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"MAX_COUNT"
+		"4096"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 192 128)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 224 -64 324 16))
 )
