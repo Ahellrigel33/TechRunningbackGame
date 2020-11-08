@@ -11,7 +11,7 @@ entity AudioPeripheral is
 		resetn: 		in  std_logic;
 		input: 		in  std_logic_vector(10 downto 0);
 		data: 		in  std_logic_vector(15 downto 0);
-		addr: 		out std_logic_vector(15 downto 0);
+		addr: 		out std_logic_vector(24 downto 0);
 		rd_en:		out std_logic;
 		output: 		out std_logic
 	);
@@ -26,7 +26,7 @@ architecture rtl of AudioPeripheral is
 	signal repeat: std_logic;
 	signal song: std_logic_vector(9 downto 0);
 	signal trigger_song_change: std_logic;
-	signal addr_int: std_logic_vector(15 downto 0);
+	signal addr_int: std_logic_vector(24 downto 0);
 	signal zero_state: std_logic;
 begin
 	process(resetn, cs, clk, zero_data)
@@ -49,11 +49,11 @@ begin
 --				when others => addr <= x"0FFFF"; 
 --			end case;
 		if (resetn = '0') then
-			addr_int <= x"0800";
+			addr_int <= '0' & x"000000";
 			zero_state <= '1';
 		elsif (rising_edge(clk)) then
 			if (zero_data = '1' and zero_state = '0') then
-				addr_int <= x"0800";
+				addr_int <= '0' & x"000000";
 				rd_en <= '1';
 				zero_state <= '1';
 			elsif (zero_state = '1') then -- Load the new data

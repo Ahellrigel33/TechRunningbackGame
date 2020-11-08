@@ -58,7 +58,7 @@ begin
 	                             row when next_state = S_READ else
 	     (12 downto 0 => '0')        when (next_state = S_PRE or next_state = S_IDLE);
 	
-	nCS  <= '0'
+	nCS  <= '0';
 	nWE <= '1';		  
 	BA <= bank;
 	DQML <= '0';

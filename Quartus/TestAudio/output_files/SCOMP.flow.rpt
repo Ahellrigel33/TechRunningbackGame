@@ -1,5 +1,5 @@
 Flow report for SCOMP
-Mon Nov  2 15:10:48 2020
+Sat Nov  7 15:54:50 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Nov  2 15:10:48 2020       ;
+; Flow Status                        ; Successful - Sat Nov  7 15:54:50 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1,109 / 49,760 ( 2 % )                      ;
-;     Total combinational functions  ; 1,017 / 49,760 ( 2 % )                      ;
-;     Dedicated logic registers      ; 462 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 462                                         ;
-; Total pins                         ; 75 / 360 ( 21 % )                           ;
+; Total logic elements               ; 30 / 49,760 ( < 1 % )                       ;
+;     Total combinational functions  ; 29 / 49,760 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 22 / 49,760 ( < 1 % )                       ;
+; Total registers                    ; 22                                          ;
+; Total pins                         ; 113 / 360 ( 31 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 1,048,576 / 1,677,312 ( 63 % )              ;
+; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/02/2020 15:09:30 ;
+; Start date & time ; 11/07/2020 15:54:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SCOMP               ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name  ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 97444821299213.160435857031591         ; --            ; --           ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 97444821299213.160479326623128         ; --            ; --           ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --           ; eda_board_design_signal_integrity ;
@@ -111,12 +111,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 1030 MB             ; 00:00:51                           ;
-; Fitter               ; 00:00:43     ; 1.3                     ; 1823 MB             ; 00:01:19                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 826 MB              ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:04     ; 2.2                     ; 938 MB              ; 00:00:08                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1084 MB             ; 00:00:01                           ;
-; Total                ; 00:01:12     ; --                      ; --                  ; 00:02:23                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 985 MB              ; 00:00:20                           ;
+; Fitter               ; 00:00:08     ; 1.0                     ; 1763 MB             ; 00:00:12                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 816 MB              ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 914 MB              ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1029 MB             ; 00:00:00                           ;
+; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:37                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

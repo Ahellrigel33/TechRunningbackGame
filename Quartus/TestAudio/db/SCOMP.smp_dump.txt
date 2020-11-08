@@ -52,3 +52,10 @@ state.rd 0 0 0 1 0 0 0 0 0 1
 state.slv_ack2 0 0 1 0 0 0 0 0 0 1 
 state.mstr_ack 0 1 0 0 0 0 0 0 0 1 
 state.stop 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |SCOMP_System|SDRAM_control:inst18|state
+Name state.S_PRE state.S_READ state.S_ACT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_ACT 0 0 1 1 
+state.S_READ 0 1 0 1 
+state.S_PRE 1 0 0 1 
