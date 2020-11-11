@@ -10,16 +10,30 @@ Test:
 	LOADI	5
 	CALL	DelayAC
 	
+	LOAD	writeDimHex
+	OR		Hex5
+	OR		midDef
+	OUT		HexPeriph
+	LOADI	5
+	CALL	DelayAC
+	
 	IN		PlayerPosPeriph
 	OUT		LEDs
 	
 	LOAD	writeHex
-	OR		Hex0
+	OR		Hex1
 	OR		rightDef
 	OUT		HexPeriph
 	LOADI	5
 	CALL	DelayAC
 	
+	LOAD	writeDimHex
+	OR		Hex1
+	OR		midDef
+	OUT		HexPeriph
+	LOADI	5
+	CALL	DelayAC
+
 	IN		PlayerPosPeriph
 	OUT		LEDs
 	
@@ -40,6 +54,15 @@ Test:
 	LOADI	5
 	CALL	DelayAC
 	
+	LOAD	writeDimHex
+	OR		Hex4
+	OR		midDef
+	OUT		HexPeriph
+	LOADI	5
+	CALL	DelayAC	
+	LOADI	5
+	CALL	DelayAC
+
 	IN		PlayerPosPeriph
 	OUT		LEDs
 	
@@ -74,7 +97,8 @@ Test:
 ; opcodes
 clear:			DW &H0000
 writeHex:		DW &H1000
-writePlayer:	DW &H2000
+writeDimHex:	DW &H3000
+enablePlayer:	DW &H2000
 
 
 ; writeHex operands
@@ -92,11 +116,6 @@ rightDef:	DW &B0000001
 ;midDef:		DW &B0111111
 ;rightDef:	DW &B1111110
 
-
-; writePlayer operands
-leftSide:		DW &B0000100000000000
-midSide:		DW &B0000010000000000
-rightSide:		DW &B0000001000000000
 
 HexPeriph:  	EQU &H0E0
 PlayerPosPeriph:  	EQU &H0E1

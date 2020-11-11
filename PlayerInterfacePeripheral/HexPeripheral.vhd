@@ -40,6 +40,7 @@ ARCHITECTURE a OF HexPeripheral IS
 		clear,
 		writeHex,
 		enablePlayer,
+		writeDimHex,
 		nothing	
 		);
 
@@ -50,22 +51,47 @@ ARCHITECTURE a OF HexPeripheral IS
 	signal latch_hex3		: STD_LOGIC_VECTOR(6 downto 0);
 	signal latch_hex4 	: STD_LOGIC_VECTOR(6 downto 0);
 	signal latch_hex5		: STD_LOGIC_VECTOR(6 downto 0);
-	signal player_pos		: STD_LOGIC_VECTOR(6 downto 0);
+	
+	signal latch_dimHex0 	: STD_LOGIC_VECTOR(6 downto 0);
+	signal latch_dimHex1		: STD_LOGIC_VECTOR(6 downto 0);
+	signal latch_dimHex2 	: STD_LOGIC_VECTOR(6 downto 0);
+	signal latch_dimHex3		: STD_LOGIC_VECTOR(6 downto 0);
+	signal latch_dimHex4 	: STD_LOGIC_VECTOR(6 downto 0);
+	signal latch_dimHex5		: STD_LOGIC_VECTOR(6 downto 0);
+	signal patternDimHex0 	: STD_LOGIC_VECTOR(6 downto 0);
+	signal patternDimHex1	: STD_LOGIC_VECTOR(6 downto 0);
+	signal patternDimHex2 	: STD_LOGIC_VECTOR(6 downto 0);
+	signal patternDimHex3	: STD_LOGIC_VECTOR(6 downto 0);
+	signal patternDimHex4 	: STD_LOGIC_VECTOR(6 downto 0);
+	signal patternDimHex5	: STD_LOGIC_VECTOR(6 downto 0);
+	
 	signal player_en		: STD_LOGIC;
 	
 	signal instr 		: instruction;
-	signal count  : std_logic_vector(11 downto 0);
+	signal count  : std_logic_vector(9 downto 0);
 	
 begin
 
 
-	with (IO_DATA(15 downto 12)) select -- select instruction based on opcode (top 4 bits of instruction)
-	instr <=
-		clear 				when "0000",
-		writeHex 			when "0001",
-		enablePlayer		when "0010",
-		nothing 	when others;
-	
+	process(resetn)
+	begin
+		if (resetn = '0') then
+			instr <= clear;
+		else
+			case IO_DATA(15 downto 12) is
+				when "0000" =>
+					instr <= clear;
+				when "0001" =>
+					instr <= writeHex;
+				when "0010" =>
+					instr <= enablePlayer;
+				when "0011" =>
+					instr <= writeDimHex;
+				when others =>
+					instr <= nothing;
+			end case;
+		end if;
+	end process;
 	
 	process(cs)
 	begin
@@ -78,6 +104,12 @@ begin
 					latch_hex3 <= "1111111";
 					latch_hex4 <= "1111111";
 					latch_hex5 <= "1111111";
+					latch_dimHex0 <= "1111111";
+					latch_dimHex1 <= "1111111";
+					latch_dimHex2 <= "1111111";
+					latch_dimHex3 <= "1111111";
+					latch_dimHex4 <= "1111111";
+					latch_dimHex5 <= "1111111";
 					player_en <= '1';
 				
 				when writeHex =>	-- turn on/off segments of 7-segment LED display (0 = off for IO_DATA, 1 = on for IO_DATA)
@@ -106,6 +138,23 @@ begin
 							player_en <= '1';
 					end case;
 						
+				when writeDimHex =>	-- turn on/off segments of 7-segment LED display (0 = off for IO_DATA, 1 = on for IO_DATA)
+					case IO_DATA(11 downto 9) is	-- display to change is the decimal value of 9th to 11th bits of instruction
+						when "000" =>
+							latch_dimHex0 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+						when "001" =>
+							latch_dimHex1 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+						when "010" =>
+							latch_dimHex2 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+						when "011" =>
+							latch_dimHex3 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+						when "100" =>
+							latch_dimHex4 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+						when "101" =>
+							latch_dimHex5 <= not IO_DATA(6 downto 0);	-- segments to turn on/off are bottom 7 bits of instruction
+						when others =>
+							latch_dimHex0 <= "1111111";
+					end case;
 					
 				when others =>
 					latch_hex0 <= "1111111";
@@ -134,23 +183,43 @@ begin
 	
 	-- the bits of player_pos that are 1 when others are dim
 	-- all other bits are fully on
-	with count(4 downto 0) select player_pos(6 downto 0) <=
-		"0000000" when "00001",
-		not(playerSegs) when others;
-	
+	with count(4 downto 0) select patternDimHex0(6 downto 0) <=
+		latch_dimHex0 when "00001",
+		latch_dimHex0 when "00010",
+		 "1111111" when others;
+	with count(4 downto 0) select patternDimHex1(6 downto 0) <=
+		latch_dimHex1 when "00001",
+		latch_dimHex1 when "00010",
+		 "1111111" when others;
+	with count(4 downto 0) select patternDimHex2(6 downto 0) <=
+		latch_dimHex2 when "00001",
+		latch_dimHex2 when "00010",
+		 "1111111" when others;
+	with count(4 downto 0) select patternDimHex3(6 downto 0) <=
+		latch_dimHex3 when "00001",
+		latch_dimHex3 when "00010",
+		 "1111111" when others;
+	with count(4 downto 0) select patternDimHex4(6 downto 0) <=
+		latch_dimHex4 when "00001",
+		latch_dimHex4 when "00010",
+		 "1111111" when others;
+	with count(4 downto 0) select patternDimHex5(6 downto 0) <=
+		latch_dimHex5 when "00001",
+		latch_dimHex5 when "00010",
+		 "1111111" when others;
+		
 
 	
 	-- output the pattern to the actual 7-segment display
 	hex0 <= 
-		(player_pos or playerSegs) and latch_hex0 	-- use playerSegs to turn off the on bits of player_pos, and add defender if there is overlap
+		playerSegs and latch_hex0 and patternDimHex0  	-- use playerSegs to turn off the on bits of player_pos, and add defender if there is overlap
 			when player_en = '1' else
-		latch_hex0
+		latch_hex0 and patternDimHex0
 			when player_en = '0';
-	hex1 <= latch_hex1;	
-	hex2 <= latch_hex2;
-	hex3 <= latch_hex3;
-	hex4 <= latch_hex4;
-	hex5 <= latch_hex5;
+	hex1 <= latch_hex1 and patternDimHex1;	
+	hex2 <= latch_hex2 and patternDimHex2;
+	hex3 <= latch_hex3 and patternDimHex3;
+	hex4 <= latch_hex4 and patternDimHex4;
+	hex5 <= latch_hex5 and patternDimHex5;
 	
 END a;
-
