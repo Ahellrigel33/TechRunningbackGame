@@ -2,8 +2,7 @@
 GSENSOR_CS_n <= <VCC>
 GSENSOR_SDO <= <VCC>
 GSENSOR_SDI <> I2C_INTERFACE:inst13.SDA
-clock_50 => PLL_main:inst1.inclk0
-KEY0 => inst2.IN0
+SW[0] => inst9.IN0
 SW[0] => DIG_IN:inst7.DI[0]
 SW[1] => DIG_IN:inst7.DI[1]
 SW[2] => DIG_IN:inst7.DI[2]
@@ -14,6 +13,8 @@ SW[6] => DIG_IN:inst7.DI[6]
 SW[7] => DIG_IN:inst7.DI[7]
 SW[8] => DIG_IN:inst7.DI[8]
 SW[9] => DIG_IN:inst7.DI[9]
+clock_50 => PLL_main:inst1.inclk0
+KEY0 => inst2.IN0
 GSENSOR_SCLK <> I2C_INTERFACE:inst13.SCL
 HEX0[0] <= HexPeripheral:inst10.hex0[0]
 HEX0[1] <= HexPeripheral:inst10.hex0[1]

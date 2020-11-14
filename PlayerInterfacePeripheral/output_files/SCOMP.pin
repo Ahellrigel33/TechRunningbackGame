@@ -118,7 +118,7 @@ GND                          : AB1       : gnd    :                   :         
 RESERVED_INPUT               : AB2       :        :                   :         : 3         :                
 RESERVED_INPUT               : AB3       :        :                   :         : 3         :                
 RESERVED_INPUT               : AB4       :        :                   :         : 3         :                
-RESERVED_INPUT               : AB5       :        :                   :         : 3         :                
+Arduino_IO[0]                : AB5       : output : 3.3-V LVTTL       :         : 3         : Y              
 RESERVED_INPUT               : AB6       :        :                   :         : 3         :                
 RESERVED_INPUT               : AB7       :        :                   :         : 3         :                
 RESERVED_INPUT               : AB8       :        :                   :         : 3         :                
