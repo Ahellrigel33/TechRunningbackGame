@@ -1,401 +1,401 @@
 -- Altera Memory Initialization File (MIF)
 
-DEPTH = 1048576;
-WIDTH = 20;
+DEPTH = 65536;
+WIDTH = 16;
 
 ADDRESS_RADIX = HEX;
 DATA_RADIX = HEX;
 
 CONTENT
   BEGIN
-    [00000..FFFFF] : 0000;  -- Default to NOP
+    [0000..FFFF] : 0000;  -- Default to NOP
 
-           00000 : 8026;  -- 	CALL  SetupI2C
-           00001 : 803C;  -- 	Call  ReadX
-           00002 : 1163;  -- 	Store L2A
-           00003 : 8046;  -- 	Call  ReadY
-           00004 : 1164;  -- 	Store L2B
-           00005 : 8139;  -- 	CALL  L2Estimate
-           00006 : 6014;  -- 	Shift -4
-           00007 : 9804;  -- 	OUT   HEX0
-           00008 : 9801;  -- 	OUT   LEDs
-           00009 : 2801;  -- 	JUMP Start ; Repeat
-           0000A : 9000;  -- 	IN Switches
-           0000B : 98F0;  -- 	OUT SqGen
-           0000C : 280C;  -- Here: JUMP Here
-           0000D : B801;  -- 	LOADI &B000001
-           0000E : 98E0;  -- 	OUT  DPs
-           0000F : 8014;  -- 	CALL WasteTime
-           00010 : B800;  -- 	LOADI &B000000
-           00011 : 98E0;  -- 	OUT  DPs
-           00012 : 8014;  -- 	CALL WasteTime
-           00013 : 2801;  -- 	JUMP Start
-           00014 : 0823;  -- 	Load WasteTimeOuterStart
-           00015 : 1024;  -- 	STORE WasteTimeOuterCount
-           00016 : 8018;  -- 	CALL WasteTimeOuter
-           00017 : 8800;  -- 	RETURN
-           00018 : 0825;  -- 	LOAD WasteTimeInnerStart
-           00019 : 801F;  -- 	CALL WasteTimeInner
-           0001A : 0824;  -- 	LOAD WasteTimeOuterCount
-           0001B : 6801;  -- 	ADDI 1
-           0001C : 1024;  -- 	STORE WasteTimeOuterCount
-           0001D : 4022;  -- 	JZERO WasteDone
-           0001E : 2818;  -- 	JUMP WasteTimeOuter
-           0001F : 6801;  -- 	ADDI 1
-           00020 : 4022;  -- 	JZERO WasteDone
-           00021 : 281F;  -- 	JUMP WasteTimeInner
-           00022 : 8800;  -- 	RETURN
-           00023 : FFF5;  -- WasteTimeOuterStart: DW &HFFF5
-           00024 : 0000;  -- WasteTimeOuterCount: DW 0
-           00025 : 3AB7;  -- WasteTimeInnerStart: DW &H3AB7
-           00026 : 097D;  -- 	LOAD   AccCfg      ; load the number of commands
-           00027 : 103B;  -- 	STORE  CmdCnt
-           00028 : B97D;  -- 	LOADI  AccCfg      ; Load list address
-           00029 : 6801;  -- 	ADDI   1           ; Increment to first command
-           0002A : 103A;  -- 	STORE  CmdPtr
-           0002B : 805A;  -- 	CALL   BlockI2C    ; wait for idle
-           0002C : 0979;  -- 	LOAD   I2CWCmd     ; load write command
-           0002D : 9890;  -- 	OUT    I2C_CMD     ; to I2C_CMD register
-           0002E : 703A;  -- 	ILOAD  CmdPtr      ; load current command
-           0002F : 9891;  -- 	OUT    I2C_DATA    ; to I2C_DATA register
-           00030 : 9892;  -- 	OUT    I2C_RDY     ; start the communication
-           00031 : 805A;  -- 	CALL   BlockI2C    ; wait for it to finish
-           00032 : 083A;  -- 	LOAD   CmdPtr
-           00033 : 6801;  -- 	ADDI   1           ; Increment to next command
-           00034 : 103A;  -- 	STORE  CmdPtr
-           00035 : 083B;  -- 	LOAD   CmdCnt
-           00036 : 6FFF;  -- 	ADDI   -1          ; Check if finished
-           00037 : 103B;  -- 	STORE  CmdCnt
-           00038 : 382B;  -- 	JPOS   I2CCmdLoop
-           00039 : 8800;  -- 	RETURN
-           0003A : 0000;  -- CmdPtr: DW 0
-           0003B : 0000;  -- CmdCnt: DW 0
-           0003C : 805A;  -- 	CALL   BlockI2C    ; ensure bus is idle
-           0003D : 097A;  -- 	LOAD   I2CRCmd     ; load read command
-           0003E : 9890;  -- 	OUT    I2C_CMD     ; send read command to I2C_CMD register
-           0003F : 097B;  -- 	LOAD   AccXAddr    ; load ADXL345 register address for X acceleration 
-           00040 : 9891;  -- 	OUT    I2C_DATA    ; send to I2C_DATA register
-           00041 : 9892;  -- 	OUT    I2C_RDY     ; start the communication
-           00042 : 805A;  -- 	CALL   BlockI2C    ; wait for it to finish
-           00043 : 9091;  -- 	IN     I2C_data    ; put the data in AC
-           00044 : 8050;  -- 	CALL   SwapBytes   ; bytes are returned in wrong order; swap them
-           00045 : 8800;  -- 	RETURN
-           00046 : 805A;  -- 	CALL   BlockI2C    ; ensure bus is idle
-           00047 : 097A;  -- 	LOAD   I2CRCmd     ; load read command
-           00048 : 9890;  -- 	OUT    I2C_CMD     ; send read command to I2C_CMD register
-           00049 : 097C;  -- 	LOAD   AccYAddr    ; load ADXL345 register address for Y acceleration 
-           0004A : 9891;  -- 	OUT    I2C_DATA    ; send to I2C_DATA register
-           0004B : 9892;  -- 	OUT    I2C_RDY     ; start the communication
-           0004C : 805A;  -- 	CALL   BlockI2C    ; wait for it to finish
-           0004D : 9091;  -- 	IN     I2C_data    ; put the data in AC
-           0004E : 8050;  -- 	CALL   SwapBytes   ; bytes are returned in wrong order; swap them
-           0004F : 8800;  -- 	RETURN
-           00050 : 1058;  -- 	STORE  SBT1
-           00051 : 6008;  -- 	SHIFT  8
-           00052 : 1059;  -- 	STORE  SBT2
-           00053 : 0858;  -- 	LOAD   SBT1
-           00054 : 6018;  -- 	SHIFT  -8
-           00055 : 4977;  -- 	AND    LoByte
-           00056 : 5059;  -- 	OR     SBT2
-           00057 : 8800;  -- 	RETURN
-           00058 : 0000;  -- SBT1: DW 0
-           00059 : 0000;  -- SBT2: DW 0
-           0005A : 096B;  -- 	LOAD   Zero
-           0005B : 1168;  -- 	STORE  Temp        ; Used to check for timeout
-           0005C : 0968;  -- 	LOAD   Temp
-           0005D : 6801;  -- 	ADDI   1           ; this will result in ~0.1s timeout
-           0005E : 1168;  -- 	STORE  Temp
-           0005F : 4063;  -- 	JZERO  I2CError    ; Timeout occurred; error
-           00060 : 9092;  -- 	IN     I2C_RDY     ; Read busy signal
-           00061 : 385C;  -- 	JPOS   BI2CL       ; If not 0, try again
-           00062 : 8800;  -- 	RETURN             ; Else return
-           00063 : 096B;  -- 	LOAD   Zero
-           00064 : 692C;  -- 	ADDI   &H12C       ; "I2C"
-           00065 : 9804;  -- 	OUT    Hex0        ; display error message
-           00066 : 2863;  -- 	JUMP   I2CError
-           00067 : 106D;  -- 	STORE  DelayTime   ; Save the desired delay
-           00068 : 9802;  -- 	OUT    Timer       ; Reset the timer
-           00069 : 9002;  -- 	IN     Timer       ; Get the current timer value
-           0006A : 206D;  -- 	SUB    DelayTime
-           0006B : 3069;  -- 	JNEG   WaitingLoop ; Repeat until timer = delay value
-           0006C : 8800;  -- 	RETURN
-           0006D : 0000;  -- DelayTime: DW 0
-           0006E : 3871;  -- 	JPOS   Abs_r
-           0006F : 596C;  -- 	XOR    NegOne       ; Flip all bits
-           00070 : 6801;  -- 	ADDI   1            ; Add one (i.e. negate number)
-           00071 : 8800;  -- 	RETURN
-           00072 : 08D2;  -- 	LOAD   AtanY
-           00073 : 806E;  -- 	CALL   Abs          ; abs(y)
-           00074 : 10D4;  -- 	STORE  AtanT
-           00075 : 08D1;  -- 	LOAD   AtanX        ; abs(x)
-           00076 : 806E;  -- 	CALL   Abs
-           00077 : 20D4;  -- 	SUB    AtanT        ; abs(x) - abs(y)
-           00078 : 3083;  -- 	JNEG   A2_sw        ; if abs(y) > abs(x), switch arguments.
-           00079 : 08D1;  -- 	LOAD   AtanX        ; Octants 1, 4, 5, 8
-           0007A : 3080;  -- 	JNEG   A2_R3
-           0007B : 8092;  -- 	CALL   A2_calc      ; Octants 1, 8
-           0007C : 307E;  -- 	JNEG   A2_R1n
-           0007D : 8800;  -- 	RETURN              ; Return raw value if in octant 1
-           0007E : 6968;  -- 	ADDI   360          ; Add 360 if we are in octant 8
-           0007F : 8800;  -- 	RETURN
-           00080 : 8092;  -- 	CALL   A2_calc      ; Octants 4, 5            
-           00081 : 68B4;  -- 	ADDI   180          ; theta' = theta + 180
-           00082 : 8800;  -- 	RETURN
-           00083 : 08D2;  -- 	LOAD   AtanY        ; Swap input arguments
-           00084 : 10D4;  -- 	STORE  AtanT
-           00085 : 08D1;  -- 	LOAD   AtanX
-           00086 : 10D2;  -- 	STORE  AtanY
-           00087 : 08D4;  -- 	LOAD   AtanT
-           00088 : 10D1;  -- 	STORE  AtanX
-           00089 : 388E;  -- 	JPOS   A2_R2        ; If Y positive, octants 2,3
-           0008A : 8092;  -- 	CALL   A2_calc      ; else octants 6, 7
-           0008B : 806F;  -- 	CALL   Neg          ; Negatge the number
-           0008C : 690E;  -- 	ADDI   270          ; theta' = 270 - theta
-           0008D : 8800;  -- 	RETURN
-           0008E : 8092;  -- 	CALL   A2_calc      ; Octants 2, 3
-           0008F : 806F;  -- 	CALL   Neg          ; negate the angle
-           00090 : 685A;  -- 	ADDI   90           ; theta' = 90 - theta
-           00091 : 8800;  -- 	RETURN
-           00092 : 08D2;  -- 	LOAD   AtanY
-           00093 : 1131;  -- 	STORE  d16sN        ; Y in numerator
-           00094 : 08D1;  -- 	LOAD   AtanX
-           00095 : 1132;  -- 	STORE  d16sD        ; X in denominator
-           00096 : 80BE;  -- 	CALL   A2_div       ; divide
-           00097 : 0937;  -- 	LOAD   dres16sQ     ; get the quotient (remainder ignored)
-           00098 : 10D3;  -- 	STORE  AtanRatio
-           00099 : 10FA;  -- 	STORE  m16sA
-           0009A : 10FB;  -- 	STORE  m16sB
-           0009B : 80B5;  -- 	CALL   A2_mult      ; X^2
-           0009C : 10FA;  -- 	STORE  m16sA
-           0009D : 08D5;  -- 	LOAD   A2c
-           0009E : 10FB;  -- 	STORE  m16sB
-           0009F : 80B5;  -- 	CALL   A2_mult
-           000A0 : 6900;  -- 	ADDI   256          ; 256/256+0.28125X^2
-           000A1 : 1132;  -- 	STORE  d16sD
-           000A2 : 08D3;  -- 	LOAD   AtanRatio
-           000A3 : 1131;  -- 	STORE  d16sN        ; Ratio in numerator
-           000A4 : 80BE;  -- 	CALL   A2_div       ; divide
-           000A5 : 0937;  -- 	LOAD   dres16sQ     ; get the quotient (remainder ignored)
-           000A6 : 10FA;  -- 	STORE  m16sA        ; <= result in radians
-           000A7 : 08D6;  -- 	LOAD   A2cd         ; degree conversion factor
-           000A8 : 10FB;  -- 	STORE  m16sB
-           000A9 : 80B5;  -- 	CALL   A2_mult      ; convert to degrees
-           000AA : 10D4;  -- 	STORE  AtanT
-           000AB : 6017;  -- 	SHIFT  -7           ; check 7th bit
-           000AC : 496D;  -- 	AND    One
-           000AD : 40B2;  -- 	JZERO  A2_rdwn      ; round down
-           000AE : 08D4;  -- 	LOAD   AtanT
-           000AF : 6018;  -- 	SHIFT  -8
-           000B0 : 6801;  -- 	ADDI   1            ; round up
-           000B1 : 8800;  -- 	RETURN
-           000B2 : 08D4;  -- 	LOAD   AtanT
-           000B3 : 6018;  -- 	SHIFT  -8           ; round down
-           000B4 : 8800;  -- 	RETURN
-           000B5 : 80D7;  -- 	CALL   Mult16s
-           000B6 : 08FF;  -- 	LOAD   mres16sH
-           000B7 : 6008;  -- 	SHIFT  8            ; move high word of result up 8 bits
-           000B8 : 10FF;  -- 	STORE  mres16sH
-           000B9 : 08FE;  -- 	LOAD   mres16sL
-           000BA : 6018;  -- 	SHIFT  -8           ; move low word of result down 8 bits
-           000BB : 4977;  -- 	AND    LoByte
-           000BC : 50FF;  -- 	OR     mres16sH     ; combine high and low words of result
-           000BD : 8800;  -- 	RETURN
-           000BE : B809;  -- 	LOADI  9            ; loop 8 times (256 = 2^8)
-           000BF : 10D4;  -- 	STORE  AtanT
-           000C0 : 08D4;  -- 	LOAD   AtanT
-           000C1 : 6FFF;  -- 	ADDI   -1
-           000C2 : 38C5;  -- 	JPOS   A2_DN        ; not done; continue shifting
-           000C3 : 8100;  -- 	CALL   Div16s       ; do the standard division
-           000C4 : 8800;  -- 	RETURN
-           000C5 : 10D4;  -- 	STORE  AtanT
-           000C6 : 0931;  -- 	LOAD   d16sN        ; start by trying to scale the numerator
-           000C7 : 6001;  -- 	SHIFT  1
-           000C8 : 5931;  -- 	XOR    d16sN        ; if the sign changed,
-           000C9 : 30CD;  -- 	JNEG   A2_DD        ; switch to scaling the denominator
-           000CA : 5931;  -- 	XOR    d16sN        ; get back shifted version
-           000CB : 1131;  -- 	STORE  d16sN
-           000CC : 28C0;  -- 	JUMP   A2_DL
-           000CD : 0932;  -- 	LOAD   d16sD
-           000CE : 6011;  -- 	SHIFT  -1           ; have to scale denominator
-           000CF : 1132;  -- 	STORE  d16sD
-           000D0 : 28C0;  -- 	JUMP   A2_DL
-           000D1 : 0000;  -- AtanX:      DW 0
-           000D2 : 0000;  -- AtanY:      DW 0
-           000D3 : 0000;  -- AtanRatio:  DW 0        ; =y/x
-           000D4 : 0000;  -- AtanT:      DW 0        ; temporary value
-           000D5 : 0048;  -- A2c:        DW 72       ; 72/256=0.28125, with 8 fractional bits
-           000D6 : 394C;  -- A2cd:       DW 14668    ; = 180/pi with 8 fractional bits
-           000D7 : B800;  -- 	LOADI  0
-           000D8 : 10FC;  -- 	STORE  m16sc        ; clear carry
-           000D9 : 10FF;  -- 	STORE  mres16sH     ; clear result
-           000DA : B810;  -- 	LOADI  16           ; load 16 to counter
-           000DB : 10FD;  -- 	STORE  mcnt16s      
-           000DC : 08FC;  -- 	LOAD   m16sc        ; check the carry (from previous iteration)
-           000DD : 40E1;  -- 	JZERO  Mult16s_noc  ; if no carry, move on
-           000DE : 08FF;  -- 	LOAD   mres16sH     ; if a carry, 
-           000DF : 18FA;  -- 	ADD    m16sA        ;  add multiplicand to result H
-           000E0 : 10FF;  -- 	STORE  mres16sH
-           000E1 : 08FB;  -- 	LOAD   m16sB
-           000E2 : 496D;  -- 	AND    One          ; check bit 0 of multiplier
-           000E3 : 10FC;  -- 	STORE  m16sc        ; save as next carry
-           000E4 : 40E8;  -- 	JZERO  Mult16s_sh   ; if no carry, move on to shift
-           000E5 : 08FF;  -- 	LOAD   mres16sH     ; if bit 0 set,
-           000E6 : 20FA;  -- 	SUB    m16sA        ;  subtract multiplicand from result H
-           000E7 : 10FF;  -- 	STORE  mres16sH
-           000E8 : 08FB;  -- 	LOAD   m16sB
-           000E9 : 6011;  -- 	SHIFT  -1           ; shift result L >>1
-           000EA : 48F9;  -- 	AND    c7FFF        ; clear msb
-           000EB : 10FB;  -- 	STORE  m16sB
-           000EC : 08FF;  -- 	LOAD   mres16sH     ; load result H
-           000ED : 600F;  -- 	SHIFT  15           ; move lsb to msb
-           000EE : 50FB;  -- 	OR     m16sB
-           000EF : 10FB;  -- 	STORE  m16sB        ; result L now includes carry out from H
-           000F0 : 08FF;  -- 	LOAD   mres16sH
-           000F1 : 6011;  -- 	SHIFT  -1
-           000F2 : 10FF;  -- 	STORE  mres16sH     ; shift result H >>1
-           000F3 : 08FD;  -- 	LOAD   mcnt16s
-           000F4 : 6FFF;  -- 	ADDI   -1           ; check counter
-           000F5 : 38DB;  -- 	JPOS   Mult16s_loop ; need to iterate 16 times
-           000F6 : 08FB;  -- 	LOAD   m16sB
-           000F7 : 10FE;  -- 	STORE  mres16sL     ; multiplier and result L shared a word
-           000F8 : 8800;  -- 	RETURN              ; Done
-           000F9 : 7FFF;  -- c7FFF: DW &H7FFF
-           000FA : 0000;  -- m16sA: DW 0 ; multiplicand
-           000FB : 0000;  -- m16sB: DW 0 ; multipler
-           000FC : 0000;  -- m16sc: DW 0 ; carry
-           000FD : 0000;  -- mcnt16s: DW 0 ; counter
-           000FE : 0000;  -- mres16sL: DW 0 ; result low
-           000FF : 0000;  -- mres16sH: DW 0 ; result high
-           00100 : B800;  -- 	LOADI  0
-           00101 : 1138;  -- 	STORE  dres16sR     ; clear remainder result
-           00102 : 1135;  -- 	STORE  d16sC1       ; clear carry
-           00103 : 0931;  -- 	LOAD   d16sN
-           00104 : 5932;  -- 	XOR    d16sD
-           00105 : 1133;  -- 	STORE  d16sS        ; sign determination = N XOR D
-           00106 : B811;  -- 	LOADI  17
-           00107 : 1134;  -- 	STORE  d16sT        ; preload counter with 17 (16+1)
-           00108 : 0932;  -- 	LOAD   d16sD
-           00109 : 806E;  -- 	CALL   Abs          ; take absolute value of denominator
-           0010A : 1132;  -- 	STORE  d16sD
-           0010B : 0931;  -- 	LOAD   d16sN
-           0010C : 806E;  -- 	CALL   Abs          ; take absolute value of numerator
-           0010D : 1131;  -- 	STORE  d16sN
-           0010E : 0931;  -- 	LOAD   d16sN
-           0010F : 601F;  -- 	SHIFT  -15          ; get msb
-           00110 : 496D;  -- 	AND    One          ; only msb (because shift is arithmetic)
-           00111 : 1136;  -- 	STORE  d16sC2       ; store as carry
-           00112 : 0931;  -- 	LOAD   d16sN
-           00113 : 6001;  -- 	SHIFT  1            ; shift <<1
-           00114 : 5135;  -- 	OR     d16sC1       ; with carry
-           00115 : 1131;  -- 	STORE  d16sN
-           00116 : 0934;  -- 	LOAD   d16sT
-           00117 : 6FFF;  -- 	ADDI   -1           ; decrement counter
-           00118 : 4128;  -- 	JZERO  Div16s_sign  ; if finished looping, finalize result
-           00119 : 1134;  -- 	STORE  d16sT
-           0011A : 0938;  -- 	LOAD   dres16sR
-           0011B : 6001;  -- 	SHIFT  1            ; shift remainder
-           0011C : 5136;  -- 	OR     d16sC2       ; with carry from other shift
-           0011D : 2132;  -- 	SUB    d16sD        ; subtract denominator from remainder
-           0011E : 3123;  -- 	JNEG   Div16s_add   ; if negative, need to add it back
-           0011F : 1138;  -- 	STORE  dres16sR
-           00120 : B801;  -- 	LOADI  1
-           00121 : 1135;  -- 	STORE  d16sC1       ; set carry
-           00122 : 290E;  -- 	JUMP   Div16s_loop
-           00123 : 1932;  -- 	ADD    d16sD        ; add denominator back in
-           00124 : 1138;  -- 	STORE  dres16sR
-           00125 : B800;  -- 	LOADI  0
-           00126 : 1135;  -- 	STORE  d16sC1       ; clear carry
-           00127 : 290E;  -- 	JUMP   Div16s_loop
-           00128 : 0931;  -- 	LOAD   d16sN
-           00129 : 1137;  -- 	STORE  dres16sQ     ; numerator was used to hold quotient result
-           0012A : 0933;  -- 	LOAD   d16sS        ; check the sign indicator
-           0012B : 312D;  -- 	JNEG   Div16s_neg
-           0012C : 8800;  -- 	RETURN
-           0012D : 0937;  -- 	LOAD   dres16sQ     ; need to negate the result
-           0012E : 806F;  -- 	CALL   Neg
-           0012F : 1137;  -- 	STORE  dres16sQ
-           00130 : 8800;  -- 	RETURN	
-           00131 : 0000;  -- d16sN: DW 0 ; numerator
-           00132 : 0000;  -- d16sD: DW 0 ; denominator
-           00133 : 0000;  -- d16sS: DW 0 ; sign value
-           00134 : 0000;  -- d16sT: DW 0 ; temp counter
-           00135 : 0000;  -- d16sC1: DW 0 ; carry value
-           00136 : 0000;  -- d16sC2: DW 0 ; carry value
-           00137 : 0000;  -- dres16sQ: DW 0 ; quotient result
-           00138 : 0000;  -- dres16sR: DW 0 ; remainder result
-           00139 : 0963;  -- 	LOAD   L2A
-           0013A : 806E;  -- 	CALL   Abs
-           0013B : 1165;  -- 	STORE  L2T1
-           0013C : 0964;  -- 	LOAD   L2B
-           0013D : 806E;  -- 	CALL   Abs
-           0013E : 2165;  -- 	SUB    L2T1
-           0013F : 315B;  -- 	JNEG   GDSwap    ; swap if needed to get largest value in X
-           00140 : 1965;  -- 	ADD    L2T1
-           00141 : 10FA;  -- 	STORE  m16sa
-           00142 : B8F6;  -- 	LOADI  246       ; max * 246
-           00143 : 10FB;  -- 	STORE  m16sB
-           00144 : 80D7;  -- 	CALL   Mult16s
-           00145 : 08FF;  -- 	LOAD   mres16sH
-           00146 : 6008;  -- 	SHIFT  8
-           00147 : 1166;  -- 	STORE  L2T2
-           00148 : 08FE;  -- 	LOAD   mres16sL
-           00149 : 6018;  -- 	SHIFT  -8        ; / 256
-           0014A : 4977;  -- 	AND    LoByte
-           0014B : 5166;  -- 	OR     L2T2
-           0014C : 1167;  -- 	STORE  L2T3
-           0014D : 0965;  -- 	LOAD   L2T1
-           0014E : 10FA;  -- 	STORE  m16sa
-           0014F : B868;  -- 	LOADI  104       ; min * 104
-           00150 : 10FB;  -- 	STORE  m16sB
-           00151 : 80D7;  -- 	CALL   Mult16s
-           00152 : 08FF;  -- 	LOAD   mres16sH
-           00153 : 6008;  -- 	SHIFT  8
-           00154 : 1166;  -- 	STORE  L2T2
-           00155 : 08FE;  -- 	LOAD   mres16sL
-           00156 : 6018;  -- 	SHIFT  -8        ; / 256
-           00157 : 4977;  -- 	AND    LoByte
-           00158 : 5166;  -- 	OR     L2T2
-           00159 : 1967;  -- 	ADD    L2T3     ; sum
-           0015A : 8800;  -- 	RETURN
-           0015B : 1965;  -- 	ADD    L2T1
-           0015C : 1166;  -- 	STORE  L2T2
-           0015D : 0965;  -- 	LOAD   L2T1
-           0015E : 1167;  -- 	STORE  L2T3
-           0015F : 0966;  -- 	LOAD   L2T2
-           00160 : 1165;  -- 	STORE  L2T1
-           00161 : 0967;  -- 	LOAD   L2T3
-           00162 : 2941;  -- 	JUMP   CalcDist
-           00163 : 0000;  -- L2A:  DW 0
-           00164 : 0000;  -- L2B:  DW 0
-           00165 : 0000;  -- L2T1: DW 0
-           00166 : 0000;  -- L2T2: DW 0
-           00167 : 0000;  -- L2T3: DW 0
-           00168 : 0000;  -- Temp:      DW 0
-           00169 : 0000;  -- Pattern:   DW 0
-           0016A : 0000;  -- Score:     DW 0
-           0016B : 0000;  -- Zero:      DW 0
-           0016C : FFFF;  -- NegOne:    DW -1
-           0016D : 0001;  -- Bit0:      DW &B0000000001
-           0016E : 0002;  -- Bit1:      DW &B0000000010
-           0016F : 0004;  -- Bit2:      DW &B0000000100
-           00170 : 0008;  -- Bit3:      DW &B0000001000
-           00171 : 0010;  -- Bit4:      DW &B0000010000
-           00172 : 0020;  -- Bit5:      DW &B0000100000
-           00173 : 0040;  -- Bit6:      DW &B0001000000
-           00174 : 0080;  -- Bit7:      DW &B0010000000
-           00175 : 0100;  -- Bit8:      DW &B0100000000
-           00176 : 0200;  -- Bit9:      DW &B1000000000
-           00177 : 00FF;  -- LoByte:    DW &H00FF
-           00178 : FF00;  -- HiByte:    DW &HFF00
-           00179 : 203A;  -- I2CWCmd:  DW &H203A    ; write two i2c bytes, addr 0x3A
-           0017A : 123A;  -- I2CRCmd:  DW &H123A    ; write one byte, read two bytes, addr 0x3A
-           0017B : 0032;  -- AccXAddr: DW &H32      ; X acceleration register address.
-           0017C : 0034;  -- AccYAddr: DW &H34      ; Y acceleration register address.
-           0017D : 0006;  -- 	DW 6           ; Number of commands to send
-           0017E : 3100;  -- 	DW &H3100      ; Dummy transaction to sync I2C bus if needed	
-           0017F : 3100;  -- 	DW &H3100      ; Dummy transaction to sync I2C bus if needed	
-           00180 : 3100;  -- 	DW &H3100      ; Right-justified 10-bit data, +/-2 G
-           00181 : 3800;  -- 	DW &H3800      ; No FIFO
-           00182 : 2C0A;  -- 	DW &H2C0A      ; 25 samples per second
-           00183 : 2D08;  -- 	DW &H2D08      ; No sleep
+           0000 : 8026;  -- 	CALL  SetupI2C
+           0001 : 803C;  -- 	Call  ReadX
+           0002 : 1163;  -- 	Store L2A
+           0003 : 8046;  -- 	Call  ReadY
+           0004 : 1164;  -- 	Store L2B
+           0005 : 8139;  -- 	CALL  L2Estimate
+           0006 : 6014;  -- 	Shift -4
+           0007 : 9804;  -- 	OUT   HEX0
+           0008 : 9801;  -- 	OUT   LEDs
+           0009 : 2801;  -- 	JUMP Start ; Repeat
+           000A : 9000;  -- 	IN Switches
+           000B : 98F0;  -- 	OUT SqGen
+           000C : 280C;  -- Here: JUMP Here
+           000D : B801;  -- 	LOADI &B000001
+           000E : 98E0;  -- 	OUT  DPs
+           000F : 8014;  -- 	CALL WasteTime
+           0010 : B800;  -- 	LOADI &B000000
+           0011 : 98E0;  -- 	OUT  DPs
+           0012 : 8014;  -- 	CALL WasteTime
+           0013 : 2801;  -- 	JUMP Start
+           0014 : 0823;  -- 	Load WasteTimeOuterStart
+           0015 : 1024;  -- 	STORE WasteTimeOuterCount
+           0016 : 8018;  -- 	CALL WasteTimeOuter
+           0017 : 8800;  -- 	RETURN
+           0018 : 0825;  -- 	LOAD WasteTimeInnerStart
+           0019 : 801F;  -- 	CALL WasteTimeInner
+           001A : 0824;  -- 	LOAD WasteTimeOuterCount
+           001B : 6801;  -- 	ADDI 1
+           001C : 1024;  -- 	STORE WasteTimeOuterCount
+           001D : 4022;  -- 	JZERO WasteDone
+           001E : 2818;  -- 	JUMP WasteTimeOuter
+           001F : 6801;  -- 	ADDI 1
+           0020 : 4022;  -- 	JZERO WasteDone
+           0021 : 281F;  -- 	JUMP WasteTimeInner
+           0022 : 8800;  -- 	RETURN
+           0023 : FFF5;  -- WasteTimeOuterStart: DW &HFFF5
+           0024 : 0000;  -- WasteTimeOuterCount: DW 0
+           0025 : 3AB7;  -- WasteTimeInnerStart: DW &H3AB7
+           0026 : 097D;  -- 	LOAD   AccCfg      ; load the number of commands
+           0027 : 103B;  -- 	STORE  CmdCnt
+           0028 : B97D;  -- 	LOADI  AccCfg      ; Load list address
+           0029 : 6801;  -- 	ADDI   1           ; Increment to first command
+           002A : 103A;  -- 	STORE  CmdPtr
+           002B : 805A;  -- 	CALL   BlockI2C    ; wait for idle
+           002C : 0979;  -- 	LOAD   I2CWCmd     ; load write command
+           002D : 9890;  -- 	OUT    I2C_CMD     ; to I2C_CMD register
+           002E : 703A;  -- 	ILOAD  CmdPtr      ; load current command
+           002F : 9891;  -- 	OUT    I2C_DATA    ; to I2C_DATA register
+           0030 : 9892;  -- 	OUT    I2C_RDY     ; start the communication
+           0031 : 805A;  -- 	CALL   BlockI2C    ; wait for it to finish
+           0032 : 083A;  -- 	LOAD   CmdPtr
+           0033 : 6801;  -- 	ADDI   1           ; Increment to next command
+           0034 : 103A;  -- 	STORE  CmdPtr
+           0035 : 083B;  -- 	LOAD   CmdCnt
+           0036 : 6FFF;  -- 	ADDI   -1          ; Check if finished
+           0037 : 103B;  -- 	STORE  CmdCnt
+           0038 : 382B;  -- 	JPOS   I2CCmdLoop
+           0039 : 8800;  -- 	RETURN
+           003A : 0000;  -- CmdPtr: DW 0
+           003B : 0000;  -- CmdCnt: DW 0
+           003C : 805A;  -- 	CALL   BlockI2C    ; ensure bus is idle
+           003D : 097A;  -- 	LOAD   I2CRCmd     ; load read command
+           003E : 9890;  -- 	OUT    I2C_CMD     ; send read command to I2C_CMD register
+           003F : 097B;  -- 	LOAD   AccXAddr    ; load ADXL345 register address for X acceleration 
+           0040 : 9891;  -- 	OUT    I2C_DATA    ; send to I2C_DATA register
+           0041 : 9892;  -- 	OUT    I2C_RDY     ; start the communication
+           0042 : 805A;  -- 	CALL   BlockI2C    ; wait for it to finish
+           0043 : 9091;  -- 	IN     I2C_data    ; put the data in AC
+           0044 : 8050;  -- 	CALL   SwapBytes   ; bytes are returned in wrong order; swap them
+           0045 : 8800;  -- 	RETURN
+           0046 : 805A;  -- 	CALL   BlockI2C    ; ensure bus is idle
+           0047 : 097A;  -- 	LOAD   I2CRCmd     ; load read command
+           0048 : 9890;  -- 	OUT    I2C_CMD     ; send read command to I2C_CMD register
+           0049 : 097C;  -- 	LOAD   AccYAddr    ; load ADXL345 register address for Y acceleration 
+           004A : 9891;  -- 	OUT    I2C_DATA    ; send to I2C_DATA register
+           004B : 9892;  -- 	OUT    I2C_RDY     ; start the communication
+           004C : 805A;  -- 	CALL   BlockI2C    ; wait for it to finish
+           004D : 9091;  -- 	IN     I2C_data    ; put the data in AC
+           004E : 8050;  -- 	CALL   SwapBytes   ; bytes are returned in wrong order; swap them
+           004F : 8800;  -- 	RETURN
+           0050 : 1058;  -- 	STORE  SBT1
+           0051 : 6008;  -- 	SHIFT  8
+           0052 : 1059;  -- 	STORE  SBT2
+           0053 : 0858;  -- 	LOAD   SBT1
+           0054 : 6018;  -- 	SHIFT  -8
+           0055 : 4977;  -- 	AND    LoByte
+           0056 : 5059;  -- 	OR     SBT2
+           0057 : 8800;  -- 	RETURN
+           0058 : 0000;  -- SBT1: DW 0
+           0059 : 0000;  -- SBT2: DW 0
+           005A : 096B;  -- 	LOAD   Zero
+           005B : 1168;  -- 	STORE  Temp        ; Used to check for timeout
+           005C : 0968;  -- 	LOAD   Temp
+           005D : 6801;  -- 	ADDI   1           ; this will result in ~0.1s timeout
+           005E : 1168;  -- 	STORE  Temp
+           005F : 4063;  -- 	JZERO  I2CError    ; Timeout occurred; error
+           0060 : 9092;  -- 	IN     I2C_RDY     ; Read busy signal
+           0061 : 385C;  -- 	JPOS   BI2CL       ; If not 0, try again
+           0062 : 8800;  -- 	RETURN             ; Else return
+           0063 : 096B;  -- 	LOAD   Zero
+           0064 : 692C;  -- 	ADDI   &H12C       ; "I2C"
+           0065 : 9804;  -- 	OUT    Hex0        ; display error message
+           0066 : 2863;  -- 	JUMP   I2CError
+           0067 : 106D;  -- 	STORE  DelayTime   ; Save the desired delay
+           0068 : 9802;  -- 	OUT    Timer       ; Reset the timer
+           0069 : 9002;  -- 	IN     Timer       ; Get the current timer value
+           006A : 206D;  -- 	SUB    DelayTime
+           006B : 3069;  -- 	JNEG   WaitingLoop ; Repeat until timer = delay value
+           006C : 8800;  -- 	RETURN
+           006D : 0000;  -- DelayTime: DW 0
+           006E : 3871;  -- 	JPOS   Abs_r
+           006F : 596C;  -- 	XOR    NegOne       ; Flip all bits
+           0070 : 6801;  -- 	ADDI   1            ; Add one (i.e. negate number)
+           0071 : 8800;  -- 	RETURN
+           0072 : 08D2;  -- 	LOAD   AtanY
+           0073 : 806E;  -- 	CALL   Abs          ; abs(y)
+           0074 : 10D4;  -- 	STORE  AtanT
+           0075 : 08D1;  -- 	LOAD   AtanX        ; abs(x)
+           0076 : 806E;  -- 	CALL   Abs
+           0077 : 20D4;  -- 	SUB    AtanT        ; abs(x) - abs(y)
+           0078 : 3083;  -- 	JNEG   A2_sw        ; if abs(y) > abs(x), switch arguments.
+           0079 : 08D1;  -- 	LOAD   AtanX        ; Octants 1, 4, 5, 8
+           007A : 3080;  -- 	JNEG   A2_R3
+           007B : 8092;  -- 	CALL   A2_calc      ; Octants 1, 8
+           007C : 307E;  -- 	JNEG   A2_R1n
+           007D : 8800;  -- 	RETURN              ; Return raw value if in octant 1
+           007E : 6968;  -- 	ADDI   360          ; Add 360 if we are in octant 8
+           007F : 8800;  -- 	RETURN
+           0080 : 8092;  -- 	CALL   A2_calc      ; Octants 4, 5            
+           0081 : 68B4;  -- 	ADDI   180          ; theta' = theta + 180
+           0082 : 8800;  -- 	RETURN
+           0083 : 08D2;  -- 	LOAD   AtanY        ; Swap input arguments
+           0084 : 10D4;  -- 	STORE  AtanT
+           0085 : 08D1;  -- 	LOAD   AtanX
+           0086 : 10D2;  -- 	STORE  AtanY
+           0087 : 08D4;  -- 	LOAD   AtanT
+           0088 : 10D1;  -- 	STORE  AtanX
+           0089 : 388E;  -- 	JPOS   A2_R2        ; If Y positive, octants 2,3
+           008A : 8092;  -- 	CALL   A2_calc      ; else octants 6, 7
+           008B : 806F;  -- 	CALL   Neg          ; Negatge the number
+           008C : 690E;  -- 	ADDI   270          ; theta' = 270 - theta
+           008D : 8800;  -- 	RETURN
+           008E : 8092;  -- 	CALL   A2_calc      ; Octants 2, 3
+           008F : 806F;  -- 	CALL   Neg          ; negate the angle
+           0090 : 685A;  -- 	ADDI   90           ; theta' = 90 - theta
+           0091 : 8800;  -- 	RETURN
+           0092 : 08D2;  -- 	LOAD   AtanY
+           0093 : 1131;  -- 	STORE  d16sN        ; Y in numerator
+           0094 : 08D1;  -- 	LOAD   AtanX
+           0095 : 1132;  -- 	STORE  d16sD        ; X in denominator
+           0096 : 80BE;  -- 	CALL   A2_div       ; divide
+           0097 : 0937;  -- 	LOAD   dres16sQ     ; get the quotient (remainder ignored)
+           0098 : 10D3;  -- 	STORE  AtanRatio
+           0099 : 10FA;  -- 	STORE  m16sA
+           009A : 10FB;  -- 	STORE  m16sB
+           009B : 80B5;  -- 	CALL   A2_mult      ; X^2
+           009C : 10FA;  -- 	STORE  m16sA
+           009D : 08D5;  -- 	LOAD   A2c
+           009E : 10FB;  -- 	STORE  m16sB
+           009F : 80B5;  -- 	CALL   A2_mult
+           00A0 : 6900;  -- 	ADDI   256          ; 256/256+0.28125X^2
+           00A1 : 1132;  -- 	STORE  d16sD
+           00A2 : 08D3;  -- 	LOAD   AtanRatio
+           00A3 : 1131;  -- 	STORE  d16sN        ; Ratio in numerator
+           00A4 : 80BE;  -- 	CALL   A2_div       ; divide
+           00A5 : 0937;  -- 	LOAD   dres16sQ     ; get the quotient (remainder ignored)
+           00A6 : 10FA;  -- 	STORE  m16sA        ; <= result in radians
+           00A7 : 08D6;  -- 	LOAD   A2cd         ; degree conversion factor
+           00A8 : 10FB;  -- 	STORE  m16sB
+           00A9 : 80B5;  -- 	CALL   A2_mult      ; convert to degrees
+           00AA : 10D4;  -- 	STORE  AtanT
+           00AB : 6017;  -- 	SHIFT  -7           ; check 7th bit
+           00AC : 496D;  -- 	AND    One
+           00AD : 40B2;  -- 	JZERO  A2_rdwn      ; round down
+           00AE : 08D4;  -- 	LOAD   AtanT
+           00AF : 6018;  -- 	SHIFT  -8
+           00B0 : 6801;  -- 	ADDI   1            ; round up
+           00B1 : 8800;  -- 	RETURN
+           00B2 : 08D4;  -- 	LOAD   AtanT
+           00B3 : 6018;  -- 	SHIFT  -8           ; round down
+           00B4 : 8800;  -- 	RETURN
+           00B5 : 80D7;  -- 	CALL   Mult16s
+           00B6 : 08FF;  -- 	LOAD   mres16sH
+           00B7 : 6008;  -- 	SHIFT  8            ; move high word of result up 8 bits
+           00B8 : 10FF;  -- 	STORE  mres16sH
+           00B9 : 08FE;  -- 	LOAD   mres16sL
+           00BA : 6018;  -- 	SHIFT  -8           ; move low word of result down 8 bits
+           00BB : 4977;  -- 	AND    LoByte
+           00BC : 50FF;  -- 	OR     mres16sH     ; combine high and low words of result
+           00BD : 8800;  -- 	RETURN
+           00BE : B809;  -- 	LOADI  9            ; loop 8 times (256 = 2^8)
+           00BF : 10D4;  -- 	STORE  AtanT
+           00C0 : 08D4;  -- 	LOAD   AtanT
+           00C1 : 6FFF;  -- 	ADDI   -1
+           00C2 : 38C5;  -- 	JPOS   A2_DN        ; not done; continue shifting
+           00C3 : 8100;  -- 	CALL   Div16s       ; do the standard division
+           00C4 : 8800;  -- 	RETURN
+           00C5 : 10D4;  -- 	STORE  AtanT
+           00C6 : 0931;  -- 	LOAD   d16sN        ; start by trying to scale the numerator
+           00C7 : 6001;  -- 	SHIFT  1
+           00C8 : 5931;  -- 	XOR    d16sN        ; if the sign changed,
+           00C9 : 30CD;  -- 	JNEG   A2_DD        ; switch to scaling the denominator
+           00CA : 5931;  -- 	XOR    d16sN        ; get back shifted version
+           00CB : 1131;  -- 	STORE  d16sN
+           00CC : 28C0;  -- 	JUMP   A2_DL
+           00CD : 0932;  -- 	LOAD   d16sD
+           00CE : 6011;  -- 	SHIFT  -1           ; have to scale denominator
+           00CF : 1132;  -- 	STORE  d16sD
+           00D0 : 28C0;  -- 	JUMP   A2_DL
+           00D1 : 0000;  -- AtanX:      DW 0
+           00D2 : 0000;  -- AtanY:      DW 0
+           00D3 : 0000;  -- AtanRatio:  DW 0        ; =y/x
+           00D4 : 0000;  -- AtanT:      DW 0        ; temporary value
+           00D5 : 0048;  -- A2c:        DW 72       ; 72/256=0.28125, with 8 fractional bits
+           00D6 : 394C;  -- A2cd:       DW 14668    ; = 180/pi with 8 fractional bits
+           00D7 : B800;  -- 	LOADI  0
+           00D8 : 10FC;  -- 	STORE  m16sc        ; clear carry
+           00D9 : 10FF;  -- 	STORE  mres16sH     ; clear result
+           00DA : B810;  -- 	LOADI  16           ; load 16 to counter
+           00DB : 10FD;  -- 	STORE  mcnt16s      
+           00DC : 08FC;  -- 	LOAD   m16sc        ; check the carry (from previous iteration)
+           00DD : 40E1;  -- 	JZERO  Mult16s_noc  ; if no carry, move on
+           00DE : 08FF;  -- 	LOAD   mres16sH     ; if a carry, 
+           00DF : 18FA;  -- 	ADD    m16sA        ;  add multiplicand to result H
+           00E0 : 10FF;  -- 	STORE  mres16sH
+           00E1 : 08FB;  -- 	LOAD   m16sB
+           00E2 : 496D;  -- 	AND    One          ; check bit 0 of multiplier
+           00E3 : 10FC;  -- 	STORE  m16sc        ; save as next carry
+           00E4 : 40E8;  -- 	JZERO  Mult16s_sh   ; if no carry, move on to shift
+           00E5 : 08FF;  -- 	LOAD   mres16sH     ; if bit 0 set,
+           00E6 : 20FA;  -- 	SUB    m16sA        ;  subtract multiplicand from result H
+           00E7 : 10FF;  -- 	STORE  mres16sH
+           00E8 : 08FB;  -- 	LOAD   m16sB
+           00E9 : 6011;  -- 	SHIFT  -1           ; shift result L >>1
+           00EA : 48F9;  -- 	AND    c7FFF        ; clear msb
+           00EB : 10FB;  -- 	STORE  m16sB
+           00EC : 08FF;  -- 	LOAD   mres16sH     ; load result H
+           00ED : 600F;  -- 	SHIFT  15           ; move lsb to msb
+           00EE : 50FB;  -- 	OR     m16sB
+           00EF : 10FB;  -- 	STORE  m16sB        ; result L now includes carry out from H
+           00F0 : 08FF;  -- 	LOAD   mres16sH
+           00F1 : 6011;  -- 	SHIFT  -1
+           00F2 : 10FF;  -- 	STORE  mres16sH     ; shift result H >>1
+           00F3 : 08FD;  -- 	LOAD   mcnt16s
+           00F4 : 6FFF;  -- 	ADDI   -1           ; check counter
+           00F5 : 38DB;  -- 	JPOS   Mult16s_loop ; need to iterate 16 times
+           00F6 : 08FB;  -- 	LOAD   m16sB
+           00F7 : 10FE;  -- 	STORE  mres16sL     ; multiplier and result L shared a word
+           00F8 : 8800;  -- 	RETURN              ; Done
+           00F9 : 7FFF;  -- c7FFF: DW &H7FFF
+           00FA : 0000;  -- m16sA: DW 0 ; multiplicand
+           00FB : 0000;  -- m16sB: DW 0 ; multipler
+           00FC : 0000;  -- m16sc: DW 0 ; carry
+           00FD : 0000;  -- mcnt16s: DW 0 ; counter
+           00FE : 0000;  -- mres16sL: DW 0 ; result low
+           00FF : 0000;  -- mres16sH: DW 0 ; result high
+           0100 : B800;  -- 	LOADI  0
+           0101 : 1138;  -- 	STORE  dres16sR     ; clear remainder result
+           0102 : 1135;  -- 	STORE  d16sC1       ; clear carry
+           0103 : 0931;  -- 	LOAD   d16sN
+           0104 : 5932;  -- 	XOR    d16sD
+           0105 : 1133;  -- 	STORE  d16sS        ; sign determination = N XOR D
+           0106 : B811;  -- 	LOADI  17
+           0107 : 1134;  -- 	STORE  d16sT        ; preload counter with 17 (16+1)
+           0108 : 0932;  -- 	LOAD   d16sD
+           0109 : 806E;  -- 	CALL   Abs          ; take absolute value of denominator
+           010A : 1132;  -- 	STORE  d16sD
+           010B : 0931;  -- 	LOAD   d16sN
+           010C : 806E;  -- 	CALL   Abs          ; take absolute value of numerator
+           010D : 1131;  -- 	STORE  d16sN
+           010E : 0931;  -- 	LOAD   d16sN
+           010F : 601F;  -- 	SHIFT  -15          ; get msb
+           0110 : 496D;  -- 	AND    One          ; only msb (because shift is arithmetic)
+           0111 : 1136;  -- 	STORE  d16sC2       ; store as carry
+           0112 : 0931;  -- 	LOAD   d16sN
+           0113 : 6001;  -- 	SHIFT  1            ; shift <<1
+           0114 : 5135;  -- 	OR     d16sC1       ; with carry
+           0115 : 1131;  -- 	STORE  d16sN
+           0116 : 0934;  -- 	LOAD   d16sT
+           0117 : 6FFF;  -- 	ADDI   -1           ; decrement counter
+           0118 : 4128;  -- 	JZERO  Div16s_sign  ; if finished looping, finalize result
+           0119 : 1134;  -- 	STORE  d16sT
+           011A : 0938;  -- 	LOAD   dres16sR
+           011B : 6001;  -- 	SHIFT  1            ; shift remainder
+           011C : 5136;  -- 	OR     d16sC2       ; with carry from other shift
+           011D : 2132;  -- 	SUB    d16sD        ; subtract denominator from remainder
+           011E : 3123;  -- 	JNEG   Div16s_add   ; if negative, need to add it back
+           011F : 1138;  -- 	STORE  dres16sR
+           0120 : B801;  -- 	LOADI  1
+           0121 : 1135;  -- 	STORE  d16sC1       ; set carry
+           0122 : 290E;  -- 	JUMP   Div16s_loop
+           0123 : 1932;  -- 	ADD    d16sD        ; add denominator back in
+           0124 : 1138;  -- 	STORE  dres16sR
+           0125 : B800;  -- 	LOADI  0
+           0126 : 1135;  -- 	STORE  d16sC1       ; clear carry
+           0127 : 290E;  -- 	JUMP   Div16s_loop
+           0128 : 0931;  -- 	LOAD   d16sN
+           0129 : 1137;  -- 	STORE  dres16sQ     ; numerator was used to hold quotient result
+           012A : 0933;  -- 	LOAD   d16sS        ; check the sign indicator
+           012B : 312D;  -- 	JNEG   Div16s_neg
+           012C : 8800;  -- 	RETURN
+           012D : 0937;  -- 	LOAD   dres16sQ     ; need to negate the result
+           012E : 806F;  -- 	CALL   Neg
+           012F : 1137;  -- 	STORE  dres16sQ
+           0130 : 8800;  -- 	RETURN	
+           0131 : 0000;  -- d16sN: DW 0 ; numerator
+           0132 : 0000;  -- d16sD: DW 0 ; denominator
+           0133 : 0000;  -- d16sS: DW 0 ; sign value
+           0134 : 0000;  -- d16sT: DW 0 ; temp counter
+           0135 : 0000;  -- d16sC1: DW 0 ; carry value
+           0136 : 0000;  -- d16sC2: DW 0 ; carry value
+           0137 : 0000;  -- dres16sQ: DW 0 ; quotient result
+           0138 : 0000;  -- dres16sR: DW 0 ; remainder result
+           0139 : 0963;  -- 	LOAD   L2A
+           013A : 806E;  -- 	CALL   Abs
+           013B : 1165;  -- 	STORE  L2T1
+           013C : 0964;  -- 	LOAD   L2B
+           013D : 806E;  -- 	CALL   Abs
+           013E : 2165;  -- 	SUB    L2T1
+           013F : 315B;  -- 	JNEG   GDSwap    ; swap if needed to get largest value in X
+           0140 : 1965;  -- 	ADD    L2T1
+           0141 : 10FA;  -- 	STORE  m16sa
+           0142 : B8F6;  -- 	LOADI  246       ; max * 246
+           0143 : 10FB;  -- 	STORE  m16sB
+           0144 : 80D7;  -- 	CALL   Mult16s
+           0145 : 08FF;  -- 	LOAD   mres16sH
+           0146 : 6008;  -- 	SHIFT  8
+           0147 : 1166;  -- 	STORE  L2T2
+           0148 : 08FE;  -- 	LOAD   mres16sL
+           0149 : 6018;  -- 	SHIFT  -8        ; / 256
+           014A : 4977;  -- 	AND    LoByte
+           014B : 5166;  -- 	OR     L2T2
+           014C : 1167;  -- 	STORE  L2T3
+           014D : 0965;  -- 	LOAD   L2T1
+           014E : 10FA;  -- 	STORE  m16sa
+           014F : B868;  -- 	LOADI  104       ; min * 104
+           0150 : 10FB;  -- 	STORE  m16sB
+           0151 : 80D7;  -- 	CALL   Mult16s
+           0152 : 08FF;  -- 	LOAD   mres16sH
+           0153 : 6008;  -- 	SHIFT  8
+           0154 : 1166;  -- 	STORE  L2T2
+           0155 : 08FE;  -- 	LOAD   mres16sL
+           0156 : 6018;  -- 	SHIFT  -8        ; / 256
+           0157 : 4977;  -- 	AND    LoByte
+           0158 : 5166;  -- 	OR     L2T2
+           0159 : 1967;  -- 	ADD    L2T3     ; sum
+           015A : 8800;  -- 	RETURN
+           015B : 1965;  -- 	ADD    L2T1
+           015C : 1166;  -- 	STORE  L2T2
+           015D : 0965;  -- 	LOAD   L2T1
+           015E : 1167;  -- 	STORE  L2T3
+           015F : 0966;  -- 	LOAD   L2T2
+           0160 : 1165;  -- 	STORE  L2T1
+           0161 : 0967;  -- 	LOAD   L2T3
+           0162 : 2941;  -- 	JUMP   CalcDist
+           0163 : 0000;  -- L2A:  DW 0
+           0164 : 0000;  -- L2B:  DW 0
+           0165 : 0000;  -- L2T1: DW 0
+           0166 : 0000;  -- L2T2: DW 0
+           0167 : 0000;  -- L2T3: DW 0
+           0168 : 0000;  -- Temp:      DW 0
+           0169 : 0000;  -- Pattern:   DW 0
+           016A : 0000;  -- Score:     DW 0
+           016B : 0000;  -- Zero:      DW 0
+           016C : FFFF;  -- NegOne:    DW -1
+           016D : 0001;  -- Bit0:      DW &B0000000001
+           016E : 0002;  -- Bit1:      DW &B0000000010
+           016F : 0004;  -- Bit2:      DW &B0000000100
+           0170 : 0008;  -- Bit3:      DW &B0000001000
+           0171 : 0010;  -- Bit4:      DW &B0000010000
+           0172 : 0020;  -- Bit5:      DW &B0000100000
+           0173 : 0040;  -- Bit6:      DW &B0001000000
+           0174 : 0080;  -- Bit7:      DW &B0010000000
+           0175 : 0100;  -- Bit8:      DW &B0100000000
+           0176 : 0200;  -- Bit9:      DW &B1000000000
+           0177 : 00FF;  -- LoByte:    DW &H00FF
+           0178 : FF00;  -- HiByte:    DW &HFF00
+           0179 : 203A;  -- I2CWCmd:  DW &H203A    ; write two i2c bytes, addr 0x3A
+           017A : 123A;  -- I2CRCmd:  DW &H123A    ; write one byte, read two bytes, addr 0x3A
+           017B : 0032;  -- AccXAddr: DW &H32      ; X acceleration register address.
+           017C : 0034;  -- AccYAddr: DW &H34      ; Y acceleration register address.
+           017D : 0006;  -- 	DW 6           ; Number of commands to send
+           017E : 3100;  -- 	DW &H3100      ; Dummy transaction to sync I2C bus if needed	
+           017F : 3100;  -- 	DW &H3100      ; Dummy transaction to sync I2C bus if needed	
+           0180 : 3100;  -- 	DW &H3100      ; Right-justified 10-bit data, +/-2 G
+           0181 : 3800;  -- 	DW &H3800      ; No FIFO
+           0182 : 2C0A;  -- 	DW &H2C0A      ; 25 samples per second
+           0183 : 2D08;  -- 	DW &H2D08      ; No sleep
   END;

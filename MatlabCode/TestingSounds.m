@@ -1,7 +1,7 @@
 %% Load file
-ramblinWreck = audioread("SoundFiles\ramblinWreck.mp3");
+ramblinWreck = audioread("SoundFiles\Fail.mp3");
 fs = 44100;
-audio = ramblinWreck(round(44100*11.2):44100*24.4,2);
+audio = ramblinWreck(round(fs*0.5):round(fs*3.5),2);
 tt = 1/fs*[0:length(audio)-1];
 
 maskTop = audio >= 0;
@@ -22,7 +22,11 @@ sound(audio, fs);
 
 
 %% Hear sound as square wave
-sound(sqAudio, fs);
+sound(maskTop*1, fs);
+
+%% Hear repeated square wave
+repSqAudio = [sqAudio; sqAudio; sqAudio; sqAudio; sqAudio];
+sound(repSqAudio, fs);
 
 %% Plot
 figure;
@@ -31,8 +35,8 @@ area(tt(1:10000), sqAudio(1:10000));
 
 
 %% Output files
-audiowrite("RamblinWreckNormal.wav",audio, fs);
-audiowrite("RamblinWreckSquare.wav",sqAudio, fs);
+%audiowrite("RamblinWreckNormal.wav",audio, fs);
+audiowrite("Hit.wav",sqAudio, fs);
 
 %% Fix volume
 volume = abs(audio);
@@ -51,7 +55,7 @@ for i = 1:length(sqAudio)
         k = k + 1;
     else
         if currVal == 0
-            k = k + 32768
+            k = k + 32768;
         end
         pulses = [pulses k];
         if currVal == 0
