@@ -33,13 +33,13 @@ for i in range(len(values)):
     temp = i + 2048
     temp = hex(int(temp))[2:].upper()
     if (len(temp)) == 4:
-        temp = "0" + temp
+        pass
     elif (len(temp)) == 3:
-        temp = "00" + temp
+        temp = "0" + temp
     elif (len(temp)) == 2:
-        temp = "000" + temp
+        temp = "00" + temp
     elif (len(temp)) == 1:
-        temp = "0000" + temp
+        temp = "000" + temp
     addresses.append(temp)
 
 for i in range(len(values)):
@@ -48,7 +48,7 @@ for i in range(len(values)):
 
 lines.append(last_line)
 
-with open("..\\MemoryFiles\\TestDone.mif", 'w') as f3:
+with open("..\\MemoryFiles\\CMScale.mif", 'w') as f3:
     f3.writelines(lines)
 
 
