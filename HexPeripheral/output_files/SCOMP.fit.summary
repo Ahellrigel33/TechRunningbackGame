@@ -1,12 +1,12 @@
-Fitter Status : Successful - Wed Oct 28 17:54:51 2020
+Fitter Status : Successful - Sat Nov 14 13:37:30 2020
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : SCOMP
 Top-level Entity Name : SCOMP_System
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 920 / 49,760 ( 2 % )
-    Total combinational functions : 820 / 49,760 ( 2 % )
+Total logic elements : 914 / 49,760 ( 2 % )
+    Total combinational functions : 821 / 49,760 ( 2 % )
     Dedicated logic registers : 419 / 49,760 ( < 1 % )
 Total registers : 419
 Total pins : 68 / 360 ( 19 % )

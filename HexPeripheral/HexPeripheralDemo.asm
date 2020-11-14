@@ -116,15 +116,37 @@ HexPeriph:  	EQU &H0E0
 ; Call this with the desired delay in AC.
 ; E.g. if AC is 10, this will delay for 10*0.1 = 1 second
 ;*******************************************************************************
+;DelayAC:
+;	STORE  DelayTime   ; Save the desired delay
+;	OUT    Timer       ; Reset the timer
+;WaitingLoop:
+;	IN     Timer       ; Get the current timer value
+;	SUB    DelayTime
+;	JNEG   WaitingLoop ; Repeat until timer = delay value
+;	RETURN
+;DelayTime: DW 0
+
 DelayAC:
-	STORE  DelayTime   ; Save the desired delay
-	OUT    Timer       ; Reset the timer
-WaitingLoop:
-	IN     Timer       ; Get the current timer value
-	SUB    DelayTime
-	JNEG   WaitingLoop ; Repeat until timer = delay value
+	LOADI 0
+Bruh:
+	ADDI 1
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	JZERO Boop
+	JUMP Bruh
+Boop:
 	RETURN
-DelayTime: DW 0
+
+OuterMask:  DW 9
+OuterCount: DW 0
 
 ;*******************************************************************************
 ; Abs: 2's complement absolute value
@@ -139,6 +161,7 @@ Neg:
 	ADDI   1            ; Add one (i.e. negate number)
 Abs_r:
 	RETURN
+
 
 ;******************************************************************************;
 ; Atan2: 4-quadrant arctangent calculation                                     ;

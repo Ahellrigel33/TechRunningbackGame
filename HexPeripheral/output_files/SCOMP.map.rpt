@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Wed Oct 28 17:54:27 2020
+Sat Nov 14 13:36:37 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -62,13 +62,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 28 17:54:27 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 14 13:36:37 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 940                                         ;
-;     Total combinational functions  ; 816                                         ;
+; Total logic elements               ; 941                                         ;
+;     Total combinational functions  ; 817                                         ;
 ;     Dedicated logic registers      ; 419                                         ;
 ; Total registers                    ; 419                                         ;
 ; Total pins                         ; 68                                          ;
@@ -173,94 +173,96 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; I2C_INTERFACE.bdf                ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/I2C_INTERFACE.bdf      ;         ;
-; i2c_master.vhd                   ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd         ;         ;
-; i2c_ctrl.vhd                     ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd           ;         ;
-; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd            ;         ;
-; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_IN.vhd             ;         ;
-; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/clk_div.vhd            ;         ;
-; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd              ;         ;
-; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd         ;         ;
-; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd              ;         ;
-; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP_System.bdf       ;         ;
-; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd           ;         ;
-; HexPeripheral.vhd                ; yes             ; User VHDL File                         ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd      ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                ;         ;
-; aglobal191.inc                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc            ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc           ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc         ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc         ;         ;
-; db/pll_main_altpll.v             ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/pll_main_altpll.v   ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf            ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc     ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc               ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc            ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc             ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc              ;         ;
-; db/altsyncram_kks3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf ;         ;
-; HexPeripheralDemo.mif            ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif  ;         ;
-; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf           ;         ;
-; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf ;         ;
-; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf            ;         ;
-; sq_gen.vhd                       ; yes             ; Auto-Found VHDL File                   ; C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd             ;         ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
+; I2C_INTERFACE.bdf                ; yes             ; User Block Diagram/Schematic File      ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/I2C_INTERFACE.bdf      ;         ;
+; i2c_master.vhd                   ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/i2c_master.vhd         ;         ;
+; i2c_ctrl.vhd                     ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd           ;         ;
+; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd            ;         ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/DIG_IN.vhd             ;         ;
+; clk_div.vhd                      ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/clk_div.vhd            ;         ;
+; TIMER.vhd                        ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/TIMER.vhd              ;         ;
+; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd         ;         ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd              ;         ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP_System.bdf       ;         ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/PLL_main.vhd           ;         ;
+; HexPeripheral.vhd                ; yes             ; User VHDL File                         ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd      ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc        ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
+; db/PLL_main_altpll.v             ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/db/PLL_main_altpll.v   ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_kks3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf ;         ;
+; HexPeripheralDemo.mif            ; yes             ; Auto-Found Memory Initialization File  ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif  ;         ;
+; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf       ;         ;
+; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf ;         ;
+; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf        ;         ;
+; SQ_GEN.vhd                       ; yes             ; Auto-Found VHDL File                   ; /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SQ_GEN.vhd             ;         ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                          ;
-+---------------------------------------------+----------------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                                  ;
-+---------------------------------------------+----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 940                                                                                    ;
-;                                             ;                                                                                        ;
-; Total combinational functions               ; 816                                                                                    ;
-; Logic element usage by number of LUT inputs ;                                                                                        ;
-;     -- 4 input functions                    ; 432                                                                                    ;
-;     -- 3 input functions                    ; 282                                                                                    ;
-;     -- <=2 input functions                  ; 102                                                                                    ;
-;                                             ;                                                                                        ;
-; Logic elements by mode                      ;                                                                                        ;
-;     -- normal mode                          ; 749                                                                                    ;
-;     -- arithmetic mode                      ; 67                                                                                     ;
-;                                             ;                                                                                        ;
-; Total registers                             ; 419                                                                                    ;
-;     -- Dedicated logic registers            ; 419                                                                                    ;
-;     -- I/O registers                        ; 0                                                                                      ;
-;                                             ;                                                                                        ;
-; I/O pins                                    ; 68                                                                                     ;
-; Total memory bits                           ; 32768                                                                                  ;
-;                                             ;                                                                                        ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                                      ;
-;                                             ;                                                                                        ;
-; Total PLLs                                  ; 1                                                                                      ;
-;     -- PLLs                                 ; 1                                                                                      ;
-;                                             ;                                                                                        ;
-; Maximum fan-out node                        ; PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 240                                                                                    ;
-; Total fan-out                               ; 4362                                                                                   ;
-; Average fan-out                             ; 3.14                                                                                   ;
-+---------------------------------------------+----------------------------------------------------------------------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 941   ;
+;                                             ;       ;
+; Total combinational functions               ; 817   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 432   ;
+;     -- 3 input functions                    ; 282   ;
+;     -- <=2 input functions                  ; 103   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 750   ;
+;     -- arithmetic mode                      ; 67    ;
+;                                             ;       ;
+; Total registers                             ; 419   ;
+;     -- Dedicated logic registers            ; 419   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 68    ;
+; Total memory bits                           ; 32768 ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Total PLLs                                  ; 1     ;
+;     -- PLLs                                 ; 1     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; inst9 ;
+; Maximum fan-out                             ; 228   ;
+; Total fan-out                               ; 4364  ;
+; Average fan-out                             ; 3.14  ;
++---------------------------------------------+-------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -268,7 +270,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                     ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; |SCOMP_System                             ; 816 (0)             ; 419 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System    ; work         ;
+; |SCOMP_System                             ; 817 (1)             ; 419 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System    ; work         ;
 ;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN          ; work         ;
 ;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                             ; DIG_OUT         ; work         ;
 ;    |HexPeripheral:inst10|                 ; 42 (42)             ; 50 (50)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HexPeripheral:inst10                                                      ; HexPeripheral   ; work         ;
@@ -429,21 +431,21 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[4][4]                         ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[0][8]                         ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_player[6]              ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex2[3]                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex4[6]                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex1[6]                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex3[6]                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex5[1]                ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[0]   ;
-; 10:1               ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex0[5]                ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[5]   ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[10]                                 ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[1]   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[11] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[2]  ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[9]                                  ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex2[6]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex4[1]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex1[3]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex3[2]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex5[0]                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|data_tx[3]   ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex0[1]                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[7]   ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[3]                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[0]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[12] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[6]  ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[10]                                 ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|count        ;
 ; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
@@ -1009,14 +1011,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 30                          ;
 ;     plain             ; 23                          ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 817                         ;
+; cycloneiii_lcell_comb ; 818                         ;
 ;     arith             ; 67                          ;
 ;         2 data inputs ; 51                          ;
 ;         3 data inputs ; 16                          ;
-;     normal            ; 750                         ;
+;     normal            ; 751                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 9                           ;
-;         2 data inputs ; 42                          ;
+;         2 data inputs ; 43                          ;
 ;         3 data inputs ; 266                         ;
 ;         4 data inputs ; 432                         ;
 ; cycloneiii_pll        ; 1                           ;
@@ -1042,60 +1044,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Oct 28 17:54:13 2020
+    Info: Processing started: Sat Nov 14 13:36:24 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file i2c_interface.bdf
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file I2C_INTERFACE.bdf
     Info (12023): Found entity 1: I2C_INTERFACE
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_master.vhd
-    Info (12022): Found design unit 1: i2c_master-logic File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 49
-    Info (12023): Found entity 1: i2c_master File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 31
+    Info (12022): Found design unit 1: i2c_master-logic File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 49
+    Info (12023): Found entity 1: i2c_master File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 31
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_ctrl.vhd
-    Info (12022): Found design unit 1: i2c_ctrl-main File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd Line: 32
-    Info (12023): Found entity 1: i2c_ctrl File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd Line: 11
-Info (12021): Found 2 design units, including 1 entities, in source file hex_disp.vhd
-    Info (12022): Found design unit 1: HEX_DISP-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HEX_DISP.vhd Line: 17
-    Info (12023): Found entity 1: HEX_DISP File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HEX_DISP.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd Line: 16
-Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_IN.vhd Line: 18
-    Info (12023): Found entity 1: DIG_IN File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/DIG_IN.vhd Line: 10
+    Info (12022): Found design unit 1: i2c_ctrl-main File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd Line: 32
+    Info (12023): Found entity 1: i2c_ctrl File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/i2c_ctrl.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file HEX_DISP.vhd
+    Info (12022): Found design unit 1: HEX_DISP-a File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/HEX_DISP.vhd Line: 17
+    Info (12023): Found entity 1: HEX_DISP File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/HEX_DISP.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file DIG_OUT.vhd
+    Info (12022): Found design unit 1: DIG_OUT-a File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/DIG_OUT.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file DIG_IN.vhd
+    Info (12022): Found design unit 1: DIG_IN-a File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/DIG_IN.vhd Line: 18
+    Info (12023): Found entity 1: DIG_IN File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/DIG_IN.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/clk_div.vhd Line: 21
-    Info (12023): Found entity 1: clk_div File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/clk_div.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 27
-    Info (12023): Found entity 1: TIMER File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 17
-Info (12021): Found 2 design units, including 1 entities, in source file io_decoder.vhd
-    Info (12022): Found design unit 1: IO_DECODER-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 30
-    Info (12023): Found entity 1: IO_DECODER File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 33
-    Info (12023): Found entity 1: SCOMP File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
+    Info (12022): Found design unit 1: clk_div-a File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/clk_div.vhd Line: 21
+    Info (12023): Found entity 1: clk_div File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/clk_div.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file TIMER.vhd
+    Info (12022): Found design unit 1: TIMER-a File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 27
+    Info (12023): Found entity 1: TIMER File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 17
+Info (12021): Found 2 design units, including 1 entities, in source file IO_DECODER.vhd
+    Info (12022): Found design unit 1: IO_DECODER-a File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 30
+    Info (12023): Found entity 1: IO_DECODER File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file SCOMP.vhd
+    Info (12022): Found design unit 1: SCOMP-a File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 33
+    Info (12023): Found entity 1: SCOMP File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 16
+Info (12021): Found 1 design units, including 1 entities, in source file SCOMP_System.bdf
     Info (12023): Found entity 1: SCOMP_System
-Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: pll_main-SYN File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 54
-    Info (12023): Found entity 1: PLL_main File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 43
-Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
+Info (12021): Found 2 design units, including 1 entities, in source file PLL_main.vhd
+    Info (12022): Found design unit 1: pll_main-SYN File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 54
+    Info (12023): Found entity 1: PLL_main File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file HEX_DISP_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
 Warning (12019): Can't analyze file -- file output_files/DPs.bdf is missing
-Info (12021): Found 1 design units, including 1 entities, in source file dps.bdf
+Info (12021): Found 1 design units, including 1 entities, in source file DPs.bdf
     Info (12023): Found entity 1: DPs
-Info (12021): Found 2 design units, including 1 entities, in source file hexperipheral.vhd
-    Info (12022): Found design unit 1: HexPeripheral-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 37
-    Info (12023): Found entity 1: HexPeripheral File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 14
+Info (12021): Found 2 design units, including 1 entities, in source file HexPeripheral.vhd
+    Info (12022): Found design unit 1: HexPeripheral-a File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 37
+    Info (12023): Found entity 1: HexPeripheral File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/HexPeripheral.vhd Line: 14
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
 Info (12128): Elaborating entity "I2C_INTERFACE" for hierarchy "I2C_INTERFACE:inst13"
 Info (12128): Elaborating entity "i2c_master" for hierarchy "I2C_INTERFACE:inst13|i2c_master:inst"
 Info (12128): Elaborating entity "i2c_ctrl" for hierarchy "I2C_INTERFACE:inst13|i2c_ctrl:inst14"
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
-Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
+Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
+Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/PLL_main.vhd Line: 141
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1151,13 +1153,13 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component"
     Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
-Info (12021): Found 1 design units, including 1 entities, in source file db/pll_main_altpll.v
-    Info (12023): Found entity 1: PLL_main_altpll File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/pll_main_altpll.v Line: 31
-Info (12128): Elaborating entity "PLL_main_altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated" File: d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12021): Found 1 design units, including 1 entities, in source file db/PLL_main_altpll.v
+    Info (12023): Found entity 1: PLL_main_altpll File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/db/PLL_main_altpll.v Line: 31
+Info (12128): Elaborating entity "PLL_main_altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated" File: /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
+Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
+Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 61
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1209,46 +1211,35 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_kks3.tdf
-    Info (12023): Found entity 1: altsyncram_kks3 File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_kks3" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_kks3:auto_generated" File: d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113031): 345 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 345 warnings found, and 10 warnings are reported. File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/HexPeripheralDemo.mif Line: 1
-    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 13
-    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 14
-    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 15
-    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 16
-    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 17
-    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 18
-    Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 19
-    Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 20
-    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 21
-    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/ Line: 22
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
+    Info (12023): Found entity 1: altsyncram_kks3 File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/db/altsyncram_kks3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_kks3" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_kks3:auto_generated" File: /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 88
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_WIDTHDIST" = "4"
     Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
     Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_clshift_fuc.tdf
-    Info (12023): Found entity 1: lpm_clshift_fuc File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf Line: 23
-Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: d:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
+    Info (12023): Found entity 1: lpm_clshift_fuc File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/db/lpm_clshift_fuc.tdf Line: 23
+Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: /home/akash/intelFPGA_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SCOMP.vhd Line: 115
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TIMER" for hierarchy "TIMER:inst4"
-Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 59
+Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/TIMER.vhd Line: 59
 Info (12128): Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst3"
-Warning (10541): VHDL Signal Declaration warning at IO_DECODER.vhd(23): used implicit default value for signal "DP_EN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 23
+Warning (10541): VHDL Signal Declaration warning at IO_DECODER.vhd(23): used implicit default value for signal "DP_EN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/IO_DECODER.vhd Line: 23
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
 Info (12128): Elaborating entity "HexPeripheral" for hierarchy "HexPeripheral:inst10"
 Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
-Warning (12125): Using design file sq_gen.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: SQ_GEN-a File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd Line: 25
-    Info (12023): Found entity 1: SQ_GEN File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/sq_gen.vhd Line: 15
+Warning (12125): Using design file SQ_GEN.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: SQ_GEN-a File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SQ_GEN.vhd Line: 25
+    Info (12023): Found entity 1: SQ_GEN File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/SQ_GEN.vhd Line: 15
 Info (12128): Elaborating entity "SQ_GEN" for hierarchy "SQ_GEN:inst16"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[6]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[6]" into an OR gate
@@ -1267,7 +1258,7 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[0]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[0]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[8]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[8]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[7]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[7]" into an OR gate
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Ryan/Documents/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 57
+Info (13000): Registers with preset signals will power-up high File: /home/akash/College/ECE 2031/TechRunningbackGame/HexPeripheral/i2c_master.vhd Line: 57
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GSENSOR_CS_n" is stuck at VCC
@@ -1276,17 +1267,17 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1052 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1053 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 54 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 967 logic cells
+    Info (21061): Implemented 968 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
-    Info: Peak virtual memory: 4817 megabytes
-    Info: Processing ended: Wed Oct 28 17:54:27 2020
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:23
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 1042 megabytes
+    Info: Processing ended: Sat Nov 14 13:36:37 2020
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:30
 
 

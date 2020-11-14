@@ -23,7 +23,8 @@ ENTITY IO_DECODER IS
     DP_EN         : OUT STD_LOGIC;
 	 SQ_EN			: OUT STD_LOGIC;
 	 HEX_EN			: OUT STD_LOGIC;
-	 PLAYER_EN		: OUT STD_LOGIC
+	 PLAYER_EN		: OUT STD_LOGIC;
+	 DEF_EN        : OUT STD_LOGIC
   );
 
 END ENTITY;
@@ -47,5 +48,6 @@ begin
   SQ_EN        <= '1' WHEN (ADDR_INT = 16#0F0#) and (IO_CYCLE = '1') ELSE '0';
   HEX_EN       <= '1' WHEN (ADDR_INT = 16#0E0#) and (IO_CYCLE = '1') ELSE '0';
   PLAYER_EN    <= '1' WHEN (ADDR_INT = 16#0E1#) and (IO_CYCLE = '1') ELSE '0';
+  DEF_EN       <= '1' WHEN (ADDR_INT = 16#0E2#) and (IO_CYCLE = '1') ELSE '0';
   
 END a;

@@ -12,7 +12,6 @@ use ieee.std_logic_unsigned.all;
 use altera_mf.altera_mf_components.all;
 use lpm.lpm_components.all;
 
-
 entity SCOMP is
 	port(
 		clock     : in    std_logic;
@@ -26,7 +25,11 @@ entity SCOMP is
 		dbg_PC    : out   std_logic_vector(10 downto 0);
 		dbg_MA    : out   std_logic_vector(10 downto 0);
 		dbg_MD    : out   std_logic_vector(15 downto 0);
-		dbg_IR    : out   std_logic_vector(15 downto 0)
+		dbg_IR    : out   std_logic_vector(15 downto 0);
+		m_mw         : out    std_logic;
+		m_data		 : in	    std_logic_vector(15 downto 0);
+		m_addr	    : out    std_logic_vector(10 downto 0);
+		m_ac			 : out    std_logic_vector(15 downto 0)
 	);
 end SCOMP;
 
@@ -58,32 +61,11 @@ architecture a of SCOMP is
 
 begin
 	-- use altsyncram component for unified program and data memory
-	altsyncram_component : altsyncram
-	GENERIC MAP (
-		numwords_a => 2048,
-		widthad_a => 11,
-		width_a => 16,
-		init_file => "HexPeripheralDemo.mif",
-		clock_enable_input_a => "BYPASS",
-		clock_enable_output_a => "BYPASS",
-		intended_device_family => "MAX 10",
-		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
-		lpm_type => "altsyncram",
-		operation_mode => "SINGLE_PORT",
-		outdata_aclr_a => "NONE",
-		outdata_reg_a => "UNREGISTERED",
-		power_up_uninitialized => "FALSE",
-		read_during_write_mode_port_a => "NEW_DATA_NO_NBE_READ",
-		width_byteena_a => 1
-	)
-	PORT MAP (
-		wren_a    => MW,
-		clock0    => clock,
-		address_a => next_mem_addr,
-		data_a    => AC,
-		q_a       => mem_data
-	);
-
+	m_mw <= MW;
+	mem_data <= m_data;
+	m_addr <= next_mem_addr;
+	m_ac <= AC;
+	
 	-- use lpm function to shift AC
 	shifter: lpm_clshift
 	generic map (

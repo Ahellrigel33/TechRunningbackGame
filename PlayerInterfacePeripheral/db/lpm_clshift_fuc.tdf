@@ -1,5 +1,5 @@
 --lpm_clshift CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" LPM_SHIFTTYPE="ARITHMETIC" LPM_WIDTH=16 LPM_WIDTHDIST=4 data direction distance result
---VERSION_BEGIN 19.1 cbx_lpm_clshift 2019:09:22:11:00:28:SJ cbx_mgl 2019:09:22:11:02:15:SJ  VERSION_END
+--VERSION_BEGIN 19.1 cbx_lpm_clshift 2019:09:22:08:02:34:SJ cbx_mgl 2019:09:22:09:26:20:SJ  VERSION_END
 
 
 -- Copyright (C) 2019  Intel Corporation. All rights reserved.
