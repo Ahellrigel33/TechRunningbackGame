@@ -48,7 +48,7 @@ for i in range(len(values)):
 
 lines.append(last_line)
 
-with open("..\\MemoryFiles\\CMScale.mif", 'w') as f3:
+with open("..\\MemoryFiles\\AllSongs.mif", 'w') as f3:
     f3.writelines(lines)
 
 

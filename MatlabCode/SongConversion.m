@@ -13,8 +13,8 @@ hit = file(round(fs*0.6):round(fs*1),2);
 file = audioread("SoundFiles\Whoosh.mp3");
 whoosh = file(round(fs*0.3):round(fs*0.5),2);
 
-file = audioread("SoundFiles\Fail.mp3");
-fail = file(round(fs*0.5):round(fs*3.5),2);
+file = audioread("SoundFiles\Whistle.mp3");
+fail = file(round(fs*0)+1:round(fs*1),2);
 
 % Convert to square waves
 ramblinWreck = (ramblinWreck >= 0)*1;

@@ -1,7 +1,7 @@
 %% Load file
-ramblinWreck = audioread("SoundFiles\Fail.mp3");
+ramblinWreck = audioread("SoundFiles\Whistle.mp3");
 fs = 44100;
-audio = ramblinWreck(round(fs*0.5):round(fs*3.5),2);
+audio = ramblinWreck(round(fs*0)+1:round(fs*1),2);
 tt = 1/fs*[0:length(audio)-1];
 
 maskTop = audio >= 0;
@@ -36,7 +36,7 @@ area(tt(1:10000), sqAudio(1:10000));
 
 %% Output files
 %audiowrite("RamblinWreckNormal.wav",audio, fs);
-audiowrite("Hit.wav",sqAudio, fs);
+audiowrite("Whistle.wav",sqAudio, fs);
 
 %% Fix volume
 volume = abs(audio);
