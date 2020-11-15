@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "Arduino_IO[0]",
+					"strict" : false
+				},
+				{
 					"name" : "HEX0[6]",
 					"strict" : false
 				},
@@ -228,11 +232,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SW[6]",
+					"name" : "SW[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SW[0]",
+					"name" : "SW[6]",
 					"strict" : false
 				},
 				{

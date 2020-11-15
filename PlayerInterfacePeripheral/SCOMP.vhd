@@ -20,16 +20,8 @@ entity SCOMP is
 		IO_CYCLE  : out   std_logic;
 		IO_ADDR   : out   std_logic_vector(10 downto 0);
 		IO_DATA   : inout std_logic_vector(15 downto 0);
-		dbg_FETCH : out   std_logic;
-		dbg_AC    : out   std_logic_vector(15 downto 0);
-		dbg_PC    : out   std_logic_vector(10 downto 0);
-		dbg_MA    : out   std_logic_vector(10 downto 0);
-		dbg_MD    : out   std_logic_vector(15 downto 0);
-		dbg_IR    : out   std_logic_vector(15 downto 0);
-		m_mw         : out    std_logic;
-		m_data		 : in	    std_logic_vector(15 downto 0);
-		m_addr	    : out    std_logic_vector(10 downto 0);
-		m_ac			 : out    std_logic_vector(15 downto 0)
+		AUDIO_ADDR: in    std_logic_vector(15 downto 0);
+		AUDIO_DATA: out   std_logic_vector(15 downto 0)
 	);
 end SCOMP;
 
@@ -41,7 +33,8 @@ architecture a of SCOMP is
 		ex_jump, ex_jneg, ex_jzero, ex_jpos,
 		ex_call, ex_return,
 		ex_and, ex_or, ex_xor, ex_shift,
-		ex_in, ex_in2, ex_out, ex_out2
+		ex_in, ex_in2, ex_out, ex_out2,
+		audio
 	);
 
 	type stack_type is array (0 to 9) of std_logic_vector(10 downto 0);
@@ -53,18 +46,40 @@ architecture a of SCOMP is
 	signal IR           : std_logic_vector(15 downto 0);
 	signal mem_data     : std_logic_vector(15 downto 0);
 	signal PC           : std_logic_vector(10 downto 0);
-	signal next_mem_addr     : std_logic_vector(10 downto 0);
+	signal next_mem_addr     : std_logic_vector(15 downto 0);
 	signal operand      : std_logic_vector(10 downto 0);
 	signal MW           : std_logic;
 	signal IO_WRITE_int : std_logic;
+	signal AUDIO_DATA_int: std_logic_vector(15 downto 0);
 
 
 begin
 	-- use altsyncram component for unified program and data memory
-	m_mw <= MW;
-	mem_data <= m_data;
-	m_addr <= next_mem_addr;
-	m_ac <= AC;
+	altsyncram_component : altsyncram
+	GENERIC MAP (
+		numwords_a => 65536,
+		widthad_a => 16,
+		width_a => 16,
+		init_file => "AudioDemoWith.mif",
+		clock_enable_input_a => "BYPASS",
+		clock_enable_output_a => "BYPASS",
+		intended_device_family => "MAX 10",
+		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
+		lpm_type => "altsyncram",
+		operation_mode => "SINGLE_PORT",
+		outdata_aclr_a => "NONE",
+		outdata_reg_a => "UNREGISTERED",
+		power_up_uninitialized => "FALSE",
+		read_during_write_mode_port_a => "NEW_DATA_NO_NBE_READ",
+		width_byteena_a => 1
+	)
+	PORT MAP (
+		wren_a    => MW,
+		clock0    => clock,
+		address_a => next_mem_addr,
+		data_a    => AC,
+		q_a       => mem_data
+	);
 	
 	-- use lpm function to shift AC
 	shifter: lpm_clshift
@@ -82,8 +97,10 @@ begin
 
 	-- Memory address comes from PC during fetch, otherwise from operand
 	with state select next_mem_addr <=
-		PC when fetch,
-		operand when others;
+		(15 downto 11 => '0') & PC when fetch,
+		AUDIO_ADDR when audio,
+		(15 downto 11 => '0') & operand when others;
+--	next_mem_addr <= AUDIO_ADDR;
 
 	-- This makes the operand available immediately after fetch, and also
 	-- handles indirect addressing of iload and istore
@@ -106,6 +123,8 @@ begin
 
 	IO_ADDR  <= IR(10 downto 0);
 	IO_WRITE <= IO_WRITE_int;
+	
+	AUDIO_DATA <= AUDIO_DATA_int;
 
 	process (clock, resetn)
 	begin
@@ -117,6 +136,7 @@ begin
 					MW        <= '0';           -- clear memory write flag
 					PC        <= "00000000000"; -- reset PC to the beginning of memory, address 0x000
 					AC        <= x"0000";       -- clear AC register
+--					AUDIO_DATA_int <= x"0000";
 					IO_WRITE_int <= '0';        -- don't drive IO
 					IO_CYCLE  <= '0';           -- stop any active IO operations
 					state     <= fetch;         -- start fetch-decode-execute cycle
@@ -126,6 +146,7 @@ begin
 					IO_CYCLE  <= '0';      -- lower IO_CYCLE after an in
 					PC        <= PC + 1;   -- increment PC to next instruction address
 					state     <= decode;
+					AUDIO_DATA_int <= mem_data;
 
 				when decode =>
 					IR    <= mem_data;          -- latch instruction into the IR
@@ -178,11 +199,11 @@ begin
 					end case;
 
 				when ex_nop =>
-					state <= fetch;
+					state <= audio;
 
 				when ex_load =>
 					AC    <= mem_data;        -- latch data from mem_data (memory contents) to AC
-					state <= fetch;
+					state <= audio;
 
 				when ex_store =>
 					MW    <= '1';             -- drop MW to end write cycle
@@ -190,59 +211,59 @@ begin
 
 				when ex_store2 =>
 					MW    <= '0';             -- drop MW to end write cycle
-					state <= fetch;
+					state <= audio;
 
 				when ex_add =>
 					AC    <= AC + mem_data;   -- addition
-					state <= fetch;
+					state <= audio;
 
 				when ex_sub =>
 					AC    <= AC - mem_data;   -- addition
-					state <= fetch;
+					state <= audio;
 
 				when ex_jump =>
 					PC    <= operand; -- overwrite PC with new address
-					state <= fetch;
+					state <= audio;
 
 				when ex_jpos =>
 					if (AC(15) = '0') and (AC /= "0000000000000000") then
 						PC    <= operand;      -- Change the program counter to the operand
 					end if;
-					state <= fetch;
+					state <= audio;
 
 				when ex_jneg =>
 					if (AC(15) = '1') then
 						PC    <= operand;      -- Change the program counter to the operand
 					end if;
-					state <= fetch;
+					state <= audio;
 
 				when ex_jzero =>
 					if (AC = x"0000") then
 						PC    <= operand;
 					end if;
-					state <= fetch;
+					state <= audio;
 
 				when ex_and =>
 					AC    <= AC and mem_data;   -- logical bitwise AND
-					state <= fetch;
+					state <= audio;
 
 				when ex_or =>
 					AC    <= AC or mem_data;
-					state <= fetch;
+					state <= audio;
 
 				when ex_xor =>
 					AC    <= AC xor mem_data;
-					state <= fetch;
+					state <= audio;
 
 				when ex_shift =>
 					AC    <= AC_shifted;
-					state <= fetch;
+					state <= audio;
 
 				when ex_addi =>
 					-- sign extension
 					AC    <= AC + (IR(10) & IR(10) & IR(10) &
 					 IR(10) & IR(10) & IR(10 downto 0));
-					state <= fetch;
+					state <= audio;
 
 				when ex_iload =>
 					-- indirect addressing is handled in next_mem_addr assignment.
@@ -254,7 +275,7 @@ begin
 
 				when ex_istore2 =>
 					MW          <= '0';
-					state       <= fetch;
+					state       <= audio;
 
 				when ex_call =>
 					for i in 0 to 8 loop
@@ -262,14 +283,14 @@ begin
 					end loop;
 					PC_stack(0) <= PC;
 					PC          <= operand;
-					state       <= fetch;
+					state       <= audio;
 
 				when ex_return =>
 					for i in 0 to 8 loop
 						PC_stack(i) <= PC_stack(i + 1);
 					end loop;
 					PC          <= PC_stack(0);
-					state       <= fetch;
+					state       <= audio;
 
 				when ex_in =>
 					IO_CYCLE <= '1';
@@ -277,7 +298,7 @@ begin
 
 				when ex_in2 =>
 					AC <= IO_DATA;
-					state <= fetch;
+					state <= audio;
 
 				when ex_out =>
 					IO_CYCLE <= '1';
@@ -285,11 +306,16 @@ begin
 
 				when ex_out2 =>
 					IO_CYCLE <= '0';
-					state <= fetch;
+					state <= audio;
 
 				when ex_loadi =>
 					AC    <= (IR(10) & IR(10) & IR(10) &
 					 IR(10) & IR(10) & IR(10 downto 0));
+					state <= audio;
+				
+				when audio =>
+					IO_WRITE_int <= '0';   -- lower IO_WRITE after an out
+					IO_CYCLE  <= '0';      -- lower IO_CYCLE after an in
 					state <= fetch;
 
 				when others =>
@@ -298,12 +324,5 @@ begin
 			end case;
 		end if;
 	end process;
-
-	dbg_FETCH <= '1' when state = fetch else '0';
-	dbg_AC  <= AC;
-	dbg_PC  <= PC;
-	dbg_MA  <= next_mem_addr;
-	dbg_MD  <= mem_data;
-	dbg_IR  <= IR;
 
 end a;

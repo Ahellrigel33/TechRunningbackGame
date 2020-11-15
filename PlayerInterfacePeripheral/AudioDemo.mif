@@ -1,0 +1,32 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    000 : 9000; -- IN  Switches
+    001 : 6006; -- SHIFT 6         ; Bring repeat bit out front
+    002 : 6017; -- SHIFT -7        ; Arithemetic right shift
+    003 : 480f; -- AND   Bitmask
+    004 : 9801; -- OUT   LEDs
+    005 : 9824; -- OUT   AudioPeriph
+    006 : b80a; -- LOADI  10
+    007 : 8009; -- CALL DelayAC
+    008 : 2800; -- JUMP  main
+    009 : 1010; -- STORE  	DelayTime   	; Save the desired delay
+    00a : 9802; -- OUT    	Timer   	; Reset the timer
+    00b : 9002; -- IN	Timer      	; Get the current timer value
+    00c : 2010; -- SUB    	DelayTime
+    00d : 300b; -- JNEG   	WaitingLoop	; Repeat until timer = delay value
+    00e : 8800; -- RETURN
+    00f : 80ff; -- Bitmask:  DW &B1000000011111111
+    010 : 0000; -- DelayTime: 	DW 0
+    011 : 8002; -- Song: DW &H8002
+
+    [012..7ff] : 0000; -- Empty memory
+
+  END;

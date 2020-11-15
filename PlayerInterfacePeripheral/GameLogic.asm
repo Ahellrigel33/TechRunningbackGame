@@ -207,34 +207,14 @@ progressBar:	DW &B0000000000
 ; Subroutine : Default Delay (ECE 2031)
 ;*******************************************************************************
 
-;DelayAC:
-;	STORE  	DelayTime   	; Save the desired delay
-;	OUT    	Timer   	; Reset the timer
-;WaitingLoop:
-;	IN	Timer      	; Get the current timer value
-;	SUB    	DelayTime
-;	JNEG   	WaitingLoop	; Repeat until timer = delay value
-;	RETURN
-
 DelayAC:
-    LOADI 0             ; Reload a 0 into the accululator
-    STORE OuterCount    ; Reset the outer counter to 0
-    JUMP  InnerLoop     ; Jump back to the InnerLoop to continue the process
-OuterLoop:
-    LOAD  OuterCount    ; Load OuterLoop counter
-    ADDI  1             ; Add one to OuterLoop counter
-    STORE OuterCount    ; Store the current count
-    XOR   OuterMask     ; Execute once when OuterLoop counter reaches 9
-    JZERO EndDelay
-InnerLoop:
-    ADDI  1             ; Add one to accumulator
-    JZERO OuterLoop     ; When acc is 0, jump to outer loop
-    JUMP  InnerLoop     ; Repeat, causes accululator to count all 2^16 values
-EndDelay:
+	STORE  	DelayTime   	; Save the desired delay
+	OUT    	Timer   	; Reset the timer
+WaitingLoop:
+	IN	Timer      	; Get the current timer value
+	SUB    	DelayTime
+	JNEG   	WaitingLoop	; Repeat until timer = delay value
 	RETURN
-
-OuterMask:  DW 9
-OuterCount: DW 0
 
 DelayTime: 	DW 0
 

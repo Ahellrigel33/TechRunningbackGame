@@ -24,7 +24,8 @@ ENTITY IO_DECODER IS
 	 SQ_EN			: OUT STD_LOGIC;
 	 HEX_EN			: OUT STD_LOGIC;
 	 PLAYER_EN		: OUT STD_LOGIC;
-	 DEF_EN        : OUT STD_LOGIC
+	 DEF_EN        : OUT STD_LOGIC;
+	 AUDIO_EN      : OUT STD_LOGIC
   );
 
 END ENTITY;
@@ -45,9 +46,12 @@ begin
   I2C_CMD_EN   <= '1' WHEN (ADDR_INT = 16#090#) and (IO_CYCLE = '1') ELSE '0';
   I2C_DATA_EN  <= '1' WHEN (ADDR_INT = 16#091#) and (IO_CYCLE = '1') ELSE '0';
   I2C_RDY_EN   <= '1' WHEN (ADDR_INT = 16#092#) and (IO_CYCLE = '1') ELSE '0';
-  SQ_EN        <= '1' WHEN (ADDR_INT = 16#0F0#) and (IO_CYCLE = '1') ELSE '0';
-  HEX_EN       <= '1' WHEN (ADDR_INT = 16#0E0#) and (IO_CYCLE = '1') ELSE '0';
-  PLAYER_EN    <= '1' WHEN (ADDR_INT = 16#0E1#) and (IO_CYCLE = '1') ELSE '0';
-  DEF_EN       <= '1' WHEN (ADDR_INT = 16#0E2#) and (IO_CYCLE = '1') ELSE '0';
+  
+  -- Peripherals made for this project
+  SQ_EN        <= '1' WHEN (ADDR_INT = 16#020#) and (IO_CYCLE = '1') ELSE '0';
+  HEX_EN       <= '1' WHEN (ADDR_INT = 16#021#) and (IO_CYCLE = '1') ELSE '0';
+  PLAYER_EN    <= '1' WHEN (ADDR_INT = 16#022#) and (IO_CYCLE = '1') ELSE '0';
+  DEF_EN       <= '1' WHEN (ADDR_INT = 16#023#) and (IO_CYCLE = '1') ELSE '0';
+  AUDIO_EN     <= '1' WHEN (ADDR_INT = 16#024#) and (IO_CYCLE = '1') ELSE '0';
   
 END a;

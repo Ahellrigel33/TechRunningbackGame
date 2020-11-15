@@ -129,6 +129,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "DEF_EN" (rect 179 219 219 231)(font "Arial" ))
 		(line (pt 240 224)(pt 224 224)(line_width 1))
 	)
+	(port
+		(pt 240 240)
+		(output)
+		(text "AUDIO_EN" (rect 0 0 51 12)(font "Arial" ))
+		(text "AUDIO_EN" (rect 168 235 219 247)(font "Arial" ))
+		(line (pt 240 240)(pt 224 240)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 224 256)(line_width 1))
 	)

@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Sat Nov 14 13:01:52 2020
+Analysis & Synthesis Status : Successful - Sun Nov 15 13:25:52 2020
 Quartus Prime Version : 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 Revision Name : SCOMP
 Top-level Entity Name : SCOMP_System
 Family : MAX 10
-Total logic elements : 1,143
-    Total combinational functions : 955
-    Dedicated logic registers : 504
-Total registers : 504
+Total logic elements : 1,365
+    Total combinational functions : 1,177
+    Dedicated logic registers : 572
+Total registers : 572
 Total pins : 70
 Total virtual pins : 0
-Total memory bits : 32,768
+Total memory bits : 1,048,576
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1
 UFM blocks : 0
