@@ -1,28 +1,38 @@
 %% Load file
-ramblinWreck = audioread("SoundFiles\Whistle.mp3");
 fs = 44100;
-audio = ramblinWreck(round(fs*0)+1:round(fs*1),2);
-tt = 1/fs*[0:length(audio)-1];
 
-maskTop = audio >= 0;
-maskBot = audio < 0;
+%% Running sand
+audio = audioread("SoundFiles\RunningSand.mp3");
+audio = audio(round(fs*1.5)+1:round(fs*2.3),2);
+oL = length(audio);
+audio = transpose(interp1(1:length(audio), audio, linspace(1, length(audio), 25000)));
+sqAudio = (audio >= 0)*1;
 
-sqAudio = ones(length(audio), 1)/2;
-for i = 1:length(sqAudio)
-    if maskTop(i)
-        sqAudio(i) = 1;
-    end
-    if maskBot(i)
-        sqAudio(i) = 0;
-    end
-end
+%% Hit
+audio = audioread("SoundFiles\SoundFX.mp3");
+audio = audio(round(fs*34.4)+1:round(fs*34.8),2);
+audio2 = audioread("SoundFiles\Whistle.mp3");
+audio2 = audio2(round(fs*0)+1:round(fs*1),2);
+audio = [audio; zeros(20000,1); audio2];
+sqAudio = (audio >= 0)*1;
+
+
+%% Whoosh
+audio = audioread("SoundFiles\SoundFX.mp3");
+audio = audio(round(fs*36.6)+1:round(fs*36.8),2);
+sqAudio = (audio >= 0)*1;
+
+%% Undertale
+audio = audioread("SoundFiles\Undertale.mp3");
+audio = audio(round(fs*0)+1:round(fs*8),2);
+sqAudio = (audio >= 0)*1;
 
 %% Hear sound as normal
 sound(audio, fs);
 
 
 %% Hear sound as square wave
-sound(maskTop*1, fs);
+sound(sqAudio, fs);
 
 %% Hear repeated square wave
 repSqAudio = [sqAudio; sqAudio; sqAudio; sqAudio; sqAudio];
@@ -35,14 +45,13 @@ area(tt(1:10000), sqAudio(1:10000));
 
 
 %% Output files
-%audiowrite("RamblinWreckNormal.wav",audio, fs);
-audiowrite("Whistle.wav",sqAudio, fs);
+%%
+audiowrite("RamblinWreckNormal.wav",audio, fs);
+%%
+audiowrite("Whoosh.wav",sqAudio, fs);
+%%
+audiowrite("RunningSandFast.wav",repSqAudio, fs);
 
-%% Fix volume
-volume = abs(audio);
-plot(tt, volume);
-
-volume = round(volume*256);
 
 
 %% Create pulse-length vector

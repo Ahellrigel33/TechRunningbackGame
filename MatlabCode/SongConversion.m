@@ -4,24 +4,27 @@ fs = 44100;
 file = audioread("SoundFiles\ramblinWreck.mp3");
 ramblinWreck = file(round(fs*11.2):round(fs*24.4),2);
 
-file = audioread("SoundFiles\Running.mp3");
-running = file(round(fs*2.1):round(fs*2.75),2);
+running = audioread("SoundFiles\RunningSand.mp3");
+running = running(round(fs*1.5)+1:round(fs*2.3),2);
+oL = length(running);
+running = transpose(interp1(1:length(running), running, linspace(1, length(running), 25000)));
 
-file = audioread("SoundFiles\Hit.mp3");
-hit = file(round(fs*0.6):round(fs*1),2);
+hit1 = audioread("SoundFiles\SoundFX.mp3");
+hit1 = hit1(round(fs*34.4)+1:round(fs*34.8),2);
+hit2 = audioread("SoundFiles\Whistle.mp3");
+hit2 = hit2(round(fs*0)+1:round(fs*1),2);
+hit = [hit1; zeros(20000,1); hit2];
 
-file = audioread("SoundFiles\Whoosh.mp3");
-whoosh = file(round(fs*0.3):round(fs*0.5),2);
+whoosh = audioread("SoundFiles\SoundFX.mp3");
+whoosh = whoosh(round(fs*36.6)+1:round(fs*36.8),2);
 
-file = audioread("SoundFiles\Whistle.mp3");
-fail = file(round(fs*0)+1:round(fs*1),2);
 
 % Convert to square waves
 ramblinWreck = (ramblinWreck >= 0)*1;
 running = (running >= 0)*1;
 hit = (hit >= 0)*1;
 whoosh = (whoosh >= 0)*1;
-fail = (fail >= 0)*1;
+
 
 %% Hear sounds
 %%
@@ -32,8 +35,6 @@ sound(running, fs);
 sound(hit, fs);
 %%
 sound(whoosh, fs);
-%%
-sound(fail, fs);
 
 
 %% Create pulse-length vector ramblinWreck
@@ -148,37 +149,9 @@ for i = 1:length(whoosh)
     end
 end
 
-%% Create pulse-length vector fail
-num_pulses = 0;
-currVal = fail(1);
-for i = 1:length(fail)
-    if fail(i) ~= currVal
-        num_pulses = num_pulses + 1;
-        currVal = abs(currVal-1);
-    end
-end
-
-k = 0;
-pulsesF = zeros(1, num_pulses + 1);
-j = 1;
-currVal = fail(1);
-for i = 1:length(fail)
-    if fail(i) ~= currVal
-        k = k + 1;
-    else
-        if currVal == 0
-            k = k + 32768;
-        end
-        pulsesF(j) = k;
-        j = j + 1;
-        currVal = abs(currVal-1);
-        k = 1;
-    end
-end
-
 
 %%
-pulses = [pulsesRW pulsesR pulsesH pulsesW pulsesF];
+pulses = [pulsesRW pulsesR pulsesH pulsesW];
 writematrix(pulses, "MemoryFiles\SongVector.txt");
 
     
