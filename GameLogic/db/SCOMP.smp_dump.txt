@@ -1,10 +1,14 @@
 
 State Machine - |SCOMP_System|DefenderPeripheral:inst17|state
-Name state.S state.L2 state.R2 state.D 
-state.D 0 0 0 0 
-state.R2 0 0 1 1 
-state.L2 0 1 0 1 
-state.S 1 0 0 1 
+Name state.N2 state.S state.R2 state.L2 state.M state.R state.L state.N 
+state.N 0 0 0 0 0 0 0 0 
+state.L 0 0 0 0 0 0 1 1 
+state.R 0 0 0 0 0 1 0 1 
+state.M 0 0 0 0 1 0 0 1 
+state.L2 0 0 0 1 0 0 0 1 
+state.R2 0 0 1 0 0 0 0 1 
+state.S 0 1 0 0 0 0 0 1 
+state.N2 1 0 0 0 0 0 0 1 
 
 State Machine - |SCOMP_System|playerInterfacePeripheral:inst9|currentPos
 Name currentPos.left currentPos.right currentPos.middle 

@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("//Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/output_files/") File("SCOMP.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/output_files/") File("SCOMP.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

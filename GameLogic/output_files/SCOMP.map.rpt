@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Sun Nov 15 22:20:01 2020
+Mon Nov 16 01:41:07 2020
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -66,15 +66,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Nov 15 22:20:01 2020       ;
+; Analysis & Synthesis Status        ; Successful - Mon Nov 16 01:41:06 2020       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,400                                       ;
-;     Total combinational functions  ; 1,212                                       ;
-;     Dedicated logic registers      ; 572                                         ;
-; Total registers                    ; 572                                         ;
+; Total logic elements               ; 1,388                                       ;
+;     Total combinational functions  ; 1,200                                       ;
+;     Dedicated logic registers      ; 579                                         ;
+; Total registers                    ; 579                                         ;
 ; Total pins                         ; 70                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 1,048,576                                   ;
@@ -177,7 +177,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 2           ;
+; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -185,54 +185,54 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                              ; Library ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------+---------+
-; I2C_INTERFACE.bdf                ; yes             ; User Block Diagram/Schematic File      ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/I2C_INTERFACE.bdf             ;         ;
-; i2c_master.vhd                   ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/i2c_master.vhd                ;         ;
-; i2c_ctrl.vhd                     ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/i2c_ctrl.vhd                  ;         ;
-; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DIG_OUT.vhd                   ;         ;
-; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DIG_IN.vhd                    ;         ;
-; clk_div.vhd                      ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/clk_div.vhd                   ;         ;
-; TIMER.vhd                        ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/TIMER.vhd                     ;         ;
-; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/IO_DECODER.vhd                ;         ;
-; SCOMP.vhd                        ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd                     ;         ;
-; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP_System.bdf              ;         ;
-; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/PLL_main.vhd                  ;         ;
-; HexPeripheral.vhd                ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/HexPeripheral.vhd             ;         ;
-; playerInterfacePeripheral.vhd    ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/playerInterfacePeripheral.vhd ;         ;
-; AudioPeripheral.vhd              ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/AudioPeripheral.vhd           ;         ;
-; DefenderPeripheral.vhd           ; yes             ; User VHDL File                         ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DefenderPeripheral.vhd        ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                         ;         ;
-; aglobal191.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                     ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc                    ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc                  ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc                  ;         ;
-; db/pll_main_altpll.v             ; yes             ; Auto-Generated Megafunction            ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/pll_main_altpll.v          ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                     ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc              ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                        ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                     ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                      ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                         ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                         ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                       ;         ;
-; db/altsyncram_1pr3.tdf           ; yes             ; Auto-Generated Megafunction            ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/altsyncram_1pr3.tdf        ;         ;
-; AllSongs.mif                     ; yes             ; Auto-Found Memory Initialization File  ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/AllSongs.mif                  ;         ;
-; db/decode_h7a.tdf                ; yes             ; Auto-Generated Megafunction            ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/decode_h7a.tdf             ;         ;
-; db/decode_aj9.tdf                ; yes             ; Auto-Generated Megafunction            ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/decode_aj9.tdf             ;         ;
-; db/mux_g3b.tdf                   ; yes             ; Auto-Generated Megafunction            ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/mux_g3b.tdf                ;         ;
-; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                    ;         ;
-; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/lpm_clshift_fuc.tdf        ;         ;
-; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                     ;         ;
-; sq_gen.vhd                       ; yes             ; Auto-Found VHDL File                   ; //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/sq_gen.vhd                    ;         ;
-+----------------------------------+-----------------+----------------------------------------+-------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------+---------+
+; I2C_INTERFACE.bdf                ; yes             ; User Block Diagram/Schematic File      ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/I2C_INTERFACE.bdf             ;         ;
+; i2c_master.vhd                   ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/i2c_master.vhd                ;         ;
+; i2c_ctrl.vhd                     ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/i2c_ctrl.vhd                  ;         ;
+; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DIG_OUT.vhd                   ;         ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DIG_IN.vhd                    ;         ;
+; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/clk_div.vhd                   ;         ;
+; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/TIMER.vhd                     ;         ;
+; IO_DECODER.vhd                   ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/IO_DECODER.vhd                ;         ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd                     ;         ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP_System.bdf              ;         ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/PLL_main.vhd                  ;         ;
+; HexPeripheral.vhd                ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/HexPeripheral.vhd             ;         ;
+; playerInterfacePeripheral.vhd    ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/playerInterfacePeripheral.vhd ;         ;
+; AudioPeripheral.vhd              ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/AudioPeripheral.vhd           ;         ;
+; DefenderPeripheral.vhd           ; yes             ; User VHDL File                         ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DefenderPeripheral.vhd        ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                           ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                       ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc                      ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc                    ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc                    ;         ;
+; db/pll_main_altpll.v             ; yes             ; Auto-Generated Megafunction            ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/pll_main_altpll.v          ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                       ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc                ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                          ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                       ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                        ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                           ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                           ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                         ;         ;
+; db/altsyncram_1pr3.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/altsyncram_1pr3.tdf        ;         ;
+; allsongs.mif                     ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/allsongs.mif                  ;         ;
+; db/decode_h7a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/decode_h7a.tdf             ;         ;
+; db/decode_aj9.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/decode_aj9.tdf             ;         ;
+; db/mux_g3b.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/mux_g3b.tdf                ;         ;
+; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                      ;         ;
+; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/lpm_clshift_fuc.tdf        ;         ;
+; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                       ;         ;
+; sq_gen.vhd                       ; yes             ; Auto-Found VHDL File                   ; C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/sq_gen.vhd                    ;         ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -240,20 +240,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                  ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,400                                                                                  ;
+; Estimated Total logic elements              ; 1,388                                                                                  ;
 ;                                             ;                                                                                        ;
-; Total combinational functions               ; 1212                                                                                   ;
+; Total combinational functions               ; 1200                                                                                   ;
 ; Logic element usage by number of LUT inputs ;                                                                                        ;
-;     -- 4 input functions                    ; 728                                                                                    ;
-;     -- 3 input functions                    ; 298                                                                                    ;
-;     -- <=2 input functions                  ; 186                                                                                    ;
+;     -- 4 input functions                    ; 721                                                                                    ;
+;     -- 3 input functions                    ; 300                                                                                    ;
+;     -- <=2 input functions                  ; 179                                                                                    ;
 ;                                             ;                                                                                        ;
 ; Logic elements by mode                      ;                                                                                        ;
-;     -- normal mode                          ; 1102                                                                                   ;
+;     -- normal mode                          ; 1090                                                                                   ;
 ;     -- arithmetic mode                      ; 110                                                                                    ;
 ;                                             ;                                                                                        ;
-; Total registers                             ; 572                                                                                    ;
-;     -- Dedicated logic registers            ; 572                                                                                    ;
+; Total registers                             ; 579                                                                                    ;
+;     -- Dedicated logic registers            ; 579                                                                                    ;
 ;     -- I/O registers                        ; 0                                                                                      ;
 ;                                             ;                                                                                        ;
 ; I/O pins                                    ; 70                                                                                     ;
@@ -266,7 +266,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                        ;
 ; Maximum fan-out node                        ; PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 426                                                                                    ;
-; Total fan-out                               ; 8182                                                                                   ;
+; Total fan-out                               ; 8167                                                                                   ;
 ; Average fan-out                             ; 3.98                                                                                   ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 
@@ -276,20 +276,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                            ; Entity Name               ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |SCOMP_System                             ; 1212 (0)            ; 572 (0)                   ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 70   ; 0            ; 0          ; |SCOMP_System                                                                                                  ; SCOMP_System              ; work         ;
+; |SCOMP_System                             ; 1200 (0)            ; 579 (0)                   ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 70   ; 0            ; 0          ; |SCOMP_System                                                                                                  ; SCOMP_System              ; work         ;
 ;    |AudioPeripheral:inst14|               ; 110 (110)           ; 64 (64)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|AudioPeripheral:inst14                                                                           ; AudioPeripheral           ; work         ;
 ;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                                                     ; DIG_IN                    ; work         ;
 ;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                                                    ; DIG_OUT                   ; work         ;
-;    |DefenderPeripheral:inst17|            ; 77 (77)             ; 21 (21)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DefenderPeripheral:inst17                                                                        ; DefenderPeripheral        ; work         ;
+;    |DefenderPeripheral:inst17|            ; 63 (63)             ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DefenderPeripheral:inst17                                                                        ; DefenderPeripheral        ; work         ;
 ;    |HexPeripheral:inst10|                 ; 105 (105)           ; 90 (90)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HexPeripheral:inst10                                                                             ; HexPeripheral             ; work         ;
-;    |I2C_INTERFACE:inst13|                 ; 228 (69)            ; 125 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13                                                                             ; I2C_INTERFACE             ; work         ;
+;    |I2C_INTERFACE:inst13|                 ; 226 (67)            ; 125 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13                                                                             ; I2C_INTERFACE             ; work         ;
 ;       |i2c_ctrl:inst14|                   ; 59 (59)             ; 70 (70)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14                                                             ; i2c_ctrl                  ; work         ;
 ;       |i2c_master:inst|                   ; 100 (100)           ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst                                                             ; i2c_master                ; work         ;
 ;    |IO_DECODER:inst3|                     ; 22 (22)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|IO_DECODER:inst3                                                                                 ; IO_DECODER                ; work         ;
 ;    |PLL_main:inst1|                       ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1                                                                                   ; PLL_main                  ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component                                                           ; altpll                    ; work         ;
 ;          |PLL_main_altpll:auto_generated| ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated                            ; PLL_main_altpll           ; work         ;
-;    |SCOMP:inst|                           ; 608 (427)           ; 198 (195)                 ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                                       ; SCOMP                     ; work         ;
+;    |SCOMP:inst|                           ; 613 (432)           ; 198 (195)                 ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                                       ; SCOMP                     ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 96 (0)              ; 3 (0)                     ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                                       ; altsyncram                ; work         ;
 ;          |altsyncram_1pr3:auto_generated| ; 96 (0)              ; 3 (3)                     ; 1048576     ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_1pr3:auto_generated                        ; altsyncram_1pr3           ; work         ;
 ;             |decode_aj9:rden_decode|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_1pr3:auto_generated|decode_aj9:rden_decode ; decode_aj9                ; work         ;
@@ -298,7 +298,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |lpm_clshift:shifter|               ; 85 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                                                   ; lpm_clshift               ; work         ;
 ;          |lpm_clshift_fuc:auto_generated| ; 85 (85)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated                                    ; lpm_clshift_fuc           ; work         ;
 ;    |TIMER:inst4|                          ; 18 (18)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                                                      ; TIMER                     ; work         ;
-;    |clk_div:inst5|                        ; 36 (36)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                                                    ; clk_div                   ; work         ;
+;    |clk_div:inst5|                        ; 35 (35)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                                                    ; clk_div                   ; work         ;
 ;    |playerInterfacePeripheral:inst9|      ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|playerInterfacePeripheral:inst9                                                                  ; playerInterfacePeripheral ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -323,16 +323,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------+
-; State Machine - |SCOMP_System|DefenderPeripheral:inst17|state ;
-+----------+---------+----------+----------+--------------------+
-; Name     ; state.S ; state.L2 ; state.R2 ; state.D            ;
-+----------+---------+----------+----------+--------------------+
-; state.D  ; 0       ; 0        ; 0        ; 0                  ;
-; state.R2 ; 0       ; 0        ; 1        ; 1                  ;
-; state.L2 ; 0       ; 1        ; 0        ; 1                  ;
-; state.S  ; 1       ; 0        ; 0        ; 1                  ;
-+----------+---------+----------+----------+--------------------+
++---------------------------------------------------------------------------------------------+
+; State Machine - |SCOMP_System|DefenderPeripheral:inst17|state                               ;
++----------+----------+---------+----------+----------+---------+---------+---------+---------+
+; Name     ; state.N2 ; state.S ; state.R2 ; state.L2 ; state.M ; state.R ; state.L ; state.N ;
++----------+----------+---------+----------+----------+---------+---------+---------+---------+
+; state.N  ; 0        ; 0       ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ;
+; state.L  ; 0        ; 0       ; 0        ; 0        ; 0       ; 0       ; 1       ; 1       ;
+; state.R  ; 0        ; 0       ; 0        ; 0        ; 0       ; 1       ; 0       ; 1       ;
+; state.M  ; 0        ; 0       ; 0        ; 0        ; 1       ; 0       ; 0       ; 1       ;
+; state.L2 ; 0        ; 0       ; 0        ; 1        ; 0       ; 0       ; 0       ; 1       ;
+; state.R2 ; 0        ; 0       ; 1        ; 0        ; 0       ; 0       ; 0       ; 1       ;
+; state.S  ; 0        ; 1       ; 0        ; 0        ; 0       ; 0       ; 0       ; 1       ;
+; state.N2 ; 1        ; 0       ; 0        ; 0        ; 0       ; 0       ; 0       ; 1       ;
++----------+----------+---------+----------+----------+---------+---------+---------+---------+
 
 
 Encoding Type:  One-Hot
@@ -420,39 +424,35 @@ Encoding Type:  One-Hot
 +----------------+------------+----------------+----------------+----------+----------+----------------+---------------+---------------+-------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                   ;
-+-------------------------------------------------+----------------------------------------------------+
-; Register name                                   ; Reason for Removal                                 ;
-+-------------------------------------------------+----------------------------------------------------+
-; playerInterfacePeripheral:inst9|IO_OUT[1,2,4,5] ; Stuck at GND due to stuck port data_in             ;
-; DIG_IN:inst7|B_DI[10..15]                       ; Stuck at GND due to stuck port data_in             ;
-; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk    ; Stuck at GND due to stuck port data_in             ;
-; DefenderPeripheral:inst17|defenders[1,2,4]      ; Merged with DefenderPeripheral:inst17|defenders[5] ;
-; DefenderPeripheral:inst17|lfsr1[0]              ; Merged with DefenderPeripheral:inst17|lfsr0[14]    ;
-; DefenderPeripheral:inst17|lfsr1[14]             ; Merged with DefenderPeripheral:inst17|lfsr0[0]     ;
-; DefenderPeripheral:inst17|lfsr1[1]              ; Merged with DefenderPeripheral:inst17|lfsr0[13]    ;
-; DefenderPeripheral:inst17|lfsr1[13]             ; Merged with DefenderPeripheral:inst17|lfsr0[1]     ;
-; DefenderPeripheral:inst17|lfsr1[2]              ; Merged with DefenderPeripheral:inst17|lfsr0[12]    ;
-; DefenderPeripheral:inst17|lfsr1[12]             ; Merged with DefenderPeripheral:inst17|lfsr0[2]     ;
-; DefenderPeripheral:inst17|lfsr1[3]              ; Merged with DefenderPeripheral:inst17|lfsr0[11]    ;
-; DefenderPeripheral:inst17|lfsr1[11]             ; Merged with DefenderPeripheral:inst17|lfsr0[3]     ;
-; DefenderPeripheral:inst17|lfsr1[4]              ; Merged with DefenderPeripheral:inst17|lfsr0[10]    ;
-; DefenderPeripheral:inst17|lfsr1[10]             ; Merged with DefenderPeripheral:inst17|lfsr0[4]     ;
-; DefenderPeripheral:inst17|lfsr1[5]              ; Merged with DefenderPeripheral:inst17|lfsr0[9]     ;
-; DefenderPeripheral:inst17|lfsr1[9]              ; Merged with DefenderPeripheral:inst17|lfsr0[5]     ;
-; DefenderPeripheral:inst17|lfsr1[6]              ; Merged with DefenderPeripheral:inst17|lfsr0[8]     ;
-; DefenderPeripheral:inst17|lfsr1[8]              ; Merged with DefenderPeripheral:inst17|lfsr0[6]     ;
-; DefenderPeripheral:inst17|lfsr1[7]              ; Merged with DefenderPeripheral:inst17|lfsr0[7]     ;
-; DefenderPeripheral:inst17|defenders[5]          ; Stuck at GND due to stuck port data_in             ;
-; I2C_INTERFACE:inst13|i2c_master:inst|count[2]   ; Stuck at GND due to stuck port data_in             ;
-; SCOMP:inst|state.ex_nop                         ; Lost fanout                                        ;
-; DefenderPeripheral:inst17|state.R2              ; Lost fanout                                        ;
-; DefenderPeripheral:inst17|state.L2              ; Lost fanout                                        ;
-; DefenderPeripheral:inst17|state.S               ; Lost fanout                                        ;
-; HexPeripheral:inst10|cnt[5..7]                  ; Lost fanout                                        ;
-; Total Number of Removed Registers = 38          ;                                                    ;
-+-------------------------------------------------+----------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                ;
++-------------------------------------------------+-------------------------------------------------+
+; Register name                                   ; Reason for Removal                              ;
++-------------------------------------------------+-------------------------------------------------+
+; DefenderPeripheral:inst17|defenders[1,2,4,5]    ; Stuck at GND due to stuck port data_in          ;
+; playerInterfacePeripheral:inst9|IO_OUT[1,2,4,5] ; Stuck at GND due to stuck port data_in          ;
+; DIG_IN:inst7|B_DI[10..15]                       ; Stuck at GND due to stuck port data_in          ;
+; I2C_INTERFACE:inst13|i2c_master:inst|scl_clk    ; Stuck at GND due to stuck port data_in          ;
+; DefenderPeripheral:inst17|lfsr1[2]              ; Merged with DefenderPeripheral:inst17|lfsr0[12] ;
+; DefenderPeripheral:inst17|lfsr1[1]              ; Merged with DefenderPeripheral:inst17|lfsr0[13] ;
+; DefenderPeripheral:inst17|lfsr1[7]              ; Merged with DefenderPeripheral:inst17|lfsr0[7]  ;
+; DefenderPeripheral:inst17|lfsr1[3]              ; Merged with DefenderPeripheral:inst17|lfsr0[11] ;
+; DefenderPeripheral:inst17|lfsr1[9]              ; Merged with DefenderPeripheral:inst17|lfsr0[5]  ;
+; DefenderPeripheral:inst17|lfsr1[8]              ; Merged with DefenderPeripheral:inst17|lfsr0[6]  ;
+; DefenderPeripheral:inst17|lfsr1[4]              ; Merged with DefenderPeripheral:inst17|lfsr0[10] ;
+; DefenderPeripheral:inst17|lfsr1[10]             ; Merged with DefenderPeripheral:inst17|lfsr0[4]  ;
+; DefenderPeripheral:inst17|lfsr1[5]              ; Merged with DefenderPeripheral:inst17|lfsr0[9]  ;
+; DefenderPeripheral:inst17|lfsr1[11]             ; Merged with DefenderPeripheral:inst17|lfsr0[3]  ;
+; DefenderPeripheral:inst17|lfsr1[6]              ; Merged with DefenderPeripheral:inst17|lfsr0[8]  ;
+; DefenderPeripheral:inst17|lfsr1[12]             ; Merged with DefenderPeripheral:inst17|lfsr0[2]  ;
+; DefenderPeripheral:inst17|lfsr1[13]             ; Merged with DefenderPeripheral:inst17|lfsr0[1]  ;
+; DefenderPeripheral:inst17|lfsr1[14]             ; Merged with DefenderPeripheral:inst17|lfsr0[0]  ;
+; DefenderPeripheral:inst17|lfsr1[0]              ; Merged with DefenderPeripheral:inst17|lfsr0[14] ;
+; I2C_INTERFACE:inst13|i2c_master:inst|count[2]   ; Stuck at GND due to stuck port data_in          ;
+; SCOMP:inst|state.ex_nop                         ; Lost fanout                                     ;
+; HexPeripheral:inst10|cnt[5..7]                  ; Lost fanout                                     ;
+; Total Number of Removed Registers = 35          ;                                                 ;
++-------------------------------------------------+-------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -460,10 +460,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 572   ;
+; Total registers                              ; 579   ;
 ; Number of registers using Synchronous Clear  ; 45    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 171   ;
+; Number of registers using Asynchronous Clear ; 178   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 369   ;
 ; Number of registers using Preset             ; 0     ;
@@ -503,40 +503,39 @@ Encoding Type:  One-Hot
 +-------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst14|addr_int[12]              ;
-; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[0][2]                        ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst14|counter[13]               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex1[0]            ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex1[0]               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex2[0]            ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex2[0]               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex3[6]            ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex3[6]               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex4[6]            ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex4[6]               ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex5[1]            ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex5[3]               ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|addr_rw[4]  ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex0[4]            ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex0[5]               ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[1]  ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[3]                                 ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[2]  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[8] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[7] ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[7]                                 ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|count       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|playerInterfacePeripheral:inst9|nextPos.right    ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|SCOMP:inst|Selector8                             ;
-; 32:1               ; 42 bits   ; 882 LEs       ; 42 LEs               ; 840 LEs                ; No         ; |SCOMP_System|HexPeripheral:inst10|Mux90                       ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|DefenderPeripheral:inst17|state                  ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst14|addr_int[2]                ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[5][10]                        ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |SCOMP_System|AudioPeripheral:inst14|counter[11]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex1[1]             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex1[0]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex2[5]             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex2[5]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex3[4]             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex3[4]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex4[1]             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex4[3]                ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex5[3]             ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex5[0]                ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|data_tx[5]   ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_dimHex0[6]             ;
+; 7:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |SCOMP_System|HexPeripheral:inst10|latch_hex0[6]                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|tx_byte[1]   ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[10]                                 ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|bit_cnt[2]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[11] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_out[0]  ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[4]                                  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst13|i2c_master:inst|count        ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|playerInterfacePeripheral:inst9|nextPos.right     ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|SCOMP:inst|Selector1                              ;
+; 32:1               ; 42 bits   ; 882 LEs       ; 42 LEs               ; 840 LEs                ; No         ; |SCOMP_System|HexPeripheral:inst10|Mux100                       ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -1112,29 +1111,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 70                          ;
-; cycloneiii_ff         ; 572                         ;
-;     CLR               ; 143                         ;
+; cycloneiii_ff         ; 579                         ;
+;     CLR               ; 150                         ;
 ;     ENA               ; 326                         ;
 ;     ENA CLR           ; 28                          ;
 ;     ENA SCLR          ; 15                          ;
 ;     SCLR              ; 30                          ;
 ;     plain             ; 30                          ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 1213                        ;
+; cycloneiii_lcell_comb ; 1201                        ;
 ;     arith             ; 110                         ;
 ;         2 data inputs ; 80                          ;
 ;         3 data inputs ; 30                          ;
-;     normal            ; 1103                        ;
+;     normal            ; 1091                        ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 28                          ;
-;         2 data inputs ; 78                          ;
-;         3 data inputs ; 268                         ;
-;         4 data inputs ; 728                         ;
+;         2 data inputs ; 71                          ;
+;         3 data inputs ; 270                         ;
+;         4 data inputs ; 721                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 128                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 4.59                        ;
+; Average LUT depth     ; 4.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1153,72 +1152,72 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sun Nov 15 22:19:40 2020
+    Info: Processing started: Mon Nov 16 01:40:46 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_interface.bdf
     Info (12023): Found entity 1: I2C_INTERFACE
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_master.vhd
-    Info (12022): Found design unit 1: i2c_master-logic File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/i2c_master.vhd Line: 49
-    Info (12023): Found entity 1: i2c_master File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/i2c_master.vhd Line: 31
+    Info (12022): Found design unit 1: i2c_master-logic File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/i2c_master.vhd Line: 49
+    Info (12023): Found entity 1: i2c_master File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/i2c_master.vhd Line: 31
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_ctrl.vhd
-    Info (12022): Found design unit 1: i2c_ctrl-main File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/i2c_ctrl.vhd Line: 32
-    Info (12023): Found entity 1: i2c_ctrl File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/i2c_ctrl.vhd Line: 11
+    Info (12022): Found design unit 1: i2c_ctrl-main File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/i2c_ctrl.vhd Line: 32
+    Info (12023): Found entity 1: i2c_ctrl File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/i2c_ctrl.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file hex_disp.vhd
-    Info (12022): Found design unit 1: HEX_DISP-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/HEX_DISP.vhd Line: 17
-    Info (12023): Found entity 1: HEX_DISP File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/HEX_DISP.vhd Line: 9
+    Info (12022): Found design unit 1: HEX_DISP-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/HEX_DISP.vhd Line: 17
+    Info (12023): Found entity 1: HEX_DISP File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/HEX_DISP.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DIG_OUT.vhd Line: 16
+    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DIG_OUT.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DIG_IN.vhd Line: 18
-    Info (12023): Found entity 1: DIG_IN File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DIG_IN.vhd Line: 10
+    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DIG_IN.vhd Line: 18
+    Info (12023): Found entity 1: DIG_IN File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DIG_IN.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/clk_div.vhd Line: 21
-    Info (12023): Found entity 1: clk_div File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/clk_div.vhd Line: 6
+    Info (12022): Found design unit 1: clk_div-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/clk_div.vhd Line: 21
+    Info (12023): Found entity 1: clk_div File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/clk_div.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/TIMER.vhd Line: 27
-    Info (12023): Found entity 1: TIMER File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/TIMER.vhd Line: 17
+    Info (12022): Found design unit 1: TIMER-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/TIMER.vhd Line: 27
+    Info (12023): Found entity 1: TIMER File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/TIMER.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file io_decoder.vhd
-    Info (12022): Found design unit 1: IO_DECODER-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/IO_DECODER.vhd Line: 33
-    Info (12023): Found entity 1: IO_DECODER File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/IO_DECODER.vhd Line: 9
+    Info (12022): Found design unit 1: IO_DECODER-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/IO_DECODER.vhd Line: 33
+    Info (12023): Found entity 1: IO_DECODER File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/IO_DECODER.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 28
-    Info (12023): Found entity 1: SCOMP File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 15
+    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 28
+    Info (12023): Found entity 1: SCOMP File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
     Info (12023): Found entity 1: SCOMP_System
 Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: pll_main-SYN File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/PLL_main.vhd Line: 55
-    Info (12023): Found entity 1: PLL_main File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/PLL_main.vhd Line: 43
+    Info (12022): Found design unit 1: pll_main-SYN File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/PLL_main.vhd Line: 55
+    Info (12023): Found entity 1: PLL_main File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/PLL_main.vhd Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
 Warning (12019): Can't analyze file -- file output_files/DPs.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file dps.bdf
     Info (12023): Found entity 1: DPs
 Info (12021): Found 2 design units, including 1 entities, in source file hexperipheral.vhd
-    Info (12022): Found design unit 1: HexPeripheral-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/HexPeripheral.vhd Line: 38
-    Info (12023): Found entity 1: HexPeripheral File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/HexPeripheral.vhd Line: 14
+    Info (12022): Found design unit 1: HexPeripheral-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/HexPeripheral.vhd Line: 38
+    Info (12023): Found entity 1: HexPeripheral File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/HexPeripheral.vhd Line: 14
 Info (12021): Found 2 design units, including 1 entities, in source file playerinterfaceperipheral.vhd
-    Info (12022): Found design unit 1: playerInterfacePeripheral-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/playerInterfacePeripheral.vhd Line: 30
-    Info (12023): Found entity 1: playerInterfacePeripheral File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/playerInterfacePeripheral.vhd Line: 14
+    Info (12022): Found design unit 1: playerInterfacePeripheral-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/playerInterfacePeripheral.vhd Line: 30
+    Info (12023): Found entity 1: playerInterfacePeripheral File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/playerInterfacePeripheral.vhd Line: 14
 Info (12021): Found 2 design units, including 1 entities, in source file memperipheral.vhd
-    Info (12022): Found design unit 1: MemPeripheral-rtl File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/MemPeripheral.vhd Line: 26
-    Info (12023): Found entity 1: MemPeripheral File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/MemPeripheral.vhd Line: 11
+    Info (12022): Found design unit 1: MemPeripheral-rtl File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/MemPeripheral.vhd Line: 26
+    Info (12023): Found entity 1: MemPeripheral File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/MemPeripheral.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file audioperipheral.vhd
-    Info (12022): Found design unit 1: AudioPeripheral-rtl File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/AudioPeripheral.vhd Line: 19
-    Info (12023): Found entity 1: AudioPeripheral File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/AudioPeripheral.vhd Line: 7
+    Info (12022): Found design unit 1: AudioPeripheral-rtl File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/AudioPeripheral.vhd Line: 19
+    Info (12023): Found entity 1: AudioPeripheral File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/AudioPeripheral.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file defenderperipheral.vhd
-    Info (12022): Found design unit 1: DefenderPeripheral-Internals File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DefenderPeripheral.vhd Line: 22
-    Info (12023): Found entity 1: DefenderPeripheral File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DefenderPeripheral.vhd Line: 12
+    Info (12022): Found design unit 1: DefenderPeripheral-Internals File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DefenderPeripheral.vhd Line: 22
+    Info (12023): Found entity 1: DefenderPeripheral File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DefenderPeripheral.vhd Line: 12
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
 Info (12128): Elaborating entity "I2C_INTERFACE" for hierarchy "I2C_INTERFACE:inst13"
 Info (12128): Elaborating entity "i2c_master" for hierarchy "I2C_INTERFACE:inst13|i2c_master:inst"
 Info (12128): Elaborating entity "i2c_ctrl" for hierarchy "I2C_INTERFACE:inst13|i2c_ctrl:inst14"
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/PLL_main.vhd Line: 149
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/PLL_main.vhd Line: 149
-Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/PLL_main.vhd Line: 149
+Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/PLL_main.vhd Line: 149
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/PLL_main.vhd Line: 149
+Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/PLL_main.vhd Line: 149
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1279,12 +1278,12 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component"
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_main_altpll.v
-    Info (12023): Found entity 1: PLL_main_altpll File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/pll_main_altpll.v Line: 31
+    Info (12023): Found entity 1: PLL_main_altpll File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/pll_main_altpll.v Line: 31
 Info (12128): Elaborating entity "PLL_main_altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 58
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 58
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 58
+Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 58
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 58
+Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 58
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1336,70 +1335,59 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_1pr3.tdf
-    Info (12023): Found entity 1: altsyncram_1pr3 File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/altsyncram_1pr3.tdf Line: 34
+    Info (12023): Found entity 1: altsyncram_1pr3 File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/altsyncram_1pr3.tdf Line: 34
 Info (12128): Elaborating entity "altsyncram_1pr3" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_1pr3:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113031): 44802 out of 65536 addresses are reinitialized. The latest initialized data will replace the existing data. There are 44802 warnings found, and 10 warnings are reported. File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/AllSongs.mif Line: 1
-    Warning (113030): Memory Initialization File address 0 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 13
-    Warning (113030): Memory Initialization File address 1 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 14
-    Warning (113030): Memory Initialization File address 2 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 15
-    Warning (113030): Memory Initialization File address 3 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 16
-    Warning (113030): Memory Initialization File address 4 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 17
-    Warning (113030): Memory Initialization File address 5 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 18
-    Warning (113030): Memory Initialization File address 6 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 19
-    Warning (113030): Memory Initialization File address 7 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 20
-    Warning (113030): Memory Initialization File address 8 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 21
-    Warning (113030): Memory Initialization File address 9 is reinitialized File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/ Line: 22
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_h7a.tdf
-    Info (12023): Found entity 1: decode_h7a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/decode_h7a.tdf Line: 23
-Info (12128): Elaborating entity "decode_h7a" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_1pr3:auto_generated|decode_h7a:decode3" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/altsyncram_1pr3.tdf Line: 44
+    Info (12023): Found entity 1: decode_h7a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/decode_h7a.tdf Line: 23
+Info (12128): Elaborating entity "decode_h7a" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_1pr3:auto_generated|decode_h7a:decode3" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/altsyncram_1pr3.tdf Line: 44
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_aj9.tdf
-    Info (12023): Found entity 1: decode_aj9 File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/decode_aj9.tdf Line: 23
-Info (12128): Elaborating entity "decode_aj9" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_1pr3:auto_generated|decode_aj9:rden_decode" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/altsyncram_1pr3.tdf Line: 45
+    Info (12023): Found entity 1: decode_aj9 File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/decode_aj9.tdf Line: 23
+Info (12128): Elaborating entity "decode_aj9" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_1pr3:auto_generated|decode_aj9:rden_decode" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/altsyncram_1pr3.tdf Line: 45
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_g3b.tdf
-    Info (12023): Found entity 1: mux_g3b File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/mux_g3b.tdf Line: 23
-Info (12128): Elaborating entity "mux_g3b" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_1pr3:auto_generated|mux_g3b:mux2" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/altsyncram_1pr3.tdf Line: 46
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 85
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 85
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 85
+    Info (12023): Found entity 1: mux_g3b File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/mux_g3b.tdf Line: 23
+Info (12128): Elaborating entity "mux_g3b" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_1pr3:auto_generated|mux_g3b:mux2" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/altsyncram_1pr3.tdf Line: 46
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 85
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 85
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 85
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_WIDTHDIST" = "4"
     Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
     Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_clshift_fuc.tdf
-    Info (12023): Found entity 1: lpm_clshift_fuc File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/db/lpm_clshift_fuc.tdf Line: 23
+    Info (12023): Found entity 1: lpm_clshift_fuc File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/db/lpm_clshift_fuc.tdf Line: 23
 Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 114
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 114
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/SCOMP.vhd Line: 114
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 114
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 114
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/SCOMP.vhd Line: 114
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "AudioPeripheral" for hierarchy "AudioPeripheral:inst14"
-Warning (10036): Verilog HDL or VHDL warning at AudioPeripheral.vhd(28): object "trigger_song_change" assigned a value but never read File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/AudioPeripheral.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at AudioPeripheral.vhd(28): object "trigger_song_change" assigned a value but never read File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/AudioPeripheral.vhd Line: 28
 Info (12128): Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst3"
-Warning (10541): VHDL Signal Declaration warning at IO_DECODER.vhd(23): used implicit default value for signal "DP_EN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/IO_DECODER.vhd Line: 23
+Warning (10541): VHDL Signal Declaration warning at IO_DECODER.vhd(23): used implicit default value for signal "DP_EN" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/IO_DECODER.vhd Line: 23
 Info (12128): Elaborating entity "TIMER" for hierarchy "TIMER:inst4"
-Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/TIMER.vhd Line: 59
+Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/TIMER.vhd Line: 59
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
 Info (12128): Elaborating entity "playerInterfacePeripheral" for hierarchy "playerInterfacePeripheral:inst9"
-Warning (10873): Using initial value X (don't care) for net "IO_OUT[15..7]" at playerInterfacePeripheral.vhd(48) File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/playerInterfacePeripheral.vhd Line: 48
-Info (10041): Inferred latch for "nextRight_en" at playerInterfacePeripheral.vhd(110) File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/playerInterfacePeripheral.vhd Line: 110
-Info (10041): Inferred latch for "nextLeft_en" at playerInterfacePeripheral.vhd(104) File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/playerInterfacePeripheral.vhd Line: 104
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "playerInterfacePeripheral:inst9|LPM_BUSTRI:IO_BUS" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/playerInterfacePeripheral.vhd Line: 57
-Info (12130): Elaborated megafunction instantiation "playerInterfacePeripheral:inst9|LPM_BUSTRI:IO_BUS" File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/playerInterfacePeripheral.vhd Line: 57
-Info (12133): Instantiated megafunction "playerInterfacePeripheral:inst9|LPM_BUSTRI:IO_BUS" with the following parameter: File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/playerInterfacePeripheral.vhd Line: 57
+Warning (10873): Using initial value X (don't care) for net "IO_OUT[15..7]" at playerInterfacePeripheral.vhd(48) File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/playerInterfacePeripheral.vhd Line: 48
+Info (10041): Inferred latch for "nextRight_en" at playerInterfacePeripheral.vhd(110) File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/playerInterfacePeripheral.vhd Line: 110
+Info (10041): Inferred latch for "nextLeft_en" at playerInterfacePeripheral.vhd(104) File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/playerInterfacePeripheral.vhd Line: 104
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "playerInterfacePeripheral:inst9|LPM_BUSTRI:IO_BUS" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/playerInterfacePeripheral.vhd Line: 57
+Info (12130): Elaborated megafunction instantiation "playerInterfacePeripheral:inst9|LPM_BUSTRI:IO_BUS" File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/playerInterfacePeripheral.vhd Line: 57
+Info (12133): Instantiated megafunction "playerInterfacePeripheral:inst9|LPM_BUSTRI:IO_BUS" with the following parameter: File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/playerInterfacePeripheral.vhd Line: 57
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "DefenderPeripheral" for hierarchy "DefenderPeripheral:inst17"
-Warning (10492): VHDL Process Statement warning at DefenderPeripheral.vhd(176): signal "IO_WRITE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/DefenderPeripheral.vhd Line: 176
+Warning (10492): VHDL Process Statement warning at DefenderPeripheral.vhd(266): signal "IO_WRITE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/DefenderPeripheral.vhd Line: 266
 Info (12128): Elaborating entity "HexPeripheral" for hierarchy "HexPeripheral:inst10"
-Warning (10492): VHDL Process Statement warning at HexPeripheral.vhd(81): signal "IO_DATA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/HexPeripheral.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at HexPeripheral.vhd(81): signal "IO_DATA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/HexPeripheral.vhd Line: 81
 Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
 Warning (12125): Using design file sq_gen.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: SQ_GEN-a File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/sq_gen.vhd Line: 25
-    Info (12023): Found entity 1: SQ_GEN File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/sq_gen.vhd Line: 15
+    Info (12022): Found design unit 1: SQ_GEN-a File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/sq_gen.vhd Line: 25
+    Info (12023): Found entity 1: SQ_GEN File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/sq_gen.vhd Line: 15
 Info (12128): Elaborating entity "SQ_GEN" for hierarchy "SQ_GEN:inst16"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[6]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[6]" into an OR gate
@@ -1418,7 +1406,7 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[1]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[1]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[8]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[8]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst13|inst1[7]" to the node "I2C_INTERFACE:inst13|i2c_ctrl:inst14|data_in[7]" into an OR gate
-Info (13000): Registers with preset signals will power-up high File: //Mac/Home/Desktop/ECE2031ws/Tech RB Game Project/GameLogic/AudioPeripheral.vhd Line: 43
+Info (13000): Registers with preset signals will power-up high File: C:/Users/steph/Documents/GitHub/TechRunningbackGame/GameLogic/AudioPeripheral.vhd Line: 43
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GSENSOR_CS_n" is stuck at VCC
@@ -1430,20 +1418,20 @@ Warning (332009): The launch and latch times for the relationship between source
 Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[1] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[0] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
 Warning (332009): The launch and latch times for the relationship between source clock: inst1|altpll_component|auto_generated|pll1|clk[0] and destination clock: inst1|altpll_component|auto_generated|pll1|clk[1] are outside of the legal time range. The relationship difference is correct, however the launch time is set to 0.
-Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1654 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1642 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 55 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1455 logic cells
+    Info (21061): Implemented 1443 logic cells
     Info (21064): Implemented 128 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 4844 megabytes
-    Info: Processing ended: Sun Nov 15 22:20:01 2020
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
+    Info: Peak virtual memory: 4818 megabytes
+    Info: Processing ended: Mon Nov 16 01:41:07 2020
     Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:26
+    Info: Total CPU time (on all processors): 00:00:36
 
 

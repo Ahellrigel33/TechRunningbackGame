@@ -9,17 +9,17 @@ USE IEEE.STD_LOGIC_ARITH.ALL;
 use ieee.std_logic_unsigned.all;
 USE LPM.LPM_COMPONENTS.ALL;
 
-entity DefenderPeripheral is
+entity defense is
     port(
         cs            : in  std_logic;  -- chip select
         resetn        : in  std_logic;  -- active-low reset
 		  IO_WRITE      : in  std_logic;
 		  IO_DATA 		 : inout std_logic_vector(15 downto 0)
     );
-end DefenderPeripheral;
+end defense;
 
 
-architecture Internals of DefenderPeripheral is   -- Define the internal architecture of the device
+architecture Internals of defense is   -- Define the internal architecture of the device
 	
 	signal lfsr0 	  : std_logic_vector(14 downto 0);  -- random number generator
 	signal init_lfsr0: std_logic_vector(14 downto 0);  -- random number seed
@@ -149,13 +149,13 @@ architecture Internals of DefenderPeripheral is   -- Define the internal archite
 					defenders <= (not(A and B)) & "00" & (A and B) & "00" & (A and B);
 					case random(2 downto 0) is
 						when "000" =>
-							state <= L;
+							state <= S;
 						when "001" =>
 							state <= L2;
 						when "010" =>
 							state <= R2;
 						when "011" =>
-							state <= R;
+							state <= S;
 						when "100" =>
 							state <= N2;
 						when "101" =>

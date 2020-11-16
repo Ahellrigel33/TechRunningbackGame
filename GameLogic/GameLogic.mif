@@ -40,7 +40,7 @@ CONTENT
            01B : 50AC;  -- 	OR	Hex5
            01C : 50B9;  -- 	OR	Hex5D
            01D : 9821;  -- 	OUT	HexPeriph
-           01E : B805;  -- 	LOADI	5
+           01E : B802;  -- 	LOADI	2
            01F : 809C;  -- 	CALL	DelayAC
            020 : 08C1;  -- 	LOAD	RunningR
            021 : 9824;  -- 	OUT 	AudioPeriph
@@ -98,7 +98,7 @@ CONTENT
            055 : 50AC;  -- 	OR	Hex5
            056 : 50B9;  -- 	OR	Hex5D
            057 : 9821;  -- 	OUT	HexPeriph
-           058 : B805;  -- 	LOADI	5
+           058 : B802;  -- 	LOADI	2
            059 : 809C;  -- 	CALL	DelayAC
            05A : 2820;  -- 	JUMP	shiftDefense
            05B : 08B0;  -- 	LOAD	nothing
@@ -107,7 +107,7 @@ CONTENT
            05E : 50AC;  -- 	OR	Hex5
            05F : 50B9;  -- 	OR	Hex5D
            060 : 9821;  -- 	OUT	HexPeriph
-           061 : B805;  -- 	LOADI	5
+           061 : B802;  -- 	LOADI	2
            062 : 809C;  -- 	CALL	DelayAC
            063 : 0870;  -- 	LOAD	spacesAfter
            064 : 6801;  -- 	ADDI	1
