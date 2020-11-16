@@ -1,0 +1,219 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..7FF] : 0000;  -- Default to NOP
+
+           000 : 08BD;  -- 	LOAD	NoAudio
+           001 : 9824;  -- 	OUT	AudioPeriph
+           002 : B8BB;  -- 	LOADI	Difficulty
+           003 : 9823;  -- 	OUT	DefGen
+           004 : 08A3;  -- 	LOAD	clear
+           005 : 10B9;  -- 	STORE	Hex5D
+           006 : 10B8;  -- 	STORE	Hex4D
+           007 : 10B7;  -- 	STORE	Hex3D
+           008 : 10B6;  -- 	STORE	Hex2D
+           009 : 10B5;  -- 	STORE	Hex1D
+           00A : 10B4;  -- 	STORE	Hex0D
+           00B : 9821;  -- 	OUT	HexPeriph
+           00C : B800;  -- 	LOADI	0
+           00D : 106E;  -- 	STORE	current
+           00E : 1070;  -- 	STORE	spacesAfter
+           00F : B805;  -- 	LOADI	5
+           010 : 1099;  -- 	STORE 	scaleCounter
+           011 : B800;  -- 	LOADI	&B0000000000
+           012 : 109B;  -- 	STORE	progressBar
+           013 : B810;  -- 	LOADI	16
+           014 : 108B;  -- 	STORE	endGameTimer
+           015 : 2820;  -- 	JUMP	shiftDefense
+           016 : 9022;  -- 	IN	PlayerPeriph
+           017 : 10BA;  -- 	STORE	playerD
+           018 : 9023;  -- 	IN 	DefGen
+           019 : 10B9;  -- 	STORE 	Hex5D
+           01A : 08A6;  -- 	LOAD	writeDimHex
+           01B : 50AC;  -- 	OR	Hex5
+           01C : 50B9;  -- 	OR	Hex5D
+           01D : 9821;  -- 	OUT	HexPeriph
+           01E : B805;  -- 	LOADI	5
+           01F : 809C;  -- 	CALL	DelayAC
+           020 : 08C1;  -- 	LOAD	RunningR
+           021 : 9824;  -- 	OUT 	AudioPeriph
+           022 : 9022;  -- 	IN	PlayerPeriph
+           023 : 10BA;  -- 	STORE	playerD
+           024 : 08B5;  -- 	LOAD 	Hex1D
+           025 : 10B4;  -- 	STORE	Hex0D
+           026 : 08B6;  -- 	LOAD 	Hex2D
+           027 : 10B5;  -- 	STORE	Hex1D
+           028 : 08B7;  -- 	LOAD 	Hex3D
+           029 : 10B6;  -- 	STORE	Hex2D
+           02A : 08B8;  -- 	LOAD 	Hex4D
+           02B : 10B7;  -- 	STORE	Hex3D
+           02C : 08B9;  -- 	LOAD 	Hex5D
+           02D : 10B8;  -- 	STORE	Hex4D
+           02E : 08A3;  -- 	LOAD	clear
+           02F : 10B9;  -- 	STORE	Hex5D
+           030 : 9022;  -- 	IN	PlayerPeriph
+           031 : 10BA;  -- 	STORE	playerD	
+           032 : 08B9;  -- 	LOAD	Hex5D
+           033 : 9821;  -- 	OUT	HexPeriph
+           034 : 08A6;  -- 	LOAD	writeDimHex
+           035 : 50AB;  -- 	OR	Hex4
+           036 : 50B8;  -- 	OR	Hex4D
+           037 : 9821;  -- 	OUT	HexPeriph
+           038 : 08A6;  -- 	LOAD	writeDimHex
+           039 : 50AA;  -- 	OR	Hex3
+           03A : 50B7;  -- 	OR	Hex3D
+           03B : 9821;  -- 	OUT	HexPeriph
+           03C : 08A6;  -- 	LOAD	writeDimHex
+           03D : 50A9;  -- 	OR	Hex2
+           03E : 50B6;  -- 	OR	Hex2D
+           03F : 9821;  -- 	OUT	HexPeriph
+           040 : 08A6;  -- 	LOAD	writeDimHex
+           041 : 50A8;  -- 	OR	Hex1
+           042 : 50B5;  -- 	OR	Hex1D
+           043 : 9821;  -- 	OUT	HexPeriph
+           044 : 08A6;  -- 	LOAD	writeDimHex
+           045 : 50A7;  -- 	OR	Hex0
+           046 : 50B4;  -- 	OR	Hex0D
+           047 : 9821;  -- 	OUT	HexPeriph
+           048 : 8069;  -- 	CALL 	checkCollision
+           049 : 808C;  -- 	CALL	makeProgress
+           04A : 086E;  -- 	LOAD	current
+           04B : 6801;  -- 	ADDI	1
+           04C : 106E;  -- 	STORE	current
+           04D : 086E;  -- 	LOAD	current
+           04E : 206F;  -- 	SUB	goalCount
+           04F : 4052;  -- 	JZERO	generateGoalLine
+           050 : 385B;  -- 	JPOS	generateNoContent
+           051 : 2816;  -- 	JUMP	generateDefense
+           052 : 086D;  -- 	LOAD	goalLine
+           053 : 10B9;  -- 	STORE	Hex5D
+           054 : 08A4;  -- 	LOAD	writeHex
+           055 : 50AC;  -- 	OR	Hex5
+           056 : 50B9;  -- 	OR	Hex5D
+           057 : 9821;  -- 	OUT	HexPeriph
+           058 : B805;  -- 	LOADI	5
+           059 : 809C;  -- 	CALL	DelayAC
+           05A : 2820;  -- 	JUMP	shiftDefense
+           05B : 08B0;  -- 	LOAD	nothing
+           05C : 10B9;  -- 	STORE	Hex5D
+           05D : 08A4;  -- 	LOAD	writeHex
+           05E : 50AC;  -- 	OR	Hex5
+           05F : 50B9;  -- 	OR	Hex5D
+           060 : 9821;  -- 	OUT	HexPeriph
+           061 : B805;  -- 	LOADI	5
+           062 : 809C;  -- 	CALL	DelayAC
+           063 : 0870;  -- 	LOAD	spacesAfter
+           064 : 6801;  -- 	ADDI	1
+           065 : 1070;  -- 	STORE 	spacesAfter
+           066 : 2071;  -- 	SUB	buffer
+           067 : 3872;  -- 	JPOS	endGameWIN
+           068 : 2820;  -- 	JUMP	shiftDefense
+           069 : 08BA;  -- 	LOAD	playerD
+           06A : 48B4;  -- 	AND	Hex0D
+           06B : 3877;  -- 	JPOS	endGameLOSE
+           06C : 8800;  -- 	RETURN
+           06D : 0006;  -- goalLine:	DW &B0000110
+           06E : 0000;  -- current:	DW 0
+           06F : 002D;  -- goalCount:	DW 45
+           070 : 0000;  -- spacesAfter:	DW 0
+           071 : 0005;  -- buffer:		DW 5
+           072 : 08BD;  -- 	LOAD	NoAudio
+           073 : 9824;  -- 	OUT	AudioPeriph
+           074 : 08BE;  -- 	LOAD	RamblinN
+           075 : 9824;  -- 	OUT	AudioPeriph
+           076 : 2879;  -- 	JUMP	blinkLEDs
+           077 : 08BD;  -- 	LOAD	NoAudio
+           078 : 9824;  -- 	OUT	AudioPeriph
+           079 : 089B;  -- 	LOAD 	progressBar
+           07A : 9801;  -- 	OUT 	LEDs
+           07B : B805;  -- 	LOADI	5
+           07C : 809C;  -- 	CALL	DelayAC
+           07D : 0A00;  -- 	LOAD	&B1000000000
+           07E : 9801;  -- 	OUT	LEDs
+           07F : B805;  -- 	LOADI	5
+           080 : 809C;  -- 	CALL	DelayAC
+           081 : 088B;  -- 	LOAD	endGameTimer
+           082 : 20C2;  -- 	SUB	ONE
+           083 : 108B;  -- 	STORE	endGameTimer
+           084 : 088B;  -- 	LOAD	endGameTimer
+           085 : 4087;  -- 	JZERO	nextLevel
+           086 : 2879;  -- 	JUMP	blinkLEDs
+           087 : 08BB;  -- 	LOAD	Difficulty
+           088 : 68C2;  -- 	ADDI	ONE
+           089 : 10BB;  -- 	STORE	Difficulty
+           08A : 2800;  -- 	JUMP 	reset
+           08B : 0010;  -- endGameTimer:	DW 16
+           08C : 0899;  -- 	LOAD 	scaleCounter
+           08D : 20C2;  -- 	SUB	ONE
+           08E : 1099;  -- 	STORE	scaleCounter
+           08F : 3896;  -- 	JPOS	showProgress
+           090 : B805;  -- 	LOADI	5
+           091 : 1099;  -- 	STORE 	scaleCounter
+           092 : 089B;  -- 	LOAD	progressBar
+           093 : 6001;  -- 	SHIFT	1
+           094 : 509A;  -- 	OR 	LEDOne
+           095 : 109B;  -- 	STORE 	progressBar
+           096 : 089B;  -- 	LOAD	progressBar
+           097 : 9801;  -- 	OUT	LEDs
+           098 : 8800;  -- 	RETURN
+           099 : 0005;  -- scaleCounter:	DW 5
+           09A : 0001;  -- LEDOne:		DW &B0000000001
+           09B : 0000;  -- progressBar:	DW &B0000000000
+           09C : 10A2;  -- 	STORE  	DelayTime   	; Save the desired delay
+           09D : 9802;  -- 	OUT    	Timer   	; Reset the timer
+           09E : 9002;  -- 	IN	Timer      	; Get the current timer value
+           09F : 20A2;  -- 	SUB    	DelayTime
+           0A0 : 309E;  -- 	JNEG   	WaitingLoop	; Repeat until timer = delay value
+           0A1 : 8800;  -- 	RETURN
+           0A2 : 0000;  -- DelayTime: 	DW 0
+           0A3 : 0000;  -- clear:		DW &H0000
+           0A4 : 1000;  -- writeHex:	DW &H1000
+           0A5 : 2000;  -- writePlayer:	DW &H2000 	; (NO MORE)
+           0A6 : 3000;  -- writeDimHex:	DW &H3000
+           0A7 : 0000;  -- Hex0:		DW &B0000000000000000
+           0A8 : 0200;  -- Hex1:		DW &B0000001000000000
+           0A9 : 0400;  -- Hex2:		DW &B0000010000000000
+           0AA : 0600;  -- Hex3:		DW &B0000011000000000
+           0AB : 0800;  -- Hex4:		DW &B0000100000000000
+           0AC : 0A00;  -- Hex5:		DW &B0000101000000000
+           0AD : 0008;  -- leftDef:	DW &B0001000
+           0AE : 0040;  -- midDef:		DW &B1000000
+           0AF : 0001;  -- rightDef:	DW &B0000001
+           0B0 : 0000;  -- nothing:	DW &B0000000
+           0B1 : 2800;  -- leftSide:	DW &B0010100000000000
+           0B2 : 2400;  -- midSide:	DW &B0010010000000000
+           0B3 : 2200;  -- rightSide:	DW &B0010001000000000
+           0B4 : 0000;  -- Hex0D:		DW &B0000000000000000
+           0B5 : 0000;  -- Hex1D:		DW &B0000000000000000
+           0B6 : 0000;  -- Hex2D:		DW &B0000000000000000
+           0B7 : 0000;  -- Hex3D:		DW &B0000000000000000
+           0B8 : 0000;  -- Hex4D:		DW &B0000000000000000
+           0B9 : 0000;  -- Hex5D:		DW &B0000000000000000
+           0BA : 0000;  -- playerD:	DW &B0000000000000000
+           0BB : 0000;  -- Difficulty:	DW &B0000000000000000
+           0BC : 0000;  -- defenseInput:	DW &B0000000000000000
+           0BD : 0000;  -- NoAudio:		DW &B0000000000000000
+           0BE : 0001;  -- RamblinN:	DW &B0000000000000001
+           0BF : 8001;  -- RamblinR:	DW &B1000000000000001
+           0C0 : 0002;  -- RunningN:	DW &B0000000000000010
+           0C1 : 8002;  -- RunningR:	DW &B1000000000000010
+           0C2 : 0001;  -- ONE:		DW 1
+           0C3 : FFFF;  -- NEGONE:		DW -1
+           0C4 : 0001;  -- Bit0:      	DW &B0000000001
+           0C5 : 0002;  -- Bit1:      	DW &B0000000010
+           0C6 : 0004;  -- Bit2:     	DW &B0000000100
+           0C7 : 0008;  -- Bit3:     	DW &B0000001000
+           0C8 : 0010;  -- Bit4:      	DW &B0000010000
+           0C9 : 0020;  -- Bit5:      	DW &B0000100000
+           0CA : 0040;  -- Bit6:      	DW &B0001000000
+           0CB : 0080;  -- Bit7:      	DW &B0010000000
+           0CC : 0100;  -- Bit8:      	DW &B0100000000
+           0CD : 0200;  -- Bit9:      	DW &B1000000000
+  END;
