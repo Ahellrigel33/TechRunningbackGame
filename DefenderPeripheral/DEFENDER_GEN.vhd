@@ -72,41 +72,82 @@ architecture Internals of defense is   -- Define the internal architecture of th
 				
 				when D =>
 					--L
-					if 32600< random(14 downto 0) AND random(14 downto 0) < 32767 then
+					if 31700 < random(14 downto 0) AND random(14 downto 0) < 32767 then
 						defenders <= (A and B) & "001000";
 						if ((A > 0) and (B > 0)) then
 							state <= L2;
 						end if;
 					end if;
 					--N
-					if 24576 < random(14 downto 0) AND random(14 downto 0) < 32600 then
+					if 29700 < random(14 downto 0) AND random(14 downto 0) < 31700 then
 						defenders <= "0000000";
 					end if;
 					--S
-					if 20480 < random(14 downto 0) AND random(14 downto 0) < 24576 then
+					if 26650 < random(14 downto 0) AND random(14 downto 0) < 29700 then
 						defenders <= ((not B) and A) & "00" & B & "00" & B;
 						state <= S;
 					end if;
 					--R2
-					if 16384 < random(14 downto 0) AND random(14 downto 0) < 20480 then
+					if 24600 < random(14 downto 0) AND random(14 downto 0) < 26650 then
 						state <= R2;
 						defenders <= B & "00000" & (A or B);
 					end if;
 					--L2
-					if 12288 < random(14 downto 0) AND random(14 downto 0) < 16384 then
+					if 22550 < random(14 downto 0) AND random(14 downto 0) < 24600 then
 						state <= L2;
 						defenders <= B & "00" & (A or B) & "000";
 					end if;
 					--M
-					if 8192 < random(14 downto 0) AND random(14 downto 0) < 12288 then
+					if 20500 < random(14 downto 0) AND random(14 downto 0) < 22550 then
 						defenders <= (not(A and B)) & "00" & (A and B) & "00" & (A and B);
 					end if;
 					--N
-					if 500 < random(14 downto 0) AND random(14 downto 0) < 8192 then
+					if 19500 < random(14 downto 0) AND random(14 downto 0) < 20500 then
 						defenders <= "0000000";
 					end if;
 					--R
-					if 0 < random(14 downto 0) AND random(14 downto 0) < 500 then
+					if 16400 < random(14 downto 0) AND random(14 downto 0) < 18450 then
+						defenders <= (A and B) & "000001";
+						if ((A > 0) and (B > 0)) then
+							state <= R2;
+						end if;
+					end if;
+					--L
+					if 12800< random(14 downto 0) AND random(14 downto 0) < 16400 then
+						defenders <= (A and B) & "001000";
+						if ((A > 0) and (B > 0)) then
+							state <= L2;
+						end if;
+					end if;
+					--N
+					if 12300 < random(14 downto 0) AND random(14 downto 0) < 12800 then
+						defenders <= "0000000";
+					end if;
+					--S
+					if 10250 < random(14 downto 0) AND random(14 downto 0) < 12300 then
+						defenders <= ((not B) and A) & "00" & B & "00" & B;
+						state <= S;
+					end if;
+					--R2
+					if 8200 < random(14 downto 0) AND random(14 downto 0) < 10250 then
+						state <= R2;
+						defenders <= B & "00000" & (A or B);
+					end if;
+					--L2
+					if 6150 < random(14 downto 0) AND random(14 downto 0) < 8200 then
+						state <= L2;
+						defenders <= B & "00" & (A or B) & "000";
+					end if;
+					--M
+					if 3100 < random(14 downto 0) AND random(14 downto 0) < 6150 then
+						defenders <= (not(A and B)) & "00" & (A and B) & "00" & (A and B);
+					end if;
+					--N
+					if 1000 < random(14 downto 0) AND random(14 downto 0) < 3100 then
+						defenders <= "0000000";
+					end if;
+					--R
+					if 0 < random(14 downto 0) AND random(14 downto 0) < 1000 then
 						defenders <= (A and B) & "000001";
 						if ((A > 0) and (B > 0)) then
 							state <= R2;
