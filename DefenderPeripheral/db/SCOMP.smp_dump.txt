@@ -1,10 +1,14 @@
 
 State Machine - |SCOMP_System|defense:inst9|state
-Name state.S state.L2 state.R2 state.D 
-state.D 0 0 0 0 
-state.R2 0 0 1 1 
-state.L2 0 1 0 1 
-state.S 1 0 0 1 
+Name state.N2 state.S state.R2 state.L2 state.M state.R state.L state.N 
+state.N 0 0 0 0 0 0 0 0 
+state.L 0 0 0 0 0 0 1 1 
+state.R 0 0 0 0 0 1 0 1 
+state.M 0 0 0 0 1 0 0 1 
+state.L2 0 0 0 1 0 0 0 1 
+state.R2 0 0 1 0 0 0 0 1 
+state.S 0 1 0 0 0 0 0 1 
+state.N2 1 0 0 0 0 0 0 1 
 
 State Machine - |SCOMP_System|SCOMP:inst|state
 Name state.ex_out2 state.ex_out state.ex_in2 state.ex_in state.ex_shift state.ex_xor state.ex_or state.ex_and state.ex_return state.ex_call state.ex_jpos state.ex_jzero state.ex_jneg state.ex_jump state.ex_sub state.ex_addi state.ex_add state.ex_loadi state.ex_istore2 state.ex_istore state.ex_iload state.ex_store2 state.ex_store state.ex_load state.ex_nop state.decode state.fetch state.init 
